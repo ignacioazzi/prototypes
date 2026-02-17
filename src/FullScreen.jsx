@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Minus, Plus, Users, Wifi, Wind, Tv, Eye, Waves, Coffee, Check, Bed, Bath, Building2, Droplets, Maximize2, ArrowLeft, BedDouble, X, Wallet } from 'lucide-react';
 import './App.css';
 
 export default function RoomCustomization() {
+  useEffect(() => {
+    document.title = 'Full Screen';
+  }, []);
   const [isBottomSheetOpen, setIsBottomSheetOpen] = useState(false);
   const [selectedRoomType, setSelectedRoomType] = useState(null);
   const [numberOfRooms, setNumberOfRooms] = useState(1);
@@ -186,10 +189,15 @@ export default function RoomCustomization() {
         <h1 className="text-3xl font-bold text-gray-800">Full Screen</h1>
         <p className="text-gray-600 text-lg mt-2">Single page room selection flow</p>
       </div>
-      <div style={{ width: '390px', aspectRatio: '1 / 2.13', transform: 'scale(0.9)', zIndex: 2, overflow: 'hidden' }}
-        className=" bg-gray-50 rounded-3xl shadow-2xl flex flex-col mx-auto">
+      <div className="relative">
+        {/* Phone frame background */}
+        <div
+          className="phone-frame-background"
+        />
+        <div style={{ width: '390px', aspectRatio: '1 / 2.13', transform: 'scale(0.9)', zIndex: 2, overflow: 'hidden' }}
+          className=" bg-gray-50 rounded-3xl shadow-2xl flex flex-col mx-auto relative">
         {/* Mock Header */}
-        <div className="bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between">
+        <div className="header bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between">
           {currentPage === 'checkout' ? (
             <>
               <button onClick={() => setCurrentPage('rooms')}>
@@ -533,6 +541,7 @@ export default function RoomCustomization() {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
     Minus,
     Plus,
@@ -21,6 +21,9 @@ import {
 } from "lucide-react";
 
 export default function BookingFlowCustomizer() {
+    useEffect(() => {
+        document.title = 'Bottom Sheet';
+    }, []);
     const [currentPage, setCurrentPage] = useState("rooms"); // 'rooms', 'room-detail', 'checkout'
     const [selectedRoomType, setSelectedRoomType] = useState(null);
     const [isBottomSheetOpen, setIsBottomSheetOpen] = useState(false);
@@ -207,18 +210,7 @@ export default function BookingFlowCustomizer() {
                 <div className="relative">
                     {/* Phone frame background */}
                     <div
-                        className="absolute pointer-events-none"
-                        style={{
-                            top: "-12px",
-                            left: "-12px",
-                            right: "-12px",
-                            bottom: "-12px",
-                            backgroundImage: "url(src/frame.png)",
-                            backgroundSize: "91% 91%",
-                            backgroundRepeat: "no-repeat",
-                            backgroundPosition: "center",
-                            zIndex: 1,
-                        }}
+                        className="phone-frame-background"
                     />
 
                     <div
@@ -289,9 +281,8 @@ export default function BookingFlowCustomizer() {
 
                         {/* Header */}
                         <div
-                            className="px-4 flex items-center justify-between relative bg-white text-gray-900 border-b border-gray-200"
+                            className="header px-4 flex items-center justify-between relative bg-white text-gray-900 border-b border-gray-200"
                             style={{
-                                height: "54px",
                                 zIndex: currentPage === "room-detail" ? 300 : 200,
                             }}
                         >

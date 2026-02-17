@@ -14,10 +14,15 @@ function RootRouter() {
     window.addEventListener('hashchange', onHash)
     return () => window.removeEventListener('hashchange', onHash)
   }, [])
-  if (route === '#two') return <TwoSteps />
-  if (route === '#full') return <FullScreen />
-  if (route === '#bottom') return <BottomSheet />
-  return <Home />
+
+  return (
+    <>
+      {route === '#two' && <TwoSteps />}
+      {route === '#full' && <FullScreen />}
+      {route === '#bottom' && <BottomSheet />}
+      {route === '#/' && <Home />}
+    </>
+  )
 }
 
 

@@ -12,3 +12,21 @@ HTML {
 .card {
   padding: 2em;
 }
+
+.phone-frame-background {
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  right: -12px;
+  bottom: -12px;
+  background-image: url(src/frame.png);
+  background-size: 91% 91%;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.header {
+  height: 54px;
+}

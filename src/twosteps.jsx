@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Minus, Plus, Users, Wifi, Wind, Tv, Eye, Waves, Coffee, Check, Bed, Bath, Building2, Maximize2, ArrowLeft, BedDouble, X, Wallet, Trash2 } from 'lucide-react';
 
 export default function TwoStepRoomSelection() {
+  useEffect(() => {
+    document.title = 'Two Steps Selection';
+  }, []);
   const [currentPage, setCurrentPage] = useState("rooms"); // 'rooms', 'select-rate', 'checkout'
   const [selectedRoomType, setSelectedRoomType] = useState(null);
   const [selectedRate, setSelectedRate] = useState(null);
@@ -288,7 +291,12 @@ export default function TwoStepRoomSelection() {
         <h1 className="text-3xl font-bold text-gray-800">Two Steps Selection</h1>
         <p className="text-gray-600 text-lg mt-2">Select room then choose rate</p>
       </div>
-      <div style={{ width: '390px', aspectRatio: '1 / 2.13', transform: 'scale(0.9)', zIndex: 2, overflow: 'hidden' }} className=" bg-gray-50 rounded-3xl shadow-2xl  flex flex-col w-full relative overflow-hidden">
+      <div className="relative">
+        {/* Phone frame background */}
+        <div
+          className="phone-frame-background"
+        />
+        <div style={{ width: '390px', aspectRatio: '1 / 2.13', transform: 'scale(0.9)', zIndex: 2, overflow: 'hidden' }} className=" bg-gray-50 rounded-3xl shadow-2xl  flex flex-col w-full relative overflow-hidden">
       <style>{`
         @keyframes slideInRight {
           from {
@@ -327,7 +335,7 @@ export default function TwoStepRoomSelection() {
       `}</style>
 
       {/* Header */}
-      <div className="bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between relative z-50">
+      <div className="header bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between relative z-50">
         {currentPage === "checkout" ? (
           <>
             <button onClick={() => setCurrentPage("rooms")}>
@@ -985,6 +993,7 @@ export default function TwoStepRoomSelection() {
             </button>
           </div>
         </div>
+      </div>
       </div>
     </div>
     </div>
