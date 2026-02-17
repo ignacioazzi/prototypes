@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+.rounded-3xl {
+  border-radius: 36px;
+}
 
 h1 {
   line-height: 1.1;

@@ -202,6 +202,8 @@ export default function BookingFlowCustomizer() {
             </div>
             <div className="flex items-start gap-12 max-w-7xl">
                 {/* Mobile Prototype */}
+                <div
+                    className="w-72"> </div>
                 <div className="relative">
                     {/* Phone frame background */}
                     <div
@@ -211,8 +213,8 @@ export default function BookingFlowCustomizer() {
                             left: "-12px",
                             right: "-12px",
                             bottom: "-12px",
-                            backgroundImage: "url(/mnt/user-data/uploads/image_11.png)",
-                            backgroundSize: "100% 100%",
+                            backgroundImage: "url(src/frame.png)",
+                            backgroundSize: "91% 91%",
                             backgroundRepeat: "no-repeat",
                             backgroundPosition: "center",
                             zIndex: 1,
