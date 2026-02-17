@@ -283,7 +283,7 @@ export default function TwoStepRoomSelection() {
   };
 
   return (
-    <div className="h-screen bg-gray-50 flex flex-col w-full relative overflow-hidden">
+    <div style={{ width: '390px', aspectRatio: '1 / 2.13', transform: 'scale(0.9)', zIndex: 2, overflow: 'hidden' }} className=" bg-gray-50 rounded-3xl shadow-2xl  flex flex-col w-full relative overflow-hidden">
       <style>{`
         @keyframes slideInRight {
           from {
@@ -616,8 +616,8 @@ export default function TwoStepRoomSelection() {
                       <button
                         onClick={() => handleSelectAndCustomize(roomType)}
                         className={`flex-1 py-3 rounded-lg font-medium transition-colors ${isSelected
-                            ? "bg-blue-600 text-white hover:bg-blue-700"
-                            : "bg-white text-blue-600 border-2 border-blue-600 hover:bg-blue-50"
+                          ? "bg-blue-600 text-white hover:bg-blue-700"
+                          : "bg-white text-blue-600 border-2 border-blue-600 hover:bg-blue-50"
                           }`}
                       >
                         {isSelected ? "Edit selection" : "Select"}
@@ -652,8 +652,8 @@ export default function TwoStepRoomSelection() {
                   id={`rate-${rate.id}`}
                   onClick={() => handleRateClick(rate, index)}
                   className={`bg-white rounded-lg shadow-sm border-2 cursor-pointer transition-all ${isSelectedRate
-                      ? "border-blue-600 bg-blue-50"
-                      : "border-gray-200 hover:border-gray-300"
+                    ? "border-blue-600 bg-blue-50"
+                    : "border-gray-200 hover:border-gray-300"
                     }`}
                 >
                   <div className="p-4">
@@ -909,8 +909,8 @@ export default function TwoStepRoomSelection() {
                       <label
                         key={option.value}
                         className={`flex items-center justify-between p-3 border-2 rounded-lg cursor-pointer transition-all ${room.bedType === option.value
-                            ? "border-blue-600 bg-blue-50"
-                            : "border-gray-200 hover:border-gray-300"
+                          ? "border-blue-600 bg-blue-50"
+                          : "border-gray-200 hover:border-gray-300"
                           }`}
                       >
                         <div className="flex items-center gap-3">
@@ -943,8 +943,8 @@ export default function TwoStepRoomSelection() {
                       <label
                         key={option.value}
                         className={`flex items-center justify-between p-3 border-2 rounded-lg cursor-pointer transition-all ${room.smokingPreference === option.value
-                            ? "border-blue-600 bg-blue-50"
-                            : "border-gray-200 hover:border-gray-300"
+                          ? "border-blue-600 bg-blue-50"
+                          : "border-gray-200 hover:border-gray-300"
                           }`}
                       >
                         <div className="flex items-center gap-3">
