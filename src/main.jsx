@@ -1,6 +1,7 @@
 import React, { StrictMode, useEffect, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
+import Home from './Home.jsx'
 import TwoSteps from './twosteps.jsx'
 import FullScreen from './FullScreen.jsx'
 import BottomSheet from './BottomSheet.jsx'
@@ -14,8 +15,9 @@ function RootRouter() {
     return () => window.removeEventListener('hashchange', onHash)
   }, [])
   if (route === '#two') return <TwoSteps />
+  if (route === '#full') return <FullScreen />
   if (route === '#bottom') return <BottomSheet />
-  return <FullScreen />
+  return <Home />
 }
 
 

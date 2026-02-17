@@ -307,8 +307,8 @@ export default function BookingFlowCustomizer() {
                                 </>
                             ) : (
                                 <>
-                                    <button onClick={() => { }}>
-                                        {/* <ArrowLeft className="w-6 h-6" /> */}
+                                    <button onClick={() => window.location.hash = '#/'}>
+                                        <ArrowLeft className="w-6 h-6" />
                                     </button>
                                     <h1 className="text-lg font-semibold">Choose your stay</h1>
                                     <div className="w-6 h-6"></div>

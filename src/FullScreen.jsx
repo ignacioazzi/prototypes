@@ -195,7 +195,9 @@ export default function RoomCustomization() {
           </>
         ) : (
           <>
-            <div className="w-6"></div>
+            <button onClick={() => window.location.hash = '#/'}>
+              <ArrowLeft className="w-6 h-6" />
+            </button>
             <h1 className="text-lg font-semibold">Choose your Stay</h1>
             <div className="w-6"></div>
           </>

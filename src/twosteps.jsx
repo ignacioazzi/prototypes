@@ -341,19 +341,9 @@ export default function TwoStepRoomSelection() {
           </>
         ) : (
           <>
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
+            <button onClick={() => window.location.hash = '#/'}>
+              <ArrowLeft className="w-6 h-6" />
+            </button>
             <h1 className="text-lg font-semibold">Select Room</h1>
             <div className="w-6"></div>
           </>
