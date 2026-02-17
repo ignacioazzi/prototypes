@@ -222,62 +222,7 @@ export default function BookingFlowCustomizer() {
                             zIndex: 2,
                         }}
                     >
-                        <style>{`
-          @keyframes slideInRight {
-            from {
-              transform: translate3d(100%, 0, 0);
-              opacity: 0.95;
-            }
-            to {
-              transform: translate3d(0, 0, 0);
-              opacity: 1;
-            }
-          }
-          
-          @keyframes slideOutRight {
-            from {
-              transform: translate3d(0, 0, 0);
-              opacity: 1;
-            }
-            to {
-              transform: translate3d(100%, 0, 0);
-              opacity: 0.95;
-            }
-          }
-          
-          @keyframes fadeIn {
-            from {
-              opacity: 0;
-            }
-            to {
-              opacity: 1;
-            }
-          }
-          
-          .page-transition {
-            position: absolute;
-            top: 54px;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: #f9fafb;
-            will-change: transform;
-          }
-          
-          .animate-slide-in-right {
-            animation: slideInRight 0.25s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
-          }
-          
-          .animate-slide-out-right {
-            animation: slideOutRight 0.25s cubic-bezier(0.4, 0.0, 0.2, 1) forwards;
-          }
-          
-          .animate-fadeIn {
-            animation: fadeIn 0.5s ease-in forwards;
-          }
-          
-          
-        `}</style>
+
 
                         {/* Header */}
                         <div
