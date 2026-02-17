@@ -195,7 +195,11 @@ export default function BookingFlowCustomizer() {
     };
 
     return (
-        <div className="min-h-screen bg-gray-200 flex items-center justify-center p-0">
+        <div className="min-h-screen bg-gray-200 flex flex-col items-center justify-center p-0 gap-8">
+            <div className="text-center">
+                <h1 className="text-3xl font-bold text-gray-800">Bottom Sheet</h1>
+                <p className="text-gray-600 text-lg mt-2">Room customization with bottom sheet drawer</p>
+            </div>
             <div className="flex items-start gap-12 max-w-7xl">
                 {/* Mobile Prototype */}
                 <div className="relative">
@@ -318,7 +322,7 @@ export default function BookingFlowCustomizer() {
 
                         {/* Room Cards */}
                         {currentPage === "rooms" && (
-                            <div className="flex-1 overflow-auto p-4 space-y-4 pb-32">
+                            <div className="flex-1 overflow-auto p-4 space-y-4">
                                 {roomCards.map((roomType) => {
                                     const isSelected = !!confirmedSelections[roomType.id];
                                     const selection = confirmedSelections[roomType.id];
@@ -599,7 +603,7 @@ export default function BookingFlowCustomizer() {
                                 className="page-transition flex flex-col animate-slide-in-right"
                                 style={{ zIndex: 30 }}
                             >
-                                <div className="flex-1 overflow-auto p-4 pb-32">
+                                <div className="flex-1 overflow-auto p-4">
                                     <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
                                         <h2 className="text-xl font-bold mb-4">Booking Summary</h2>
                                         <div className="space-y-3">

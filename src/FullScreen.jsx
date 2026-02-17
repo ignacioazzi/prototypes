@@ -34,7 +34,7 @@ export default function RoomCustomization() {
       cancellation: 'Free cancellation before 29 May 2025',
       prepayment: 'No prepayment needed – pay at the property',
       breakfast: 'Breakfast available, pay at the property (€ 12)',
-      discount: '10% Genius discount',
+      discount: '47% Genius discount',
       discountBadges: ['47% off', 'Genius discount'],
       originalPrice: 163,
       price: 76,
@@ -60,7 +60,7 @@ export default function RoomCustomization() {
       prepayment: null,
       breakfast: 'Breakfast available, pay at the property (€ 12)',
       discount: '15% discount',
-      discountBadges: ['Non-refundable'],
+      discountBadges: [],
       originalPrice: 152,
       price: 129,
       priceFor: 2,
@@ -181,8 +181,13 @@ export default function RoomCustomization() {
   };
 
   return (
-    <div style={{ width: '390px', aspectRatio: '1 / 2.13', transform: 'scale(0.9)', zIndex: 2, overflow: 'hidden' }}
-      className=" bg-gray-50 rounded-3xl shadow-2xl flex flex-col mx-auto">
+    <div className="flex flex-col items-center justify-center min-h-screen gap-8">
+      <div className="text-center">
+        <h1 className="text-3xl font-bold text-gray-800">Full Screen</h1>
+        <p className="text-gray-600 text-lg mt-2">Single page room selection flow</p>
+      </div>
+      <div style={{ width: '390px', aspectRatio: '1 / 2.13', transform: 'scale(0.9)', zIndex: 2, overflow: 'hidden' }}
+        className=" bg-gray-50 rounded-3xl shadow-2xl flex flex-col mx-auto">
       {/* Mock Header */}
       <div className="bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between">
         {currentPage === 'checkout' ? (
@@ -528,6 +533,7 @@ export default function RoomCustomization() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }

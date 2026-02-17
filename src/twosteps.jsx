@@ -283,7 +283,12 @@ export default function TwoStepRoomSelection() {
   };
 
   return (
-    <div style={{ width: '390px', aspectRatio: '1 / 2.13', transform: 'scale(0.9)', zIndex: 2, overflow: 'hidden' }} className=" bg-gray-50 rounded-3xl shadow-2xl  flex flex-col w-full relative overflow-hidden">
+    <div className="flex flex-col items-center justify-center min-h-screen gap-8">
+      <div className="text-center">
+        <h1 className="text-3xl font-bold text-gray-800">Two Steps Selection</h1>
+        <p className="text-gray-600 text-lg mt-2">Select room then choose rate</p>
+      </div>
+      <div style={{ width: '390px', aspectRatio: '1 / 2.13', transform: 'scale(0.9)', zIndex: 2, overflow: 'hidden' }} className=" bg-gray-50 rounded-3xl shadow-2xl  flex flex-col w-full relative overflow-hidden">
       <style>{`
         @keyframes slideInRight {
           from {
@@ -981,6 +986,7 @@ export default function TwoStepRoomSelection() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }

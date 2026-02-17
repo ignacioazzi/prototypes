@@ -2,11 +2,11 @@
 
 
 h1 {
-  font-size: 1.2em;
   line-height: 1.1;
 }
 
 .border-b,
+.border-t,
 label.border-2 {
   border-color: #eee9e9
 }
