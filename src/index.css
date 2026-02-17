@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+
+h1 {
+  font-size: 1.2em;
+  line-height: 1.1;
+}
+
+.border-b,
+label.border-2 {
+  border-color: #eee9e9
+}
+
+body,
+html {
+  background-color: var(--color-gray-200) !important;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
