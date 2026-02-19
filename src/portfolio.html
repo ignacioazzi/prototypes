@@ -17,7 +17,7 @@
     <div class="deck">
 
         <!-- SLIDE 1: Business impact -->
-        <div class="slide" id="slide-0">
+        <div class="slide" id="slide-1">
             <div class="s4">
                 <div class="slide-inner">
                     <div class="slide-header">
@@ -72,7 +72,7 @@
         </div>
 
         <!-- SLIDE 2: Benefits for partners -->
-        <div class="slide" id="slide-1">
+        <div class="slide" id="slide-2">
             <div class="s0">
                 <div class="slide-inner">
                     <div class="slide-header">
@@ -126,7 +126,7 @@
         </div>
 
         <!-- SLIDE 3: Statement -->
-        <div class="slide" id="slide-2">
+        <div class="slide" id="slide-3">
             <div class="s1">
                 <p class="slide-subtitle">Our objective then?</p>
                 <h1>To build a <strong>scalable solution</strong>, where users could <strong>easily customise their
@@ -135,7 +135,7 @@
         </div>
 
         <!-- SLIDE 4: Stakeholder triangle -->
-        <div class="slide" id="slide-3">
+        <div class="slide" id="slide-4">
             <div class="s2">
                 <div class="slide-inner narrow">
                     <div class="slide-header">
@@ -184,7 +184,7 @@
         </div>
 
         <!-- SLIDE 5: Room selection -->
-        <div class="slide" id="slide-4">
+        <div class="slide" id="slide-5">
             <div class="s3">
                 <div class="s3-left">
                     <div class="s3-title-block">
@@ -225,7 +225,6 @@
             </div>
         </div>
 
-        <nav class="dots" id="dots"></nav>
     </div>
 
     <!-- ── DESIGN CONTROLS ── -->
@@ -279,46 +278,6 @@
     </div>
 
     <script>
-        const slides = document.querySelectorAll('.slide');
-        const dotsEl = document.getElementById('dots');
-        let current = 0, animating = false;
-
-        // slides.forEach((_, i) => {
-        //     const d = document.createElement('div');
-        //     d.className = 'dot' + (i === 0 ? ' active' : '');
-        //     d.addEventListener('click', () => goTo(i));
-        //     dotsEl.appendChild(d);
-        // });
-
-        // function goTo(next) {
-        //     if (animating || next === current || next < 0 || next >= slides.length) return;
-        //     animating = true;
-        //     const prev = current, dir = next > prev ? 'up' : 'down';
-        //     slides[prev].classList.remove('active');
-        //     slides[prev].classList.add(dir === 'up' ? 'exit-up' : 'exit-down');
-        //     slides[next].classList.remove('exit-up', 'exit-down', 'active');
-        //     void slides[next].offsetWidth;
-        //     slides[next].classList.add('active');
-        //     dotsEl.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === next));
-        //     current = next;
-        //     setTimeout(() => { slides[prev].classList.remove('exit-up', 'exit-down'); animating = false; }, 460);
-        // }
-
-        // document.addEventListener('keydown', e => {
-        //     if (e.key === 'ArrowDown' || e.key === 'ArrowRight') goTo(current + 1);
-        //     if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') goTo(current - 1);
-        // });
-
-        // let scrollCooldown = false;
-        // document.addEventListener('wheel', e => {
-        //     if (scrollCooldown) return;
-        //     scrollCooldown = true;
-        //     e.deltaY > 0 ? goTo(current + 1) : goTo(current - 1);
-        //     setTimeout(() => { scrollCooldown = false; }, 700);
-        // }, { passive: true });
-
-        // slides[0].classList.add('active');
-
         // ── design controls ──
         const root = document.documentElement;
         const panel = document.getElementById('ctrl-panel');
