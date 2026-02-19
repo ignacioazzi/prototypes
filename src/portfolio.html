@@ -126,12 +126,12 @@
         </div>
 
         <!-- SLIDE 3: Statement -->
-        <div class="slide" id="slide-3">
-            <div class="s1">
-                <p class="slide-subtitle">Our objective then?</p>
-                <h1>To build a <strong>scalable solution</strong>, where users could <strong>easily customise their
-                        rooms</strong> and partners <strong>rapidly reply.</strong></h1>
-            </div>
+        <div class="slide s1" id="slide-3">
+
+            <p class="slide-subtitle">Our objective then?</p>
+            <h1>To build a <strong>scalable solution</strong>, where users could <strong>easily customise their
+                    rooms</strong> and partners <strong>rapidly reply.</strong></h1>
+
         </div>
 
         <!-- SLIDE 4: Stakeholder triangle -->
@@ -278,6 +278,17 @@
     </div>
 
     <script>
+        // ── viewport entrance animations ──
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.25 });
+        document.querySelectorAll('.slide').forEach(s => observer.observe(s));
+
         // ── design controls ──
         const root = document.documentElement;
         const panel = document.getElementById('ctrl-panel');
