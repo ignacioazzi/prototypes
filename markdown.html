@@ -1,0 +1,80 @@
+<HEAD>
+    <link rel="stylesheet" href="/markdown.css">
+
+</HEAD>
+<script type="text/markdown" id="content">
+# Room Customiser
+
+## Summary
+
+Booking.com preference customisations brought benefits guests, partners and the business, **but there designs needed improvements for both guests and partners.** 
+
+Considering the information we gathered, I delivered a first rapid redesign accomodating a small number of preferences. As soon as we saw positive A/B results, I continue working on a longer term which not only would let users customise their room, but also be informed in advanced of the options available and finally review their choices.
+
+***The result: A fundational step for our team and others.***
+
+<div class="wide">
+
+## What are preferences?
+
+Preferences (also referred to as user requests) are non-guaranteed customizations that guests can communicate regarding their stay. These may relate to logistical details such as check-in or check-out time, or room-specific attributes including bed type, smoking preferences, dietary restrictions, or floor location. While these requests are not contractually guaranteed, they are an important expression of guest expectations and can significantly influence satisfaction.
+</div>
+
+## Pros and cons 
+
+
+<div class="fifty-fifty">
+<div class="fifty">
+
+ **Pros**  
+Customizations delivered measurable value across all stakeholders: guests, partners, and the business:
+
+ **Guests** <br>
+Preferences gave guests greater perceived control over their stay. By expressing room-related or logistical needs in advance, guests felt more confident that the experience would align with their expectations, increasing trust and satisfaction.
+
+ **Partners** <br>
+When preferences were honored, partners experienced a +1.3 uplift in review scores, along with a measurable decrease in cancellations. Additionally, early visibility into guest needs before check-in improved operational preparedness and service quality.
+
+**Booking.com**<br>
+Expanding available preference options contributed to increased revenue. Structured customization opportunities encouraged higher engagement and enabled incremental monetization through enhanced room-related selections.
+</div>
+<div class="fifty">
+
+**Cons**    
+At the time of the project, the experience for submitting preferences was outdated and inefficient.
+
+Guests were required to navigate to the final step of the booking flow to discover which customizations were available. Instead of selecting structured options, they had to manually enter requests into a free-text field. This interaction pattern was particularly cumbersome on mobile devices, where typing long messages increases friction and completion time.
+
+The experience was equally inefficient on the partner side, as they had to review and respond to each request individually, creating unnecessary operational overhead. There was no scalable way to process recurring or common preferences.
+
+Additionally, other product teams expressed interest in enabling preference selection earlier in the guest journey. As the team responsible for Room Selection within the app ecosystem, we identified an opportunity to design a more scalable and structured solution that would improve the experience for guests, streamline workflows for partners, and support cross-team integration.</div>
+</div>
+
+## Objective
+
+Design a structured and scalable preference system that:
+
+- Improves discoverability and reduces friction for guests
+- Minimizes manual effort for partners
+- Transforms free-text requests into structured, actionable data
+- Enables automation and cross-team integrations
+- Scales across markets, property types, and future product expansions
+- Aligns with the Room Selection ecosystem in mobile apps"
+
+## First step
+
+The first step was to bring the feature to the Room Selection Flow. We believed that by doing so, we could get a sense whether more users were actually interested in adding preferences for their room.
+
+As we were moving away from unstructrured preferences to structured one, we had to pick one preferences for users to pick from.
+</script>
+
+
+<div id="output"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<script>
+    const raw = document.getElementById('content').textContent;
+    document.getElementById('output').innerHTML = marked.parse(raw);
+
+</script>
