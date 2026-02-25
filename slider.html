@@ -226,15 +226,14 @@
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M10 3L5 8L10 13" />
             </svg>
-
           </button>
 
+          <button class="nav-btn toggle-btn" id="showAllBtn">Show all designs together</button>
 
           <button class="nav-btn" id="nextBtn">
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M6 3L11 8L6 13" />
             </svg>
-
           </button>
 
         </div>
@@ -242,7 +241,7 @@
         <div class="slider-track-outer" id="trackOuter">
           <div class="slider-track" id="track">
 
-            <!-- 1. Baseline -->
+            <!-- 1. Bring customizations to Room Selection -->
             <div class="card active" data-index="0">
               <div class="card-label"></div>
               <div class="phone-wrap">
@@ -250,7 +249,7 @@
                   <div class="phone-notch"></div>
                   <div class="phone-status"><span>9:41</span><span>●●●</span></div>
                   <div class="phone-content">
-                    <div class="phone-screen-label">Baseline</div>
+                    <div class="phone-screen-label">Bring customizations to Room Selection</div>
                   </div>
                   <div class="phone-home"></div>
                 </div>
@@ -272,11 +271,11 @@
                   to improve readability.</p>
 
                 <div class="metrics">
-                  <div class="metric-block">
+                  <div class="metric-block metric-placeholder">
                     <div class="mlabel">Conversion Rate</div>
                     <div class="mrow"><span class="mval-lg">3.2%</span></div>
                   </div>
-                  <div class="metric-block">
+                  <div class="metric-block metric-placeholder">
                     <div class="mlabel">Avg. Session Time</div>
                     <div class="mrow"><span class="mval-sm">1m 24s</span></div>
                   </div>
@@ -284,7 +283,7 @@
               </div>
             </div>
 
-            <!-- 2. Single Toggle -->
+            <!-- 2. Selecting bed preference in the room card -->
             <div class="card inactive" data-index="1">
               <div class="card-label"></div>
               <div class="phone-wrap">
@@ -292,19 +291,24 @@
                   <div class="phone-notch"></div>
                   <div class="phone-status"><span>9:41</span><span>●●●</span></div>
                   <div class="phone-content">
-                    <div class="phone-screen-label">Single Toggle</div>
+                    <div class="phone-screen-label">Selecting bed preference in the room card</div>
                   </div>
                   <div class="phone-home"></div>
                 </div>
               </div>
               <div class="card-label">
-                <p class="card-title"><span class="num">2.</span> Select bed preference in the room card</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas illo officiis esse
-                  minus dolore nobis dolorem debitis repellat repudiandae quae molestiae, id perferendis
-                  odit quasi doloribus aut vero facere voluptatum?</p>
+                <p class="card-title"><span class="num">2.</span> Selecting bed preference in the room card</p>
+                <p>Building on the baseline's success, we brought customization selection directly into the room card.
+                  The focus was bed type—our data showed it was the most-requested room-level preference, and it was
+                  already available on Desktop. This iteration tested whether guests would engage with preferences when
+                  given immediate, inline control.</p>
 
                 <div class="metrics">
                   <div class="metric-block">
+                    <div class="mlabel">Bookings with bed preference</div>
+                    <div class="mrow"><span class="mval-lg">+4,282</span></div>
+                  </div>
+                  <div class="metric-block metric-placeholder">
                     <div class="mlabel">Conversion Rate</div>
                     <div class="mrow">
                       <span class="mval-lg">3.8%<span class="arr up"><svg viewBox="0 0 7 7">
@@ -312,7 +316,7 @@
                           </svg>+18%</span></span>
                     </div>
                   </div>
-                  <div class="metric-block">
+                  <div class="metric-block metric-placeholder">
                     <div class="mlabel">Avg. Session Time</div>
                     <div class="mrow">
                       <span class="mval-sm">1m 51s<span class="arr up"><svg viewBox="0 0 7 7">
@@ -324,7 +328,7 @@
               </div>
             </div>
 
-            <!-- 3. Multi-Select — FIRST WIN -->
+            <!-- 3. Deep Dive: ‘No preference’ as default -->
             <div class="card inactive" data-index="2">
               <div class="card-label"></div>
               <div class="phone-wrap">
@@ -333,19 +337,21 @@
                   <div class="phone-notch"></div>
                   <div class="phone-status"><span>9:41</span><span>●●●</span></div>
                   <div class="phone-content">
-                    <div class="phone-screen-label">Multi-Select</div>
+                    <div class="phone-screen-label">Deep Dive: ‘No preference’ as default</div>
                   </div>
                   <div class="phone-home"></div>
                 </div>
               </div>
               <div class="card-label">
-                <p class="card-title"><span class="num">3.</span> Multi-Select</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas illo officiis esse
-                  minus dolore nobis dolorem debitis repellat repudiandae quae molestiae, id perferendis
-                  odit quasi doloribus aut vero facere voluptatum?</p>
+                <p class="card-title"><span class="num">3.</span> Deep Dive: ‘No preference’ as default</p>
+                <p>An early team discussion centred on what the default state should be — guests could pick a bed
+                  type, but leaving it unselected was equally valid.</p>
+                <p>I decided to make "No preference" the default. Auto-selecting a bed type for every eligible room
+                  would have flooded partners with unintentional requests, driving up workload and pushing down reply
+                  rates — ultimately hurting the review scores the feature was meant to improve.</p>
 
                 <div class="metrics">
-                  <div class="metric-block">
+                  <div class="metric-block metric-placeholder">
                     <div class="mlabel">Conversion Rate</div>
                     <div class="mrow">
                       <span class="mval-lg">5.1%<span class="arr up"><svg viewBox="0 0 7 7">
@@ -353,7 +359,7 @@
                           </svg>+59%</span></span>
                     </div>
                   </div>
-                  <div class="metric-block">
+                  <div class="metric-block metric-placeholder">
                     <div class="mlabel">Avg. Session Time</div>
                     <div class="mrow">
                       <span class="mval-sm">2m 38s<span class="arr up"><svg viewBox="0 0 7 7">
@@ -365,7 +371,7 @@
               </div>
             </div>
 
-            <!-- 4. Guided Flow -->
+            <!-- 4. Information architecture improvements -->
             <div class="card inactive" data-index="3">
               <div class="card-label"></div>
               <div class="phone-wrap">
@@ -373,19 +379,23 @@
                   <div class="phone-notch"></div>
                   <div class="phone-status"><span>9:41</span><span>●●●</span></div>
                   <div class="phone-content">
-                    <div class="phone-screen-label">Guided Flow</div>
+                    <div class="phone-screen-label">Information architecture improvements</div>
                   </div>
                   <div class="phone-home"></div>
                 </div>
               </div>
               <div class="card-label">
-                <p class="card-title"><span class="num">4.</span> Guided Flow</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas illo officiis esse
-                  minus dolore nobis dolorem debitis repellat repudiandae quae molestiae, id perferendis
-                  odit quasi doloribus aut vero facere voluptatum?</p>
+                <p class="card-title"><span class="num">4.</span> Information architecture improvements</p>
+                <p>I then looked into structuring the room card Information Architecture in a better way:
+                  The idea was to keep all the static information at the top of the card and moving the aspects where
+                  users could make a choice (user preferences, number of rooms and room selection) to the bottom.</p>
 
                 <div class="metrics">
                   <div class="metric-block">
+                    <div class="mlabel">Bookings with bed customisation</div>
+                    <div class="mrow"><span class="mval-lg">+4,743</span></div>
+                  </div>
+                  <div class="metric-block metric-placeholder">
                     <div class="mlabel">Conversion Rate</div>
                     <div class="mrow">
                       <span class="mval-lg">4.7%<span class="arr down"><svg viewBox="0 0 7 7">
@@ -393,7 +403,7 @@
                           </svg>−8%</span></span>
                     </div>
                   </div>
-                  <div class="metric-block">
+                  <div class="metric-block metric-placeholder">
                     <div class="mlabel">Avg. Session Time</div>
                     <div class="mrow">
                       <span class="mval-sm">3m 12s<span class="arr up"><svg viewBox="0 0 7 7">
@@ -406,10 +416,18 @@
             </div>
           </div>
         </div>
+        <div id="allDetails" class="all-details"></div>
       </div>
     </div>
 
-    <!-- CHALLENGE SLIDE -->
+    <section class="slide">
+      <div class="header">
+        <h1>As experiments showed positive signals,<br>I began exploring designs which supported<br>multiple user
+          preferences.</h1>
+      </div>
+    </section>
+
+    <!--  
     <section class="slide slide-callout">
       <div class="header">
         <p class="label">Challenge</p>
@@ -420,7 +438,7 @@
       </div>
     </section>
 
-    <!-- A NEW SCREEN SLIDE -->
+
     <section class="slide slide-callout">
       <div class="header">
         <p class="label">Insight</p>
@@ -429,9 +447,8 @@
           right
           path: one that could scale the preference experience without compromising the room selection flow.</p>
       </div>
-    </section>
-
-    <!-- RESEARCH SLIDE -->
+    </section> -->
+    <!-- 
     <section class="slide slide-research">
       <div class="header">
         <p class="label">Guest Research · 2023</p>
@@ -460,9 +477,9 @@
           <p class="insight-quote">"I got confused about what I'd actually chosen."</p>
         </div>
       </div>
-    </section>
+    </section> -->
 
-    <!-- CAROUSEL SLIDE -->
+
 
 
 
@@ -498,6 +515,9 @@
     const track = document.getElementById('track');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
+    const showAllBtn = document.getElementById('showAllBtn');
+    const allDetails = document.getElementById('allDetails');
+    const sliderSection = document.querySelector('.slider-section');
     const winBadge = document.getElementById('winBadge');
     const WIN_INDEX = 2;
 
@@ -506,6 +526,7 @@
 
     let current = 0;
     let badgeShown = false;
+    let allMode = false;
     let startX = 0;
     let dragging = false;
 
@@ -549,10 +570,63 @@
       }
     }
 
+    // ── All-view toggle ──
+    function buildAllDetails() {
+      allDetails.innerHTML = '';
+      cards.forEach(card => {
+        const labels = card.querySelectorAll('.card-label');
+        const contentLabel = labels[labels.length - 1];
+        const col = document.createElement('div');
+        col.className = 'all-detail-col';
+        [...contentLabel.children].forEach(child => {
+          if (!child.classList.contains('card-title')) {
+            col.appendChild(child.cloneNode(true));
+          }
+        });
+        allDetails.appendChild(col);
+      });
+    }
+
+    function enterAllMode() {
+      allMode = true;
+      cards.forEach(c => {
+        c.style.flexBasis = '';
+        c.style.minWidth = '';
+        c.classList.remove('inactive');
+        c.classList.add('active');
+      });
+      track.style.transition = 'none';
+      track.style.transform = 'none';
+      sliderSection.classList.add('show-all');
+      buildAllDetails();
+      allDetails.style.display = 'grid';
+      prevBtn.disabled = true;
+      nextBtn.disabled = true;
+      showAllBtn.classList.add('active');
+      showAllBtn.textContent = 'Show one at a time';
+    }
+
+    function exitAllMode() {
+      allMode = false;
+      sliderSection.classList.remove('show-all');
+      allDetails.style.display = 'none';
+      sizeCards();
+      track.style.transform = 'none';
+      requestAnimationFrame(() => {
+        track.style.transition = '';
+        goTo(current);
+      });
+      showAllBtn.classList.remove('active');
+      showAllBtn.textContent = 'Show all designs together';
+    }
+
+    showAllBtn.addEventListener('click', () => allMode ? exitAllMode() : enterAllMode());
+
     prevBtn.addEventListener('click', () => goTo(current - 1));
     nextBtn.addEventListener('click', () => goTo(current + 1));
 
     document.addEventListener('keydown', e => {
+      if (allMode) return;
       if (e.key === 'ArrowRight') goTo(current + 1);
       if (e.key === 'ArrowLeft') goTo(current - 1);
     });
@@ -563,6 +637,7 @@
     outer.addEventListener('mouseup', e => {
       if (!dragging) return;
       dragging = false;
+      if (allMode) return;
       const d = e.clientX - startX;
       if (Math.abs(d) > 40) d < 0 ? goTo(current + 1) : goTo(current - 1);
     });
@@ -570,11 +645,13 @@
 
     outer.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
     outer.addEventListener('touchend', e => {
+      if (allMode) return;
       const d = e.changedTouches[0].clientX - startX;
       if (Math.abs(d) > 40) d < 0 ? goTo(current + 1) : goTo(current - 1);
     }, { passive: true });
 
     window.addEventListener('resize', () => {
+      if (allMode) return;
       sizeCards();
       track.style.transition = 'none';
       track.style.transform = `translateX(${-getOffset(current)}px)`;

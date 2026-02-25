@@ -65,10 +65,11 @@ p+p{
     --border: #E4E2DC;
     --bg: #f7f7f5;
     --phone-width: 245px;
+    --carousel-max-w: 1100px;
    }
 
    .slide {
-    padding: 6em 13em;
+    padding: 6em 11em;
     display: flex;
     flex-direction: column;
     gap: 3em;
@@ -232,12 +233,26 @@ p+p{
    /* ── SLIDER SECTION ── */
    .slide-carousel {
     background: var(--bg);
+    /* max-width: var(--carousel-max-w); */
+    margin: 0 auto;
    }
 
    .slider-section {
     position: relative;
     padding-bottom: 32px;
     /* margin: 2em 0; */
+    When drafting, I deliberately start with the simplest and fastest possible solution. This approach helps surface limitations early. In this case, the question was straightforward: What if users could select all preferences directly from the room card?
+
+This exploration made the trade-offs clear. Displaying even just two preferences on the card would significantly increase its height, making it harder for users to scan the list, compare rooms, and navigate efficiently.
+
+In addition, past A/B tests consistently showed that even small increases in room card height negatively impacted conversion. Based on these insights, this direction was discarded early in favor of more scalable solutions.;
+    When drafting, I deliberately start with the simplest and fastest possible solution. This approach helps surface limitations early. In this case, the question was straightforward: What if users could select all preferences directly from the room card?
+
+This exploration made the trade-offs clear. Displaying even just two preferences on the card would significantly increase its height, making it harder for users to scan the list, compare rooms, and navigate efficiently.
+
+In addition, past A/B tests consistently showed that even small increases in room card height negatively impacted conversion. Based on these insights, this direction was discarded early in favor of more scalable solutions.;
+    max-width: var(--carousel-max-w);
+    MARGIN: 0 AUTO;
    }
 
    /* Right gradient affordance */
@@ -267,7 +282,6 @@ p+p{
     display: flex;
     gap: 66px;
     transition: transform 0.55s cubic-bezier(0.65, 0, 0.15, 1);
-    will-change: transform;
     padding: 62px 0px 24px;
     /* initial centering handled by JS */
    }
@@ -277,7 +291,7 @@ p+p{
     flex: 0 0 auto;
     display: flex;
     flex-direction: row-reverse;
-    /* GAP: 4em; */
+    GAP: 5em;
     /* align-items: center; */
     position: relative;
     transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -298,7 +312,7 @@ p+p{
     width: var(--phone-width);
     height: calc(var(--phone-width) * 2);
     background: #f9f9f9;
-    border-radius: 36px;
+    border-radius: 26px;
     border: 1.5px solid var(--border);
     box-shadow:
      0 0 0 6px rgba(255, 255, 255, 0.5),
@@ -357,6 +371,7 @@ p+p{
     justify-content: center;
     gap: 8px;
     padding: 20px;
+    text-align: center;
    }
 
    .phone-screen-label {
@@ -446,7 +461,7 @@ p+p{
    /* ── CARD LABEL ── */
    .card-label {
     font-size: 14px;
-    color: #9ca3af;
+    /* color: #9ca3af; */
     letter-spacing: 0.03em;
     transition: color 0.4s;
     LINE-HEIGHT: 1.3EM;
@@ -456,7 +471,7 @@ p+p{
 
    .card.active .card-label,
    .card.prev .card-label {
-    color: #111827;
+    /* color: #111827; */
    }
 
   
@@ -471,7 +486,8 @@ p+p{
 
 p.card-title {
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 800;
+    LETTER-SPACING: 0;
 }
 
    .card-label .num {
@@ -961,4 +977,112 @@ p.card-title {
 
    section.slide.slide-left {
     align-items: flex-start;
+   }
+
+   /* ── PLACEHOLDER METRICS ── */
+   .metric-placeholder {
+    display: none;
+   }
+
+   /* ── TOGGLE BUTTON ── */
+   .toggle-btn {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+   }
+
+   .toggle-btn.active {
+    background: #111827;
+    color: white;
+   }
+
+   /* ── ALL-VIEW MODE ── */
+   .show-all {
+    --phone-width: 220px;
+   }
+
+   .show-all .slider-track-outer {
+    overflow: visible;
+   }
+
+   .show-all .slider-track {
+    transform: none !important;
+    transition: none !important;
+    gap: 20px;
+   }
+
+   .show-all .card {
+    flex: 1 1 0;
+    min-width: 0 !important;
+    flex-direction: column;
+    align-items: center;
+    opacity: 1 !important;
+    justify-content: flex-start;
+    gap: 12px;
+   }
+
+   /* Hide the empty spacer label */
+   .show-all .card .card-label:first-child {
+    display: none;
+   }
+
+   /* Content label: show title only */
+   .show-all .card .card-label:last-child {
+    width: 78%;
+    text-align: center;
+    text-transform: none;
+    letter-spacing: 0;
+    color: #111827;
+    MARGIN-TOP: 3EM;
+   }
+
+   .show-all .card .card-label:last-child > *:not(.card-title) {
+    display: none;
+   }
+
+   .show-all p.card-title {
+    font-size: 14px;
+   }
+
+   /* Reset phone scale in all-view */
+   .show-all .card .phone {
+    transform: none !important;
+    background: #ffffff !important;
+    box-shadow:
+     0 0 0 6px rgba(255, 255, 255, 0.5),
+     0 8px 24px rgba(0, 0, 0, 0.07),
+     0 24px 56px rgba(0, 0, 0, 0.07) !important;
+   }
+
+   /* ── ALL-DETAILS PANEL ── */
+   .all-details {
+    display: none;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 24px 0 16px;
+    border-top: 1px solid var(--border);
+    margin-top: 16px;
+    DISPLAY: NONE!IMPORTANT;
+   }
+
+   .all-detail-col p {
+    max-width: none;
+    font-size: 13px;
+    line-height: 1.55;
+    color: #6b7280;
+   }
+
+   .all-detail-col p + p {
+    margin-top: 1em;
+   }
+
+   .all-detail-col .metrics {
+    margin-top: 16px;
+   }
+
+   .all-detail-col .metric-block {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
    }
