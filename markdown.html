@@ -1,71 +1,553 @@
 <HEAD>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="/markdown.css">
+    <style>
+        body {
+            width: 80%;
+            max-width: 1200px;
+            font-family: 'DM Sans', sans-serif;
+        }
 
+        /* Layout templates */
+        .slide-cols {
+            display: flex;
+            gap: 32px;
+            align-items: flex-start;
+            margin-top: 0;
+            margin-bottom: 4em;
+        }
+
+        .slide-cols-tight {
+            display: flex;
+            gap: 16px;
+            margin-top: 0;
+            margin-bottom: 4em;
+        }
+
+        .col {
+            flex: 1;
+        }
+
+        .col-media {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .col-media>strong {
+            font-size: 0.9em;
+            margin-top: 0.8em;
+            margin-bottom: 0;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 3.2em;
+            margin-bottom: 1em;
+        }
+
+        /* Eyebrow label */
+        .eyebrow {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #999;
+            margin-bottom: 0.4em;
+        }
+
+        /* Wide slide variant */
+        .slide-cols--wide {
+            margin-left: -12%;
+            margin-right: -12%;
+        }
+
+        .slide-cols--wide .desc-sm p {
+            font-size: 0.85em;
+        }
+
+        h2.step-h2 {
+            font-size: 1.05em;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        /* Placeholders: all mobile proportions (9:19) */
+        .placeholder {
+            background: #e8e8e8;
+            border-radius: 8px;
+            aspect-ratio: 9 / 19;
+            width: 185px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #aaa;
+            font-size: 0.85em;
+        }
+
+        .placeholder-device {
+            width: 140px;
+            flex-shrink: 0;
+            background: #fff;
+            border-radius: 24px;
+            border: 2px solid #ccc;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+            aspect-ratio: 9 / 19;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #aaa;
+            font-size: 0.75em;
+        }
+
+        .caption {
+            font-size: 0.8em;
+            opacity: 0.6;
+        }
+
+        /* User flow */
+        .flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 2.5em;
+            margin-bottom: 2.5em;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            font-size: 1em;
+            margin-left: -15%;
+            margin-right: -15%;
+        }
+
+        .flow-step {
+            padding: 8px 16px;
+            background: #e8f5e9;
+            border-radius: 4px;
+            white-space: nowrap;
+            color: #2e7d32;
+        }
+
+        .flow-step--bold {
+            font-weight: 600;
+        }
+
+        /* Blue panel */
+        .blue-panel {
+            background: #0057B8;
+            margin-left: calc(50% - 50vw);
+            margin-right: calc(50% - 50vw);
+            padding: 96px calc(50vw - 50%);
+            text-align: center;
+            margin-top: 3em;
+            margin-bottom: 3em;
+        }
+
+        .blue-panel h2 {
+            color: #fff;
+            margin: 0 auto 0.5em;
+            max-width: 680px;
+        }
+
+        .blue-panel .eyebrow {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .blue-panel p {
+            color: #fff;
+            font-size: 1.1em;
+            margin: 0 auto;
+            line-height: 1.6;
+            max-width: 680px;
+        }
+
+        /* Mobile design block */
+        .mobile-design {
+            display: flex;
+            gap: 16px;
+            flex: 1;
+            align-items: flex-start;
+        }
+
+        .mobile-design div p {
+            margin-top: 0.4em;
+        }
+
+        /* Results / metrics */
+        .results {
+            font-size: 0.9em;
+        }
+
+        /* XL placeholder for Two designs slide */
+        .placeholder-xl {
+            background: #e8e8e8;
+            border-radius: 8px;
+            aspect-ratio: 9 / 19;
+            width: 240px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #aaa;
+            font-size: 0.85em;
+        }
+
+        /* Steps side-by-side row */
+        .steps-row {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 4em;
+            overflow-x: auto;
+            padding-bottom: 8px;
+        }
+
+        .step-col {
+            flex-shrink: 0;
+            width: 180px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .step-col .placeholder {
+            width: 100%;
+        }
+
+        .step-title {
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-top: 0.4em;
+        }
+
+        .step-col p {
+            font-size: 0.88em;
+            margin: 0;
+            color: #444;
+            line-height: 1.3;
+        }
+
+        /* Metrics UI */
+        .metrics {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid #e8e8e8;
+        }
+
+        .metric {
+            display: flex;
+            flex-direction: column;
+            gap: 1px;
+        }
+
+        .metric-value {
+            font-size: 1.05em;
+            font-weight: 700;
+            color: #111;
+            line-height: 1;
+        }
+
+        .metric-label {
+            font-size: 0.7em;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Hero title block */
+        .hero {
+            margin-left: calc(50% - 50vw);
+            margin-right: calc(50% - 50vw);
+            padding: 160px calc(50vw - 50%) 140px;
+            background: #0F1923;
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        .hero h1 {
+            color: #fff;
+            margin: 0 0 0.4em;
+            font-size: 3.4em;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtitle {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.1em;
+            margin: 0;
+            line-height: 1.6;
+            max-width: 560px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Soft panel */
+        .soft-panel {
+            background: #f5f5f3;
+            border-radius: 12px;
+            padding: 32px 36px;
+            margin-top: 3.2em;
+            margin-bottom: 4em;
+        }
+
+        .soft-panel h2 {
+            margin-top: 0;
+        }
+
+        /* Context grid */
+        .context-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            margin-bottom: 4em;
+        }
+
+        .context-grid-header {
+            font-size: 0.8em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #999;
+            padding: 8px 0 10px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .context-grid-cell {
+            padding: 16px 24px 16px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 0.92em;
+            line-height: 1.5;
+        }
+
+        .context-grid-cell:nth-child(even) {
+            padding-left: 24px;
+            padding-right: 0;
+            border-left: 1px solid #f0f0f0;
+        }
+
+        /* Scroll fade-in */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </HEAD>
 <script type="text/markdown" id="content">
-# Room Customiser
-
-## Summary
-
-Booking.com preference customisations brought benefits guests, partners and the business, **but there designs needed improvements for both guests and partners.** 
-
-Considering the information we gathered, I delivered a first rapid redesign accomodating a small number of preferences. As soon as we saw positive A/B results, I continue working on a longer term which not only would let users customise their room, but also be informed in advanced of the options available and finally review their choices.
-
-***The result: A fundational step for our team and others.***
-
-<div class="wide">
-
-## What are preferences?
-
-Preferences (also referred to as user requests) are non-guaranteed customizations that guests can communicate regarding their stay. These may relate to logistical details such as check-in or check-out time, or room-specific attributes including bed type, smoking preferences, dietary restrictions, or floor location. While these requests are not contractually guaranteed, they are an important expression of guest expectations and can significantly influence satisfaction.
+<div class="hero">
+  <h1>Room Customiser</h1>
+  <p class="hero-subtitle">Designing a scalable preference system that put guests in control of their stay — and helped partners prepare before check-in.</p>
 </div>
 
-## Pros and cons 
+<h2><span class="eyebrow">Overview</span>Summary</h2>
 
+**Problem:** Guests could only discover room preferences at the final booking step, and partners had no way to process requests at scale, limiting the feature's reach and impact.
 
-<div class="fifty-fifty">
-<div class="fifty">
+**My role:** I delivered a rapid first iteration, and after positive A/B results, developed a longer-term solution letting guests customise their room, explore available options, and review their choices.
 
- **Pros**  
-Customizations delivered measurable value across all stakeholders: guests, partners, and the business:
+**Impact:** ***The result: A foundational step for our team and beyond.***
 
- **Guests** <br>
-Preferences gave guests greater perceived control over their stay. By expressing room-related or logistical needs in advance, guests felt more confident that the experience would align with their expectations, increasing trust and satisfaction.
+<h2><span class="eyebrow">Context</span>What are guest preferences?</h2>
 
- **Partners** <br>
-When preferences were honored, partners experienced a +1.3 uplift in review scores, along with a measurable decrease in cancellations. Additionally, early visibility into guest needs before check-in improved operational preparedness and service quality.
+Preferences are non-guaranteed customisations guests can request for their stay. Some apply at the room level (such as bed type or floor) while others apply at the property level, like check-in time or dietary needs. While not contractually guaranteed, they're a key driver of guest satisfaction.
 
-**Booking.com**<br>
-Expanding available preference options contributed to increased revenue. Structured customization opportunities encouraged higher engagement and enabled incremental monetization through enhanced room-related selections.
-</div>
-<div class="fifty">
-
-**Cons**    
-At the time of the project, the experience for submitting preferences was outdated and inefficient.
-
-Guests were required to navigate to the final step of the booking flow to discover which customizations were available. Instead of selecting structured options, they had to manually enter requests into a free-text field. This interaction pattern was particularly cumbersome on mobile devices, where typing long messages increases friction and completion time.
-
-The experience was equally inefficient on the partner side, as they had to review and respond to each request individually, creating unnecessary operational overhead. There was no scalable way to process recurring or common preferences.
-
-Additionally, other product teams expressed interest in enabling preference selection earlier in the guest journey. As the team responsible for Room Selection within the app ecosystem, we identified an opportunity to design a more scalable and structured solution that would improve the experience for guests, streamline workflows for partners, and support cross-team integration.</div>
+<div class="flow">
+  <div class="flow-step">Location selection</div>
+  <span>→</span>
+  <div class="flow-step">Hotel Selection</div>
+  <span>→</span>
+  <div class="flow-step">Room Selection</div>
+  <span>→</span>
+  <div class="flow-step">Check-out</div>
+  <span>→</span>
+  <div class="flow-step flow-step--bold">State a preference</div>
+  <span>→</span>
+  <div class="flow-step">Payment</div>
 </div>
 
-## Objective
+<h2><span class="eyebrow">Context</span>What we knew going in</h2>
 
-Design a structured and scalable preference system that:
+Before we started designing the room customization system, we needed to have a clear understanding of what was working and what wasn't. For that, we conducted a comprehensive audit of existing features and user feedback.
 
-- Improves discoverability and reduces friction for guests
-- Minimizes manual effort for partners
-- Transforms free-text requests into structured, actionable data
-- Enables automation and cross-team integrations
-- Scales across markets, property types, and future product expansions
-- Aligns with the Room Selection ecosystem in mobile apps"
+<div class="context-grid">
+  <div class="context-grid-header">What was working</div>
+  <div class="context-grid-header">What wasn't working</div>
 
-## First step
+  <div class="context-grid-cell"><strong>Guests</strong> felt more in control by expressing needs in advance, increasing trust and satisfaction.</div>
+  <div class="context-grid-cell"><strong>Guests</strong> could only discover preferences at the final booking step, entering requests in a free-text field — especially cumbersome on mobile.</div>
 
-The first step was to bring the feature to the Room Selection Flow. We believed that by doing so, we could get a sense whether more users were actually interested in adding preferences for their room.
+  <div class="context-grid-cell"><strong>Partners</strong> who honored preferences saw a +1.3 uplift in review scores, fewer cancellations, and better pre-check-in preparedness.</div>
+  <div class="context-grid-cell"><strong>Partners</strong> had to review and respond to each request individually, with no scalable way to handle recurring or common preferences.</div>
 
-As we were moving away from unstructrured preferences to structured one, we had to pick one preferences for users to pick from.
+  <div class="context-grid-cell"><strong>Booking.com</strong> saw higher engagement and incremental revenue as more preference options became available.</div>
+  <div class="context-grid-cell"><strong>Other teams</strong> wanted earlier access to preferences in the guest journey, with no existing way to support cross-team integration.</div>
+</div>
+
+<div class="soft-panel">
+<h2><span class="eyebrow">Goal</span>My goal as a designer</h2>
+
+**Design a structured and scalable preference system that:**
+
+- Improved discoverability and reduced friction for guests
+- Minimised manual effort for partners
+- Transformed free-text requests into structured, actionable data
+- Enabled automation and cross-team integrations
+- Scaled across markets, property types, and future expansions
+</div>
+
+<h2><span class="eyebrow">Approach</span>The Plan</h2>
+
+We moved preferences into the Room Selection flow to test whether more guests would engage with them. As we shifted from free-text to structured options, we started with a single preference to validate the approach.
+
+<div class="steps-row">
+  <div class="step-col">
+    <div class="placeholder">[Image]</div>
+    <strong class="step-title">Moving customisation to Room selection</strong>
+    <p>We moved the preference step from checkout into Room Selection, starting with a single binary choice to validate engagement.</p>
+    <div class="metrics">
+      <div class="metric"><span class="metric-value">[+X%]</span><span class="metric-label">Preference engagement</span></div>
+      <div class="metric"><span class="metric-value">[−X%]</span><span class="metric-label">Drop-off at checkout</span></div>
+    </div>
+  </div>
+  <div class="step-col">
+    <div class="placeholder">[Image]</div>
+    <strong class="step-title">Adding bed preferences in the room card</strong>
+    <p>We embedded the bed preference toggle directly in the room card, so guests could act on it without leaving the selection flow.</p>
+    <div class="metrics">
+      <div class="metric"><span class="metric-value">[+X%]</span><span class="metric-label">Bed preference selections</span></div>
+      <div class="metric"><span class="metric-value">[+X%]</span><span class="metric-label">Room card interactions</span></div>
+    </div>
+  </div>
+  <div class="step-col">
+    <div class="placeholder">[Image]</div>
+    <strong class="step-title">Improving Room Card information architecture</strong>
+    <p>We reorganised the card to surface room type, bed config, and amenities first, making preferences a natural part of the choice.</p>
+    <div class="metrics">
+      <div class="metric"><span class="metric-value">[+X%]</span><span class="metric-label">Task completion rate</span></div>
+      <div class="metric"><span class="metric-value">[+X pts]</span><span class="metric-label">Usability score</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="blue-panel">
+  <h2><span class="eyebrow">Challenge</span>The challenge: more options, less noise</h2>
+  <p>A single preference validated the model, but the real goal was to surface a broader range without overwhelming guests or cluttering the room selection experience. More options meant more complexity. The question became: how do we scale the preference surface while keeping the interaction feel lightweight?</p>
+</div>
+
+<h2><span class="eyebrow">Exploration</span>Design explorations</h2>
+
+<div class="steps-row">
+  <div class="step-col">
+    <div class="placeholder">[Image]</div>
+    <strong class="step-title">Progressive disclosure</strong>
+    <p>Show one preference at a time, expanding only when the guest engages.</p>
+  </div>
+  <div class="step-col">
+    <div class="placeholder">[Image]</div>
+    <strong class="step-title">Summary row</strong>
+    <p>A compact row at the bottom of the card summarising selected preferences with quick-edit access.</p>
+  </div>
+  <div class="step-col">
+    <div class="placeholder">[Image]</div>
+    <strong class="step-title">Expandable panel</strong>
+    <p>An opt-in panel guests can open to set multiple preferences at once, without blocking the main flow.</p>
+  </div>
+</div>
+
+<div class="blue-panel">
+  <h2><span class="eyebrow">Insight</span>A new screen is needed</h2>
+  <p>After testing multiple approaches within the room card, it became clear that a dedicated screen was the right path: one that could scale the preference experience without compromising the room selection flow.</p>
+</div>
+
+<h2><span class="eyebrow">Concepts</span>Two designs: Bottom sheet vs Full-screen</h2>
+
+<div class="steps-row">
+  <div class="step-col">
+    <div class="placeholder">[Screen]</div>
+    <strong class="step-title">Bottom sheet</strong>
+    <p>A lightweight overlay that keeps guests in context. Lower commitment, easier to dismiss, and minimal disruption to the room selection flow.</p>
+  </div>
+  <div class="step-col">
+    <div class="placeholder">[Screen]</div>
+    <strong class="step-title">Full-screen</strong>
+    <p>A dedicated space that signals importance. More room to present options, educate guests, and support confident decision-making.</p>
+  </div>
+</div>
+
+<h2><span class="eyebrow">Collaboration</span>Team critique</h2>
+
+We shared both directions with the wider design team to pressure-test assumptions and surface blind spots before investing further.
+
+<h2><span class="eyebrow">Research</span>Testing with users</h2>
+
+We ran usability sessions to observe how guests interacted with each direction, paying close attention to comprehension, hesitation points, and completion rates.
+
+<h2><span class="eyebrow">Results</span>A/B results: round 1</h2>
+
+<div class="slide-cols">
+  <div class="mobile-design">
+    <div class="placeholder">[Screen]</div>
+    <div>
+      <strong>Bottom sheet</strong>
+      <p class="results">[+X% preference selection rate]<br>[−X% drop-off vs. control]</p>
+    </div>
+  </div>
+  <div class="mobile-design">
+    <div class="placeholder">[Screen]</div>
+    <div>
+      <strong>Full-screen</strong>
+      <p class="results">[+X% preference selection rate]<br>[−X% drop-off vs. control]</p>
+    </div>
+  </div>
+</div>
+
+<h2><span class="eyebrow">Retrospective</span>What went well, what could be improved, and next steps.</h2>
+
+<div class="slide-cols">
+  <div class="col">
+    The first iteration shipped quickly and validated the core hypothesis: moving preferences to Room Selection drove meaningful engagement. The shift from free-text to structured data was a foundational win. What we learned: guests wanted more context when making preference choices, and the system needed to scale beyond a single option. These insights directly shaped the second experiment.
+  </div>
+  <div class="col-media">
+    <div class="placeholder">[Image]</div>
+    <span class="caption">[Retrospective summary, key learnings]</span>
+  </div>
+</div>
+
+<h2><span class="eyebrow">Iteration</span>Second experiment: Mixing the best of both worlds</h2>
+
+<div class="slide-cols">
+  <div class="mobile-design">
+    <div class="placeholder">[Screen]</div>
+    <div>
+      <strong>Combined approach</strong>
+      <p class="results">[+X% preference selection rate]<br>[+X% guest satisfaction score]</p>
+    </div>
+  </div>
+  <div class="mobile-design">
+    <div class="placeholder">[Screen]</div>
+    <div>
+      <strong>Refined variant</strong>
+      <p class="results">[+X% preference selection rate]<br>[+X% partner preparedness score]</p>
+    </div>
+  </div>
+</div>
 </script>
 
 
@@ -77,4 +559,18 @@ As we were moving away from unstructrured preferences to structured one, we had 
     const raw = document.getElementById('content').textContent;
     document.getElementById('output').innerHTML = marked.parse(raw);
 
+    // Scroll fade-in
+    const targets = ['h2', '.slide-cols', '.slide-cols-tight', '.steps-row', '.blue-panel', '.flow'];
+    document.querySelectorAll(targets.join(',')).forEach(el => el.classList.add('fade-in'));
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
