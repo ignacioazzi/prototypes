@@ -80,7 +80,7 @@
 
     <!-- PREFERENCES SLIDE -->
     <section class="slide slide-preferences">
-      <div class="pref-layout">
+      <div class="side-by-side">
         <div class="pref-text">
           <div class="header header--left">
             <p class="label">Background</p>
@@ -202,16 +202,13 @@
           as it was out ouf our scope </p>
       </div>
     </section>
-    <div class="slide slide-carousel">
+    <div class="slide slide-carousel wide">
       <!-- HEADER -->
       <header class="header">
         <p class="label">Room Customization · Design Evolution</p>
-        <h1>Four iterations.<br>One clear winner.</h1>
+        <h1>Four iterations</h1>
         <p>Each version introduced a new layer of guest control — from a single preference toggle to a fully
-          guided
-          customization flow. Here's how conversion rate, session depth, and satisfaction scores shifted
-          across
-          each round of testing.
+          guided customization flow.
         </p>
       </header>
 
@@ -427,27 +424,107 @@
       </div>
     </section>
 
-    <!--  
-    <section class="slide slide-callout">
-      <div class="header">
+
+    <section class="slide side-by-side w25-75 wide">
+      <div class="header header--left">
         <p class="label">Challenge</p>
-        <h1>The challenge: more options, less noise</h1>
-        <p>A single preference validated the model, but the real goal was to surface a broader range without
-          overwhelming guests or cluttering the room selection experience. More options meant more complexity. The
-          question became: how do we scale the preference surface while keeping the interaction feel lightweight?</p>
+        <h1>Multiple user preferences initial drafts</h1>
+        <p>When drafting, I deliberately start with the simplest and fastest possible solution. This approach helps
+          surface limitations early. In this case, the question was straightforward: What if users could select all
+          preferences directly from the room card?</p>
+
+        <p>This exploration made the trade-offs clear. Displaying even just two preferences on the card would
+          significantly increase its height, making it harder for users to scan the list, compare rooms, and navigate
+          efficiently.</p>
+
+        <p>In addition, past A/B tests consistently showed that even small increases in room card height negatively
+          impacted conversion. Based on these insights, this direction was discarded early in favor of more scalable
+          solutions.</p>
+      </div>
+
+      <div class="draft-grid">
+        <div class="draft-item">
+          <div class="phone">
+            <div class="phone-notch"></div>
+            <div class="phone-status"><span>9:41</span><span>●●●</span></div>
+            <div class="phone-content">
+              <div class="phone-screen-label">Draft A</div>
+            </div>
+            <div class="phone-home"></div>
+          </div>
+          <p>Inline preferences stacked below room details</p>
+        </div>
+        <div class="draft-item">
+          <div class="phone">
+            <div class="phone-notch"></div>
+            <div class="phone-status"><span>9:41</span><span>●●●</span></div>
+            <div class="phone-content">
+              <div class="phone-screen-label">Draft B</div>
+            </div>
+            <div class="phone-home"></div>
+          </div>
+          <p>Expandable preference row within the card</p>
+        </div>
+        <div class="draft-item">
+          <div class="phone">
+            <div class="phone-notch"></div>
+            <div class="phone-status"><span>9:41</span><span>●●●</span></div>
+            <div class="phone-content">
+              <div class="phone-screen-label">Draft C</div>
+            </div>
+            <div class="phone-home"></div>
+          </div>
+          <p>Chip-based multi-select at the bottom of the card</p>
+        </div>
       </div>
     </section>
 
 
-    <section class="slide slide-callout">
+
+    <section class="slide">
       <div class="header">
         <p class="label">Insight</p>
         <h1>A new screen is needed</h1>
-        <p>After testing multiple approaches within the room card, it became clear that a dedicated screen was the
-          right
+        <p>After testing multiple approaches within the room card, it became clear that a dedicated screen was the right
           path: one that could scale the preference experience without compromising the room selection flow.</p>
       </div>
-    </section> -->
+    </section>
+    <section class="slide">
+      <div class="header">
+        <p class="label">Then</p>
+        <h1>Two designs surfaced as the most promising candidates.</h1>
+      </div>
+      <div class="draft-grid w50-50">
+        <div class="draft-item">
+          <div class="phone">
+            <img src="src/rc.png" alt="">
+          </div>
+          <p class="title">Full screen</p>
+          <p>A single screen for all room customisation. This would boost engagement by surfacing options upfront, and
+            keep all preferences visible at once.
+          </p>
+          <p>To keep the screen height manageable, I chose drop-downs for each preference.</p>
+          <p>
+            The tradeoff was scalability, as more rooms or preferences could make it harder to navigate, but data showed
+            this was low-risk: 90% of reservations are for a single room, making a long list of rooms unlikely.</p>
+        </div>
+        <div class="draft-item">
+          <div class="phone">
+            <img src="src/bt1.png" alt="">
+          </div>
+          <p class="title">Two steps</p>
+          <p>I focused this proposal on splitting the customization flow across multiple screens, giving each room its
+            own dedicated space with radio groups to display preferences clearly.
+          </p>
+          <p>
+            I kept customisation optional, driven by two concerns: conversion risk and scalability — a separate screen
+            per room gave enough space to handle preferences individually as rooms grew.
+          </p>
+          <p>
+            The tradeoff was navigation, requiring users to move back and forth between screens, making it harder to see
+            all selections at once. </p>
+        </div>
+    </section>
     <!-- 
     <section class="slide slide-research">
       <div class="header">
@@ -512,7 +589,6 @@
 
   <script>
     const cards = [...document.querySelectorAll('.card')];
-    const track = document.getElementById('track');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
     const showAllBtn = document.getElementById('showAllBtn');
@@ -521,40 +597,15 @@
     const winBadge = document.getElementById('winBadge');
     const WIN_INDEX = 2;
 
-    const GAP = parseFloat(getComputedStyle(track).columnGap || getComputedStyle(track).gap);
-    const TRACK_PAD = parseFloat(getComputedStyle(track).paddingLeft);
-
     let current = 0;
     let badgeShown = false;
     let allMode = false;
     let startX = 0;
     let dragging = false;
 
-    function getContainerWidth() {
-      return document.getElementById('trackOuter').clientWidth;
-    }
-
-    function getCardWidth() {
-      return getContainerWidth() - 2 * TRACK_PAD;
-    }
-
-    function sizeCards() {
-      const cardW = getCardWidth();
-      cards.forEach(c => {
-        c.style.flexBasis = cardW + 'px';
-        c.style.minWidth = cardW + 'px';
-      });
-    }
-
-    function getOffset(index) {
-      return index * (getCardWidth() + GAP);
-    }
-
     function goTo(index) {
       if (index < 0 || index >= cards.length) return;
       current = index;
-
-      track.style.transform = `translateX(${-getOffset(index)}px)`;
 
       cards.forEach((c, i) => {
         c.classList.toggle('active', i === index);
@@ -590,13 +641,9 @@
     function enterAllMode() {
       allMode = true;
       cards.forEach(c => {
-        c.style.flexBasis = '';
-        c.style.minWidth = '';
         c.classList.remove('inactive');
         c.classList.add('active');
       });
-      track.style.transition = 'none';
-      track.style.transform = 'none';
       sliderSection.classList.add('show-all');
       buildAllDetails();
       allDetails.style.display = 'grid';
@@ -610,12 +657,7 @@
       allMode = false;
       sliderSection.classList.remove('show-all');
       allDetails.style.display = 'none';
-      sizeCards();
-      track.style.transform = 'none';
-      requestAnimationFrame(() => {
-        track.style.transition = '';
-        goTo(current);
-      });
+      goTo(current);
       showAllBtn.classList.remove('active');
       showAllBtn.textContent = 'Show all designs together';
     }
@@ -650,15 +692,6 @@
       if (Math.abs(d) > 40) d < 0 ? goTo(current + 1) : goTo(current - 1);
     }, { passive: true });
 
-    window.addEventListener('resize', () => {
-      if (allMode) return;
-      sizeCards();
-      track.style.transition = 'none';
-      track.style.transform = `translateX(${-getOffset(current)}px)`;
-      requestAnimationFrame(() => { track.style.transition = ''; });
-    });
-
-    sizeCards();
     goTo(0);
   </script>
 </body>
