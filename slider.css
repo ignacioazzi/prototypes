@@ -4,6 +4,8 @@
     box-sizing: border-box;
    }
 
+.card.active {}
+
    body {
     font-family: 'DM Sans', sans-serif;
     font-size: 18px;
@@ -235,7 +237,7 @@ p+p{
    .slider-section {
     position: relative;
     padding-bottom: 32px;
-    margin: 2em 0;
+    /* margin: 2em 0; */
    }
 
    /* Right gradient affordance */
@@ -266,44 +268,24 @@ p+p{
     gap: 66px;
     transition: transform 0.55s cubic-bezier(0.65, 0, 0.15, 1);
     will-change: transform;
-    padding: 52px 84px 24px;
+    padding: 62px 0px 24px;
     /* initial centering handled by JS */
    }
 
    /* ── CARD ── */
    .card {
-    flex: 0 0 calc(3 * var(--phone-width));
+    flex: 0 0 auto;
     display: flex;
-    flex-direction: row;
-    GAP: 4em;
-    align-items: center;
+    flex-direction: row-reverse;
+    /* GAP: 4em; */
+    /* align-items: center; */
     position: relative;
     transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    justify-content: space-between;
    }
 
    .card.inactive {
-    opacity: 0.3;
-   }
-
-   .card.prev {
-    opacity: 1;
-   }
-
-   .card.prev .phone {
-    transform: scale(1.07);
-    background: #ffffff;
-    box-shadow:
-     0 0 0 6px rgba(255, 255, 255, 0.9),
-     0 12px 32px rgba(0, 0, 0, 0.10),
-     0 40px 80px rgba(0, 0, 0, 0.12);
-   }
-
-   .card.prev .metric-block {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.45s 0.1s ease, transform 0.45s 0.1s ease;
-    width: 100%;
-    /* text-align: center; */
+    opacity: 0;
    }
 
    /* ── PHONE ── */
@@ -463,17 +445,13 @@ p+p{
 
    /* ── CARD LABEL ── */
    .card-label {
-    margin: 5em 0 1em;
     font-size: 14px;
-    /* font-weight: 700; */
     color: #9ca3af;
     letter-spacing: 0.03em;
-    /* text-align: center; */
     transition: color 0.4s;
-    text-transform: uppercase;
     LINE-HEIGHT: 1.3EM;
-    WIDTH: 100%;
-    flex-grow: 1;
+    flex-grow: 0;
+    width: 365px;
    }
 
    .card.active .card-label,
