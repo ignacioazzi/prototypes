@@ -905,8 +905,7 @@ p+p{
    /* Goal soft panel */
    .goal-panel {
     display: flex;
-    flex-direction: column;
-    /* background: #f5f5f3; */
+    flex-direction: column;D
     border-radius: 12px;
     padding: 6em;
     /* margin-top: 32px; */
