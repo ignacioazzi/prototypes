@@ -425,56 +425,37 @@
     </section>
 
 
-    <section class="slide side-by-side w25-75 wide">
-      <div class="header header--left">
+    <section class="slide wide">
+      <div class="header">
         <p class="label">Challenge</p>
         <h1>Multiple user preferences initial drafts</h1>
-        <p>When drafting, I deliberately start with the simplest and fastest possible solution. This approach helps
-          surface limitations early. In this case, the question was straightforward: What if users could select all
-          preferences directly from the room card?</p>
 
-        <p>This exploration made the trade-offs clear. Displaying even just two preferences on the card would
-          significantly increase its height, making it harder for users to scan the list, compare rooms, and navigate
-          efficiently.</p>
+        <p>I start with the simplest possible solution to surface limitations early. The first question: What if
+          users could select preferences directly from the room card?</p>
 
-        <p>In addition, past A/B tests consistently showed that even small increases in room card height negatively
-          impacted conversion. Based on these insights, this direction was discarded early in favor of more scalable
-          solutions.</p>
+        <p>Even two preferences would significantly increase card height, hurting scannability and comparison. Past A/B
+          tests confirmed this — small height increases consistently hurt conversion — so this direction was discarded
+          early.</p>
       </div>
 
       <div class="draft-grid">
         <div class="draft-item">
-          <div class="phone">
-            <div class="phone-notch"></div>
-            <div class="phone-status"><span>9:41</span><span>●●●</span></div>
-            <div class="phone-content">
-              <div class="phone-screen-label">Draft A</div>
-            </div>
-            <div class="phone-home"></div>
-          </div>
-          <p>Inline preferences stacked below room details</p>
+          <P>Base room card</P>
+          <img src="src/assets/explorations_base.png" alt="" </img>
         </div>
         <div class="draft-item">
-          <div class="phone">
-            <div class="phone-notch"></div>
-            <div class="phone-status"><span>9:41</span><span>●●●</span></div>
-            <div class="phone-content">
-              <div class="phone-screen-label">Draft B</div>
-            </div>
-            <div class="phone-home"></div>
-          </div>
-          <p>Expandable preference row within the card</p>
+          <P>Two preferences can easily double the room card height.</P>
+          <img src="src/assets/explorations_0.png" alt="" </img>
         </div>
         <div class="draft-item">
-          <div class="phone">
-            <div class="phone-notch"></div>
-            <div class="phone-status"><span>9:41</span><span>●●●</span></div>
-            <div class="phone-content">
-              <div class="phone-screen-label">Draft C</div>
-            </div>
-            <div class="phone-home"></div>
-          </div>
-          <p>Chip-based multi-select at the bottom of the card</p>
+          <p>Using dropdowns, the pattern suggested by Design Systems team.</p>
+          <img src="src/assets/explorations_1.png" alt="" </img>
+        </div>
+
+        <div class="draft-item">
+          <p>Chip-based multi-select at the bottom of the card.</p>
+          <img src="src/assets/explorations_3.png" alt=""> </img>
+
         </div>
       </div>
     </section>
@@ -484,7 +465,7 @@
     <section class="slide">
       <div class="header">
         <p class="label">Insight</p>
-        <h1>A new screen is needed</h1>
+        <h1>A new screen was needed</h1>
         <p>After testing multiple approaches within the room card, it became clear that a dedicated screen was the right
           path: one that could scale the preference experience without compromising the room selection flow.</p>
       </div>
@@ -494,12 +475,13 @@
         <p class="label">Then</p>
         <h1>Two designs surfaced as the most promising candidates.</h1>
       </div>
-      <div class="draft-grid w50-50">
+      <div class="draft-grid grid-2 w50-50">
         <div class="draft-item">
           <div class="phone">
             <img src="src/rc.png" alt="">
           </div>
           <p class="title">Full screen</p>
+          <a href="#" class="proto-btn">Start prototype ↗</a>
           <p>A single screen for all room customisation. This would boost engagement by surfacing options upfront, and
             keep all preferences visible at once.
           </p>
@@ -513,6 +495,7 @@
             <img src="src/bt1.png" alt="">
           </div>
           <p class="title">Two steps</p>
+          <a href="#" class="proto-btn">Start prototype ↗</a>
           <p>I focused this proposal on splitting the customization flow across multiple screens, giving each room its
             own dedicated space with radio groups to display preferences clearly.
           </p>
@@ -525,7 +508,33 @@
             all selections at once. </p>
         </div>
     </section>
-    <!-- 
+
+    <section class="slide">
+      <div class="header">
+        <p class="label">Feedback</p>
+        <h1>The main concern: would an extra screen hurt conversion?</h1>
+        <p>Both designs were shared with the team and the Design community. Most feedback focused on how users would
+          react to an additional screen — with only one preference at the time, a separate step felt like overkill. But
+          it was the right foundation to build on.</p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="header">
+        <p class="label">Research</p>
+        <h1>8 users tested both designs before any A/B test.</h1>
+        <p>Before running an A/B test, we ran usability sessions with 8 users, each asked to customise and book a
+          single room, then a multi-room reservation. All users completed both tasks with no major design or copy
+          issues.</p>
+        <p>One open question was the "Select and customize" label — using two actions in a single tag felt off. When
+          asked, users couldn't suggest an alternative.</p>
+        <p>6 out of 8 users preferred the bottom sheet design, describing it as more mobile-friendly and modern
+          compared to the full-screen dropdown approach. We shared that instinct — but knew we'd need to test both to
+          find out which actually performed better.</p>
+      </div>
+    </section>
+
+    <!--
     <section class="slide slide-research">
       <div class="header">
         <p class="label">Guest Research · 2023</p>

@@ -1,7 +1,17 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm run dev:*)"
+      "Bash(npm run dev:*)",
+      "Bash(git checkout:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(git remote set-url:*)",
+      "Bash(git add:*)",
+      "Bash(python3:*)",
+      "WebFetch(domain:support.claude.com)",
+      "Bash(perl -i -ne 'print unless /^\\\\s*\\\\/\\\\*\\\\s*[a-zA-Z-]+\\\\s*:.*;\\\\s*\\\\*\\\\/\\\\s*$/' /Users/ignacio/Desktop/Work/Prototypes/www/slider.css)",
+      "Bash(perl -i -0pe 's/\\\\n\\\\s+When drafting,\\\\n.*?;\\\\n\\\\s+When drafting,\\\\n.*?;//s' /Users/ignacio/Desktop/Work/Prototypes/www/slider.css)",
+      "Bash(perl -i -pe ':*)"
     ]
   }
 }
