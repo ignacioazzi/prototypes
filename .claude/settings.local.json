@@ -11,7 +11,8 @@
       "WebFetch(domain:support.claude.com)",
       "Bash(perl -i -ne 'print unless /^\\\\s*\\\\/\\\\*\\\\s*[a-zA-Z-]+\\\\s*:.*;\\\\s*\\\\*\\\\/\\\\s*$/' /Users/ignacio/Desktop/Work/Prototypes/www/slider.css)",
       "Bash(perl -i -0pe 's/\\\\n\\\\s+When drafting,\\\\n.*?;\\\\n\\\\s+When drafting,\\\\n.*?;//s' /Users/ignacio/Desktop/Work/Prototypes/www/slider.css)",
-      "Bash(perl -i -pe ':*)"
+      "Bash(perl -i -pe ':*)",
+      "Bash({ sed -n '8p' /Users/ignacio/Desktop/Work/Prototypes/www/room_customiser_case_study.html)"
     ]
   }
 }

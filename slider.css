@@ -14,6 +14,7 @@
 
    p {
        max-width: 680px;
+       /* text-align: left; */
    }
 
    p+p {
@@ -85,13 +86,14 @@
        box-sizing: border-box;
        POSITION: RELATIVE;
        justify-content: space-around;
+       align-items: flex-start;
    }
 
+.slide.center{
+       align-items: center;
+}
 
-   .slide.wide {
-       padding-inline: max(1.5rem, calc((100% - var(--max-w)) / 2));
-       background: #edf4f0;
-   }
+
 
    .slide:not(.blue-bg):after {
        width: 100px;
@@ -304,7 +306,7 @@
        transition:
            transform 0.55s cubic-bezier(0.65, 0, 0.15, 1),
            box-shadow 0.55s cubic-bezier(0.65, 0, 0.15, 1);
-       transform: scale(1.1);
+       /* transform: scale(1.1); */
        margin-bottom: 4em;
    }
 
@@ -784,7 +786,9 @@
 
    .w50-50 {
        display: grid;
-       grid-template-columns: 50% 50%;
+       grid-template-columns: 1fr 270px;
+       gap: 30px;
+       width: 100%;
    }
 
    .pref-img {
@@ -810,9 +814,9 @@
 
    /* Summary slide */
    .slide-summary .summary-grid {
-       display: grid;
+       /* display: grid; */
        grid-template-columns: repeat(3, 1fr);
-       gap: 4EM;
+       gap: 1EM;
        width: 100%;
        text-align: left;
    }
@@ -934,22 +938,31 @@
        display: flex;
        gap: 2.5em;
        justify-content: space-around;
-       align-items: flex-start;
+       align-items: stretch;
        padding: 2em;
        /* width: 100%; */
        overflow: visible;
        white-space: nowrap;
        /* padding-top: 11em; */
-       align-content: center;
+       align-content: space-between;
+       
+       
+       
+       
+       
+       
+       
+       
 
        .draft-item {
            display: flex;
            flex-direction: column;
-           align-items: flex-start;
+           /* align-items: flex-start; */
            flex-grow: 1;
            min-width: 342px;
            gap: 2em;
-           white-space: normal;
+           /* white-space: normal; */
+           /* height: 100%; */
            text-align: le;
            align-content: flex-start;
        }
@@ -959,7 +972,7 @@
        }
 
        &.grid-2 .draft-item {
-           gap: 0 !important;
+           gap: 0em !important;
        }
 
 
@@ -967,6 +980,7 @@
            margin: 3em 0 6em;
            position: relative;
            left: 2em;
+           width: 453px;
        }
 
        .draft-item>img {
