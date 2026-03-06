@@ -41,13 +41,13 @@
   <!-- ── OVERVIEW ── -->
   <section class="slide slide-summary">
     <div class="header header--left">
-      <p class="label">Overview</p>
+      <!-- <p class="label">Overview</p> -->
       <h1>Summary</h1>
     </div>
     <div class="summary-grid mw-760">
       <div class="summary-row">
         <div class="summary-label">Problem</div>
-        <p>Guests had no structured way to express room preferences. Partners had no structured way to honour them. Unmet requests were causing cancellations and review score degradation.</p>
+        <p>Guests had no structured way to express their room preferences. Partners had no structured way to honour them. Unmet requests were causing cancellations and review score degradation.</p>
       </div>
       <div class="summary-row">
         <div class="summary-label">My role</div>
@@ -55,33 +55,68 @@
       </div>
       <div class="summary-row">
         <div class="summary-label">Impact</div>
-        <p><strong>~500 fewer bookings per night</strong> when the feature was removed. <strong>+50%</strong> cot and extra bed requests after cross-team integration.</p>
+        <p><strong>~500 fewer bookings per night</strong> when the feature was removed. <br><strong>+50%</strong> cot and extra bed requests after cross-team integration.</p>
       </div>
     </div>
   </section>
 
 
   <!-- ── WHAT ARE PREFERENCES ── -->
+
   <section class="slide">
-    <div class="header">
-      <p class="label">Context</p>
-      <h1>What are guest preferences?</h1>
-      <p>Preferences are non-guaranteed customisations guests can request for their stay. Some apply at the <strong>room level</strong> — such as bed type or floor — while others apply at the <strong>property level</strong>, like check-in time or dietary needs. While not contractually guaranteed, they're a key driver of guest satisfaction.</p>
-    </div>
-    <div class="pref-flow">
-      <div class="pref-flow-step">Location selection</div>
-      <span class="pref-flow-arrow">→</span>
-      <div class="pref-flow-step">Hotel selection</div>
-      <span class="pref-flow-arrow">→</span>
-      <div class="pref-flow-step">Room selection</div>
-      <span class="pref-flow-arrow">→</span>
-      <div class="pref-flow-step">Check-out</div>
-      <span class="pref-flow-arrow">→</span>
-      <div class="pref-flow-step pref-flow-step--bold">State a preference</div>
-      <span class="pref-flow-arrow">→</span>
-      <div class="pref-flow-step">Payment</div>
+    <div class="w50-50">
+      <div class="header header--left">
+        <p class="label">Context</p>
+        <h1>What are guest preferences?</h1>
+        <p>Preferences are non-guaranteed customisations guests can request for their stay. Some apply at the <strong>room
+            level</strong> — such as bed type or floor — while others apply at the <strong>property level</strong>, like
+          check-in time or dietary needs. While not contractually guaranteed, they're a key driver of guest satisfaction.</p>
+
+          <p>From the mDot experiments, these were the most requested room-level preferences:</p>
+
+          <ul>
+            <li>Bed type</li>
+            <li>Floor preference</li>
+            <li>Smoking preference</li>
+            <li>Extra cot / crib</li>
+            <li>Extra bed</li>
+            <li>Meal plan</li>
+          </ul>
+        </div>
+
+        <div>
+      <div class="phone-wrap">
+        <div class="phone phone-bigger">
+          <img src="src/flow/special.png" alt="">
+          <!-- <div class="phone-notch"></div>
+          <div class="phone-status"><span>9:41</span><span>●●●</span></div>
+          <div class="phone-content">
+            <div class="phone-screen-label">Awareness only</div>
+          </div>
+          <div class="phone-home"></div> -->
+        </div>
+      </div>
+          <small>Screen where guests can express their room preferences</small>
+        </div>
+
+      </div>
     </div>
   </section>
+
+
+
+
+  <!-- <section class="slide slide-flow wide">
+    <div class="container">
+      <img width="300px" height="1175px" src="/src/flow/01.png" alt="Image 1">
+      <img width="300px" height="1175px" src="/src/flow/02.png" alt="Image 2">
+      <img width="300px" height="1175px" src="/src/flow/03.png" alt="Image 3">
+      <img width="300px" height="1175px" src="/src/flow/04.png" alt="Image 4">
+      <img width="300px" height="1175px" src="/src/flow/05.png" alt="Image 5">
+      <img width="300px" height="1175px" src="/src/flow/06.png" alt="Image 6">
+      <img width="300px" height="1175px" src="/src/flow/07.png" alt="Image 7">
+    </div>
+  </section> -->
 
   <!-- ── WHAT WE KNEW ── -->
   <section class="slide">
@@ -89,7 +124,7 @@
       <p class="label">Discovery</p>
       <h1>What we knew going in.</h1>
     </div>
-    <div class="discovery-layout">
+    <!-- <div class="discovery-layout">
       <div class="discovery-col discovery-col--prose mw-760">
         <div class="discovery-prose-block">
           <div class="summary-label">The opportunity</div>
@@ -99,8 +134,52 @@
           <div class="summary-label">The problem</div>
           <p>Partners had no structured way to honour requests. Unanswered requests were causing cancellations. The free text field was creating noise on both sides — guests sent requests into a void, partners received requests they couldn't process at scale.</p>
         </div>
+      </div> -->
+      <div class="context-layout">
+      
+        <!-- Left: What was working -->
+      
+        <div class="context-col">
+          <h2>What was working</h2>
+      
+          <div class="context-cards">
+            <div class="insight insight--up">
+              <div class="insight-title">Guests</div>
+              <p>Guests felt more in control by setting expectations upfront, boosting trust and satisfaction.</p>
+            </div>
+            <div class="insight insight--up">
+              <div class="insight-title">Partners</div>
+              <p> 1.3 review score uplift for partners who honoured requests — worth ~900€ per year in commission.
+              </p>
+            </div>
+            <div class="insight insight--up">
+              <div class="insight-title">Booking.com</div>
+              <p>More preference options drove higher engagement and incremental revenue.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Right: What wasn't working -->
+        <div class="context-col">
+          <h2>What wasn't working</h2>
+          <div class="context-cards">
+            <div class="insight">
+              <div class="insight-title">Guests hit a dead end</div>
+              <p>Preferences were only discoverable at the final booking step, via a free-text field — especially
+                frustrating on mobile.</p>
+            </div>
+            <div class="insight">
+              <div class="insight-title">No scale for partners</div>
+              <p>Partners had to handle 234K unstructured free-text requests per day manually, with no way to process common ones at scale.</p>
+            </div>
+            <div class="insight">
+              <div class="insight-title">A broader opportunity</div>
+              <p>Other teams also wanted earlier access to preferences in the guest journey, signalling wider demand.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="discovery-col discovery-col--stats">
+      <!-- <div class="discovery-col discovery-col--stats">
         <div class="discovery-stat">
           <span class="discovery-stat-val">24%</span>
           <span class="discovery-stat-desc">of all bookings carried a room-related customisation request</span>
@@ -108,16 +187,13 @@
         <div class="discovery-stat">
           <span class="discovery-stat-val">234K</span>
           <span class="discovery-stat-desc">unstructured free-text requests per day, with no scalable way to process them</span>
-        </div>
+        </div> 
         <div class="discovery-stat">
           <span class="discovery-stat-val">63%</span>
           <span class="discovery-stat-desc">of bookers had preferences or requests they wanted to express</span>
-        </div>
-        <div class="discovery-stat">
-          <span class="discovery-stat-val">+1.3</span>
-          <span class="discovery-stat-desc">review score uplift for partners who honoured requests — worth ~900€ per year in commission</span>
-        </div>
-      </div>
+        </div> -->
+
+      <!-- </div> -->
     </div>
   </section>
 
@@ -801,12 +877,12 @@
   </section>
 
   <!-- ── FINAL EVOLUTION ── -->
-  <section class="slide slide-statement">
+  <!-- <section class="slide slide-statement">
     <div class="header">
       <p class="label">Final evolution</p>
       <h1>We removed the entry point entirely. Customisation surfaced directly in the first screen of the flow.</h1>
     </div>
-  </section>
+  </section> -->
 
   <!-- ── IMPACT ── -->
   <section class="slide">
@@ -817,18 +893,18 @@
     <div class="impact-grid">
       <div class="impact-cell">
         <span class="impact-cell-label">Block-out experiment · Android</span>
-        <span class="impact-cell-val positive">~500</span>
+        <span class="impact-cell-val positive">~500 BPDs</span>
         <p>Fewer bookings per night when the customiser was removed. Direct confirmation of incremental value.</p>
       </div>
       <div class="impact-cell">
-        <span class="impact-cell-label">Cots and extra beds · vs booking process</span>
+        <span class="impact-cell-label">Cots and extra beds</span>
         <span class="impact-cell-val positive">+50%</span>
-        <p>Requests on the first experiment run. No conversion drop.</p>
+        <p>Requests on the first experiment run. <br>No conversion drop.</p>
       </div>
       <div class="impact-cell">
         <span class="impact-cell-label">Awareness experiments · conversion</span>
         <span class="impact-cell-val positive">+3.54%</span>
-        <p>Lift on first awareness experiment. +1.08% on second. Surfacing options earlier moved the needle.</p>
+        <p>Lift on first awareness experiment. <br>+1.08% on second. Surfacing options earlier moved the needle.</p>
       </div>
       <div class="impact-cell">
         <span class="impact-cell-label">"Select and customise" CTA · booked_with_pref</span>
