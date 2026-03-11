@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(plutil -p ~/Library/Preferences/com.ameba.SwiftBar.plist)",
+      "Read(//Users/ignacio/SwiftBar Plugins/**)",
+      "Bash(npm run build)",
+      "Bash(git -C /Users/ignacio/Desktop/Work/Prototypes/www show HEAD:index.html)",
+      "Bash(git -C /Users/ignacio/Desktop/Work/Prototypes/www log --all --oneline)",
+      "Bash(sed -i '' 's/{ value: \"\"single\"\", label: \"\"2 Single beds\"\" },/{ value: \"\"single\"\", label: \"\"2 single beds\"\" },/' /Users/ignacio/Desktop/Work/Prototypes/www/src/BottomSheet.jsx)",
+      "Bash(sed -i '' 's/{ value: \"\"double\"\", label: \"\"1 Double bed\"\" },/{ value: \"\"double\"\", label: \"\"1 double bed\"\" },/' /Users/ignacio/Desktop/Work/Prototypes/www/src/BottomSheet.jsx)",
+      "Bash(sed -i '' 's/        PLACEHOLDER/        { value: \"\"single\"\", label: \"\"2 single beds\"\" },/' /Users/ignacio/Desktop/Work/Prototypes/www/src/BottomSheet.jsx)",
+      "Bash(sed -i '' '/{ value: \"\"no-preference\"\", label: \"\"No preference\"\" }/{n; s/{ value: \"\"single\"\", label: \"\"2 single beds\"\" },/SWAP_SINGLE/}' /Users/ignacio/Desktop/Work/Prototypes/www/src/BottomSheet.jsx)"
+    ],
+    "additionalDirectories": [
+      "/Users/ignacio/SwiftBar Plugins",
+      "/Users/ignacio"
+    ]
+  }
+}

@@ -309,7 +309,7 @@ export default function TwoStepRoomSelection() {
           <div
             className="phone-frame-background"
           />
-          <div style={{ width: '390px', aspectRatio: '1 / 2.13', transform: 'scale(0.9)', zIndex: 2, overflow: 'hidden' }} className=" bg-gray-50 rounded-3xl shadow-2xl  flex flex-col w-full relative overflow-hidden">
+          <div style={{ width: '390px', aspectRatio: '1 / 2.13', transform: 'scale(0.9)', zIndex: 2, overflow: 'hidden' }} className=" bg-gray-50 shadow-2xl  flex flex-col w-full relative overflow-hidden">
 
 
             {/* Header */}

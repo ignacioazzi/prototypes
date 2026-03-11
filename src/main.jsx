@@ -5,9 +5,10 @@ import Home from './Home.jsx'
 import TwoSteps from './twosteps.jsx'
 import FullScreen from './FullScreen.jsx'
 import BottomSheet from './BottomSheet.jsx'
+import CursorDemoGlobal from './CursorDemoGlobal.jsx'
 
 function RootRouter() {
-  const [route, setRoute] = useState(window.location.hash || '#/')
+  const [route, setRoute] = useState(window.location.hash || '#bottom')
 
   useEffect(() => {
     const onHash = () => setRoute(window.location.hash || '#/')
@@ -19,7 +20,13 @@ function RootRouter() {
     <>
       {route === '#two' && <TwoSteps />}
       {route === '#full' && <FullScreen />}
-      {route === '#bottom' && <BottomSheet />}
+      {route === '#bottom' && (
+        <div className="container_designs" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', minHeight: '100vh' }}>
+          <div data-demo="bs-frame"><BottomSheet /></div>
+          <div data-demo="fs-frame"><FullScreen /></div>
+          <CursorDemoGlobal />
+        </div>
+      )}
       {route === '#/' && <Home />}
     </>
   )

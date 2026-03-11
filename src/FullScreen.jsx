@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Minus, Plus, Users, Wifi, Wind, Tv, Eye, Waves, Coffee, Check, Bed, Bath, Building2, Droplets, Maximize2, ArrowLeft, BedDouble, X, Wallet } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Minus, Plus, Users, Wifi, Wind, Tv, Eye, Coffee, Bed, Bath, Building2, Maximize2, ChevronLeft, BedDouble, X, Wallet } from 'lucide-react';
+import IosStatusBar from './IosStatusBar';
 import './App.css';
 
 export default function RoomCustomization() {
@@ -19,31 +20,27 @@ export default function RoomCustomization() {
   const roomCards = [
     {
       id: 1,
-      name: 'Standard Room',
+      name: 'Double or Twin Room',
       bedOptions: [
         { text: 'Option 1: 2 single beds', isSingle: true },
         { text: 'Option 2: 1 extra-large double bed', isSingle: false }
       ],
-      size: '32 m²',
+      size: '25m²',
       amenities: [
         { icon: Wifi, text: 'Free WiFi' },
-        { icon: Bath, text: 'Ensuite bathroom' },
+        { icon: Bath, text: 'Bath' },
         { icon: Wind, text: 'Air conditioning' },
-        { icon: Building2, text: 'City view' },
-        { icon: Waves, text: 'Pool with a view' },
-        { icon: Building2, text: 'Rooftop pool' },
-        { icon: Tv, text: 'Flat-screen TV' }
       ],
       isRefundable: true,
-      cancellation: 'Free cancellation before 29 May 2025',
-      prepayment: 'No prepayment needed – pay at the property',
-      breakfast: 'Breakfast available, pay at the property (€ 12)',
-      discount: '47% Genius discount',
-      discountBadges: ['47% off', 'Genius discount'],
-      originalPrice: 163,
-      price: 76,
-      priceFor: 3,
-      image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="200"%3E%3Crect fill="%23e5e7eb" width="400" height="200"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="16" fill="%236b7280"%3EStandard Room%3C/text%3E%3C/svg%3E'
+      cancellation: 'Free cancellation at any time',
+      prepayment: 'Pay at the property',
+      breakfast: 'Breakfast available at additional cost (€ 19.50)',
+      discount: null,
+      discountBadges: [],
+      originalPrice: null,
+      price: 45,
+      priceFor: 2,
+      image: 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="400" height="200"%3E%3Crect fill="%23e5e7eb" width="400" height="200"/%3E%3Ctext x="50%25" y="50%25" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="16" fill="%236b7280"%3EDouble or Twin Room%3C/text%3E%3C/svg%3E'
     },
     {
       id: 2,
@@ -99,7 +96,7 @@ export default function RoomCustomization() {
   const bedOptions = [
     { value: 'no-preference', label: 'No preference' },
     { value: '1-double', label: '1 double bed' },
-    { value: '2-single', label: '2 single beds' }
+    { value: '2-single', label: '2 single beds' },
   ];
 
   const mealOptions = [
@@ -198,9 +195,8 @@ export default function RoomCustomization() {
         <h1 className="text-3xl font-bold text-gray-800">Full Screen</h1>
         <p className="text-gray-600 text-lg mt-2">Single page room selection flow</p>
       </div>
-      <div className="flex items-start gap-12 max-w-7xl">
+      <div className="flex items-start gap-12 max-w-7xl mx-auto">
 
-        <div className="w-72"></div>
 
         <div className="relative">
           {/* Phone frame background */}
@@ -208,26 +204,20 @@ export default function RoomCustomization() {
             className="phone-frame-background"
           />
           <div style={{ width: '390px', aspectRatio: '1 / 2.13', transform: 'scale(0.9)', zIndex: 2, overflow: 'hidden' }}
-            className=" bg-gray-50 rounded-3xl shadow-2xl flex flex-col mx-auto relative">
-            {/* Mock Header */}
-            <div className="header bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between">
-              {currentPage === 'checkout' ? (
-                <>
-                  <button onClick={() => setCurrentPage('rooms')}>
-                    <ArrowLeft className="w-6 h-6" />
-                  </button>
-                  <h1 className="text-lg font-semibold">Checkout</h1>
-                  <div className="w-6"></div>
-                </>
-              ) : (
-                <>
-                  <button onClick={() => window.location.hash = '#/'}>
-                    <ArrowLeft className="w-6 h-6" />
-                  </button>
-                  <h1 className="text-lg font-semibold">Choose your Stay</h1>
-                  <div className="w-6"></div>
-                </>
-              )}
+            className="bg-gray-50 shadow-2xl flex flex-col mx-auto relative overflow-hidden">
+            {/* iOS Header */}
+            <div className="header" style={{ height: 'auto' }}>
+              <IosStatusBar />
+              <div className="flex items-center px-3 py-2 relative">
+                {currentPage === 'checkout' ? (
+                  <button onClick={() => setCurrentPage('rooms')}><ChevronLeft className="w-6 h-6" /></button>
+                ) : (
+                  <button onClick={() => window.location.hash = '#/'}><ChevronLeft className="w-6 h-6" /></button>
+                )}
+                <h1 className="text-lg font-bold absolute left-0 right-0 text-center pointer-events-none">
+                  {currentPage === 'checkout' ? 'Checkout' : 'Choose your Stay'}
+                </h1>
+              </div>
             </div>
 
             {/* Room Cards */}
@@ -423,29 +413,24 @@ export default function RoomCustomization() {
               </div>
             )}
 
-            {/* Bottom Sheet Overlay */}
-            {isBottomSheetOpen && (
-              <div
-                className="fixed inset-0 bg-black/40 z-40 transition-opacity"
-                onClick={() => setIsBottomSheetOpen(false)}
-              />
-            )}
-
-            {/* Bottom Sheet */}
+            {/* Full Screen Customize Panel */}
             <div
-              className={`fixed bottom-0 left-0 right-0 bg-white rounded-t-3xl shadow-2xl z-50 transition-transform duration-300 ease-out ${isBottomSheetOpen ? 'translate-y-0' : 'translate-y-full'
+              className={`fixed inset-0 bg-white z-50 flex flex-col transition-transform duration-300 ease-out ${isBottomSheetOpen ? 'translate-x-0' : 'translate-x-full'
                 }`}
-              style={{ height: '76vh', maxHeight: '90vh' }}
             >
-              {/* Handle */}
-              <div className="flex justify-center pt-3 pb-2">
-                <div className="w-12 h-1.5 bg-gray-300 rounded-full"></div>
+              {/* iOS-style header */}
+              <div className="header" style={{ height: 'auto' }}>
+                <IosStatusBar />
+                <div className="flex items-center px-3 py-2 relative">
+                  <button onClick={() => setIsBottomSheetOpen(false)}>
+                    <ChevronLeft className="w-6 h-6" />
+                  </button>
+                  <h2 className="text-lg font-bold absolute left-0 right-0 text-center pointer-events-none">{selectedRoomType?.name}</h2>
+                </div>
               </div>
 
               {/* Content */}
-              <div className="px-5 pb-5 overflow-y-auto" style={{ height: 'calc(76vh - 116px)' }}>
-                {/* Title */}
-                <h2 className="text-2xl font-bold mb-6">Customize Your Rooms</h2>
+              <div className="flex-1 overflow-auto px-5 py-5">
 
                 {/* Number of Rooms Stepper */}
                 <div className="mb-6 pt-2">
@@ -454,12 +439,13 @@ export default function RoomCustomization() {
                     <div className="flex items-center gap-4">
                       <button
                         onClick={() => handleRoomCountChange(-1)}
-                        className="w-10 h-10 rounded-md border-2 border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors"
+                        className="w-10 h-10 rounded-md border-2 border-blue-600 flex items-center justify-center hover:bg-blue-50 transition-colors"
                       >
-                        <Minus className="w-5 h-5 text-gray-700" />
+                        <Minus className="w-5 h-5 text-blue-600" />
                       </button>
                       <span className="text-xl font-semibold w-8 text-center">{numberOfRooms}</span>
                       <button
+                        data-demo="fs-plus-btn"
                         onClick={() => handleRoomCountChange(1)}
                         disabled={numberOfRooms === 5}
                         className="w-10 h-10 rounded-md border-2 border-blue-600 flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed hover:bg-blue-50 transition-colors"
@@ -470,70 +456,36 @@ export default function RoomCustomization() {
                   </div>
                 </div>
 
+
                 {/* Room Configurations */}
                 <div className="space-y-6 mb-6">
                   {rooms.map((room) => (
-                    <div key={room.id} className="border-t pt-6 first:border-t-0 first:pt-0">
-                      <h3 className="text-lg font-semibold mb-4">Room {room.id}</h3>
+                    <div key={room.id} className="pt-2 first:border-t-0 first:pt-0">
+                      <h3 className="text-xl font-bold mb-4">Room {room.id}</h3>
 
                       {/* Bed Type */}
-                      <div className="mb-5">
-                        <label className="block text-base text-gray-900 mb-2">Bed Type</label>
-                        <div className="space-y-2">
+                      <div className="mb-5 preferences ">
+                        <label className="block pref-title text-base text-gray-900 mb-2">Choose your bed</label>
+                        <div className="flex flex-col gap-2">
                           {bedOptions.map((option) => (
                             <label
                               key={option.value}
-                              className={`flex items-center justify-between p-3 border-2 rounded-lg cursor-pointer transition-all ${room.bedType === option.value
-                                ? 'border-blue-600 bg-blue-50'
-                                : 'border-gray-200 hover:border-gray-300'
-                                }`}
+                              className="flex items-center justify-between py-2 cursor-pointer"
                             >
-                              <div className="flex items-center gap-3">
-                                <input
-                                  type="radio"
-                                  name={`bed-type-${room.id}`}
-                                  value={option.value}
-                                  checked={room.bedType === option.value}
-                                  onChange={(e) => updateRoom(room.id, 'bedType', e.target.value)}
-                                  className="w-4 h-4 text-blue-600 cursor-pointer"
-                                />
-                                <span className="text-base font-medium">{option.label}</span>
-                              </div>
+                              <span className="text-base">{option.label}</span>
+                              <input
+                                type="radio"
+                                name={`bed-type-${room.id}`}
+                                value={option.value}
+                                checked={room.bedType === option.value}
+                                onChange={(e) => updateRoom(room.id, 'bedType', e.target.value)}
+                                className="w-5 h-5 text-blue-600 cursor-pointer"
+                              />
                             </label>
                           ))}
                         </div>
                       </div>
 
-                      {/* Meal Plan */}
-                      <div>
-                        <label className="block text-base font-bold text-gray-900 mb-2">Meal Plan</label>
-                        <div className="space-y-2">
-                          {mealOptions.map((option) => (
-                            <label
-                              key={option.value}
-                              className={`flex items-center justify-between p-3 border-2 rounded-lg cursor-pointer transition-all ${room.mealPlan === option.value
-                                ? 'border-blue-600 bg-blue-50'
-                                : 'border-gray-200 hover:border-gray-300'
-                                }`}
-                            >
-                              <div className="flex items-center gap-3">
-                                <input
-                                  type="radio"
-                                  name={`meal-plan-${room.id}`}
-                                  value={option.value}
-                                  checked={room.mealPlan === option.value}
-                                  onChange={(e) => updateRoom(room.id, 'mealPlan', e.target.value)}
-                                  className="w-4 h-4 text-blue-600 cursor-pointer"
-                                />
-                                <span className="text-base font-medium">{option.label}</span>
-                              </div>
-                              {option.price > 0 && (
-                                <span className="text-base font-semibold text-green-600">+${option.price}</span>
-                              )}
-                            </label>
-                          ))}
-                        </div>
-                      </div>
                     </div>
                   ))}
                 </div>
@@ -559,7 +511,7 @@ export default function RoomCustomization() {
           {/* Text Description */}
 
         </div>
-        <div className="w-72 animate-fadeIn flex items-center pt-16 text-base" key={textContent}>
+        <div className="w-72 animate-fadeIn flex items-center text-base" key={textContent}>
           <p className="leading-relaxed">{textContent}</p>
         </div>
       </div>

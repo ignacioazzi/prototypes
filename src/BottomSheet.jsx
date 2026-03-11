@@ -14,11 +14,12 @@ import {
     Bath,
     Building2,
     Maximize2,
-    ArrowLeft,
+    ChevronLeft,
     BedDouble,
     X,
     ChevronRight,
 } from "lucide-react";
+import IosStatusBar from "./IosStatusBar";
 
 export default function BookingFlowCustomizer() {
     useEffect(() => {
@@ -84,8 +85,8 @@ export default function BookingFlowCustomizer() {
 
     const bedOptions = [
         { value: "no-preference", label: "No preference" },
-        { value: "single", label: "Single Bed" },
-        { value: "double", label: "Double bed" },
+        { value: "double", label: "1 double bed" },
+        { value: "single", label: "2 single beds" },
     ];
 
     const handleRoomCountChange = (delta) => {
@@ -198,15 +199,14 @@ export default function BookingFlowCustomizer() {
     };
 
     return (
+        <>
         <div className="min-h-screen bg-gray-200 flex flex-col items-center justify-center p-0 gap-8">
             <div className="text-center">
                 <h1 className="text-3xl font-bold text-gray-800">Bottom Sheet</h1>
                 <p className="text-gray-600 text-lg mt-2">Room customization with bottom sheet drawer</p>
             </div>
-            <div className="flex items-start gap-12 max-w-7xl">
+            <div className="flex items-start gap-12 max-w-7xl mx-auto">
                 {/* Mobile Prototype */}
-                <div
-                    className="w-72"> </div>
                 <div className="relative">
                     {/* Phone frame background */}
                     <div
@@ -214,7 +214,7 @@ export default function BookingFlowCustomizer() {
                     />
 
                     <div
-                        className="relative bg-gray-50 flex flex-col overflow-hidden rounded-3xl shadow-2xl"
+                        className="relative bg-gray-50 flex flex-col overflow-hidden shadow-2xl"
                         style={{
                             width: "390px",
                             aspectRatio: "1 / 2.13",
@@ -224,38 +224,26 @@ export default function BookingFlowCustomizer() {
                     >
 
 
-                        {/* Header */}
+                        {/* iOS Header */}
                         <div
-                            className="header px-4 flex items-center justify-between relative bg-white text-gray-900 border-b border-gray-200"
-                            style={{
-                                zIndex: currentPage === "room-detail" ? 300 : 200,
-                            }}
+                            className="header"
+                            style={{ height: 'auto', zIndex: currentPage === "room-detail" ? 300 : 200 }}
                         >
-                            {currentPage === "checkout" ? (
-                                <>
-                                    <button onClick={() => setCurrentPage("rooms")}>
-                                        <ArrowLeft className="w-6 h-6" />
-                                    </button>
-                                    <h1 className="text-lg font-semibold">Checkout</h1>
-                                    <div className="w-6"></div>
-                                </>
-                            ) : currentPage === "room-detail" ? (
-                                <>
-                                    <button onClick={handleBackFromDetail}>
-                                        <ArrowLeft className="w-6 h-6" />
-                                    </button>
-                                    <h1 className="text-lg font-semibold">Room requests</h1>
-                                    <div className="w-6"></div>
-                                </>
-                            ) : (
-                                <>
-                                    <button onClick={() => window.location.hash = '#/'}>
-                                        <ArrowLeft className="w-6 h-6" />
-                                    </button>
-                                    <h1 className="text-lg font-semibold">Choose your stay</h1>
-                                    <div className="w-6 h-6"></div>
-                                </>
-                            )}
+                            <IosStatusBar />
+                            <div className="flex items-center px-3 py-2 relative">
+                                <button onClick={
+                                    currentPage === "checkout" ? () => setCurrentPage("rooms") :
+                                    currentPage === "room-detail" ? handleBackFromDetail :
+                                    () => window.location.hash = '#/'
+                                }>
+                                    <ChevronLeft className="w-6 h-6" />
+                                </button>
+                                <h1 className="text-lg font-bold absolute left-0 right-0 text-center pointer-events-none">
+                                    {currentPage === "checkout" ? "Checkout" :
+                                     currentPage === "room-detail" ? "Room requests" :
+                                     "Choose your stay"}
+                                </h1>
+                            </div>
                         </div>
 
                         {/* Room Cards */}
@@ -334,7 +322,7 @@ export default function BookingFlowCustomizer() {
                                                     )}
 
                                                 {/* Benefits */}
-                                                <div className="mb-3 space-y-2">
+                                                <div className="flex flex-col gap-2 mb-3">
                                                     {roomType.cancellation && (
                                                         <div className="flex items-start gap-2">
                                                             <svg
@@ -482,20 +470,20 @@ export default function BookingFlowCustomizer() {
                                     }`}
                                 style={{ zIndex: 260 }}
                             >
-                                <div className="flex-1 overflow-auto p-4 pb-24">
+                                <div className="flex-1 overflow-auto p-4 pb-24" style={{ paddingTop: "2em" }}>
                                     <div className="mb-6">
-                                        <h2 className="text-lg font-semibold mb-2">
+                                        <h2 className="text-lg font-semibold ">
                                             Choose your bed
                                         </h2>
                                         <p className="text-sm text-gray-600 mb-4">
                                             Subject to availability at the property
                                         </p>
 
-                                        <div className="space-y-2">
+                                        <div className="flex flex-col gap-2">
                                             {bedOptions.map((option) => (
                                                 <label
                                                     key={option.value}
-                                                    className="flex items-center justify-between p-4 border-2 rounded-lg cursor-pointer transition-all bg-white"
+                                                    className="flex items-center justify-between py-2 cursor-pointer"
                                                 >
                                                     <span className="text-base">{option.label}</span>
                                                     <input
@@ -609,26 +597,25 @@ export default function BookingFlowCustomizer() {
                         )}
 
                         {/* Bottom Sheet Overlay */}
-                        {isBottomSheetOpen && (
-                            <div
-                                className="fixed inset-0 bg-black/50"
-                                style={{
-                                    zIndex: 250,
-                                    transition: "opacity 0.25s cubic-bezier(0.4, 0.0, 0.2, 1)",
-                                }}
-                                onClick={() => setIsBottomSheetOpen(false)}
-                            />
-                        )}
+                        <div
+                            className="fixed inset-0 bg-black/50"
+                            style={{
+                                zIndex: 250,
+                                opacity: isBottomSheetOpen ? 1 : 0,
+                                pointerEvents: isBottomSheetOpen ? "auto" : "none",
+                                transition: "opacity 0.25s cubic-bezier(0.4, 0.0, 0.2, 1)",
+                            }}
+                            onClick={() => setIsBottomSheetOpen(false)}
+                        />
 
                         {/* Bottom Sheet - Room Selection */}
                         <div
                             className={`fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white rounded-t-3xl shadow-2xl ${isBottomSheetOpen ? "translate-y-0" : "translate-y-full"
                                 }`}
                             style={{
-                                height: "75vh",
                                 zIndex: 250,
-                                transition: "transform 0.25s cubic-bezier(0.4, 0.0, 0.2, 1)",
-                                willChange: "transform",
+                                transition: "translate 0.25s cubic-bezier(0.4, 0.0, 0.2, 1)",
+                                willChange: "translate",
                             }}
                         >
                             <div className="flex justify-center pt-3 pb-2">
@@ -639,7 +626,7 @@ export default function BookingFlowCustomizer() {
                                 className="px-5 pb-5 overflow-y-auto"
                                 style={{ height: "calc(75vh - 140px)" }}
                             >
-                                <h2 className="text-xl font-bold mb-1" style={{ paddingTop: "1em" }}>
+                                <h2 className="text-2xl font-bold mb-1" style={{ paddingTop: "1em" }}>
                                     {selectedRoomType?.name}
                                 </h2>
 
@@ -652,14 +639,15 @@ export default function BookingFlowCustomizer() {
                                         <div className="flex items-center gap-4">
                                             <button
                                                 onClick={() => handleRoomCountChange(-1)}
-                                                className="w-10 h-10 rounded-md border-2 border-gray-300 flex items-center justify-center hover:bg-gray-50 transition-colors"
+                                                className="w-10 h-10 rounded-md border-2 border-blue-700 flex items-center justify-center hover:bg-gray-50 transition-colors"
                                             >
-                                                <Minus className="w-5 h-5 text-gray-700" />
+                                                <Minus className="w-5 h-5 text-blue-700" />
                                             </button>
                                             <span className="text-xl font-semibold w-8 text-center">
                                                 {numberOfRooms}
                                             </span>
                                             <button
+                                                data-demo="plus-btn"
                                                 onClick={() => handleRoomCountChange(1)}
                                                 disabled={numberOfRooms === 5}
                                                 className="w-10 h-10 rounded-md border-2 border-blue-700 flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed hover:bg-blue-50 transition-colors"
@@ -725,7 +713,7 @@ export default function BookingFlowCustomizer() {
 
                 {/* Text Description */}
                 <div
-                    className="w-72 animate-fadeIn flex items-center pt-16 text-base"
+                    className="w-72 animate-fadeIn flex items-center text-base"
                     key={textContent}
                     style={{}}
                 >
@@ -754,5 +742,6 @@ export default function BookingFlowCustomizer() {
                 </div>
             </div >
         </div >
+        </>
     );
 }

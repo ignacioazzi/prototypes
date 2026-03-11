@@ -22,7 +22,7 @@ export default function Home() {
       <div className="relative">
         {/* Phone frame background */}
         <div className="phone-frame-background" />
-        <div style={{ width: '390px', aspectRatio: '1 / 2.13', transform: 'scale(0.9)', zIndex: 2 }} className=" flex rounded-3xl shadow-2xl  flex-col items-center justify-center bg-gray-50  gap-8 p-8 relative">
+        <div style={{ width: '390px', aspectRatio: '1 / 2.13', transform: 'scale(0.9)', zIndex: 2 }} className=" flex shadow-2xl  flex-col items-center justify-center bg-gray-50  gap-8 p-8 relative">
           <nav className="flex flex-col gap-4">
             <button
               onClick={() => handleNavigation('#full')}

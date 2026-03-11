@@ -86,7 +86,7 @@
         <div>
       <div class="phone-wrap">
         <div class="phone phone-bigger">
-          <img src="src/flow/special.png" alt="">
+          <img src="img/flow/special.png" alt="">
           <!-- <div class="phone-notch"></div>
           <div class="phone-status"><span>9:41</span><span>●●●</span></div>
           <div class="phone-content">
@@ -205,7 +205,7 @@
   </section>
 
   <!-- ── CHAPTER: FOUNDATION ── -->
-  <section class="slide slide-chapter">
+  <section class="slide slide-chapter mb-0">
     <span class="chapter-eyebrow">Process · Chapter 01</span>
     <h2 class="chapter-title">Foundation</h2>
     <p class="chapter-desc">Before designing a dedicated screen, we needed to understand how much the room card could hold — and what happened when we pushed past its limits.</p>
@@ -232,34 +232,30 @@
       <h1>Four experiments that set the way.</h1>
       <p>Before designing a customisation flow, we needed to establish whether users would engage with preferences at all inside the room selection context. </p><p> Rather than building a full solution immediately, I structured a sequence of experiments that progressively increased intervention complexity — each one informing the next.</p>
     </div>
-    <div class="slider-section">
+    <!-- <div class="slider-section">
     
-      <!-- CONTROLS -->
+    
       <div class="controls">
-    
-        <button class="nav-btn" id="prevBtn">
+        <button class="nav-btn toggle-btn" id="showAllBtn">Show all designs together</button>
+      </div>
+
+      <div class="slider-with-arrows">
+
+        <button class="nav-btn side-nav" id="prevBtn">
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M10 3L5 8L10 13"></path>
           </svg>
         </button>
-    
-        <button class="nav-btn toggle-btn" id="showAllBtn">Show all designs together</button>
-    
-        <button class="nav-btn" id="nextBtn">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M6 3L11 8L6 13"></path>
-          </svg>
-        </button>
-    
-      </div>
-    
+
       <div class="slider-track-outer" id="trackOuter">
         <div class="slider-track" id="track">
     
-          <!-- 1. Awareness only -->
+  
           <div class="card inactive" data-index="0">
             <div class="card-label"></div>
-            <div class="phone-wrap">
+            <img width="400px" class="rounded_shadows" src="img/first_steps_02.png" alt="">
+        <div class="phone-wrap">
+              
               <div class="phone">
                 <div class="phone-notch"></div>
                 <div class="phone-status"><span>9:41</span><span>●●●</span></div>
@@ -276,10 +272,10 @@
             </div>
           </div>
     
-          <!-- 2. Inline selection on the room card -->
           <div class="card inactive" data-index="1">
             <div class="card-label"></div>
-            <div class="phone-wrap">
+            <img width="400px" height="auto" class="rounded_shadows" src="img/first_steps_03.png" alt="">
+        <div class="phone-wrap">
               <div class="phone">
                 <div class="phone-notch"></div>
                 <div class="phone-status"><span>9:41</span><span>●●●</span></div>
@@ -301,20 +297,9 @@
             </div>
           </div>
     
-          <!-- 3. Establishing the default state -->
-          <div class="card active" data-index="2">
+       <div class="card active" data-index="2">
             <div class="card-label"></div>
-            <div class="phone-wrap">
-              <div class="win-badge pop" id="winBadge">First full win</div>
-              <div class="phone">
-                <div class="phone-notch"></div>
-                <div class="phone-status"><span>9:41</span><span>●●●</span></div>
-                <div class="phone-content">
-                  <div class="phone-screen-label">Establishing the default state</div>
-                </div>
-                <div class="phone-home"></div>
-              </div>
-            </div>
+            <img width="400px" height="auto" class="rounded_shadows" src="img/first_steps_03.png" alt="">
             <div class="card-label">
               <p class="card-title"><span class="num">3.</span> Establishing the default state</p>
               <p>A key team discussion: what should the default selection be? I decided to make "No preference" the explicit default. Auto-selecting a bed type for every eligible room would have generated unintentional requests at scale, driving up partner workload and pushing down reply rates — directly undermining the review score improvement the feature was designed to produce.</p>
@@ -327,10 +312,10 @@
             </div>
           </div>
     
-          <!-- 4. Information architecture restructuring -->
           <div class="card inactive" data-index="3">
             <div class="card-label"></div>
-            <div class="phone-wrap">
+            <img width="400px" height="auto" class="rounded_shadows" src="img/first_steps_04.png" alt="">
+ <div class="phone-wrap">
               <div class="phone">
                 <div class="phone-notch"></div>
                 <div class="phone-status"><span>9:41</span><span>●●●</span></div>
@@ -339,7 +324,7 @@
                 </div>
                 <div class="phone-home"></div>
               </div>
-            </div>
+            </div> 
             <div class="card-label">
               <p class="card-title"><span class="num">4.</span> Information architecture restructuring</p>
               <p>As the room card began carrying more interactive elements, I restructured its IA. Static information — details, conditions, pricing — moved to the top. Interactive elements — preference selection, number of rooms, room CTA — moved to the bottom. Clear separation between reading and deciding.</p>
@@ -352,6 +337,14 @@
             </div>
           </div>
         </div>
+      </div>
+
+        <button class="nav-btn side-nav" id="nextBtn">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M6 3L11 8L6 13"></path>
+          </svg>
+        </button>
+
       </div>
       <div id="allDetails" class="all-details" style="display: none;">
         <div class="all-detail-col">
@@ -460,45 +453,69 @@
           </div>
         </div>
       </div>
-    </div>
-     <!-- <div class="exp-steps">
+    </div> -->
+
+     <div class="exp-steps">
+
       <div class="exp-step">
         <div class="exp-step-num">01</div>
+        <div class="exp-step-body">
+          <div class="exp-step-title">Base</div>
+          <p>The initial card design made no mention of the possibility of customising the bed type, a key gap in communicating
+          available options to the user.</p> <p> UI also suffered from inconsistent font colour and weight usage, along with broader
+          information architecture issues. These were known problems at the time, but given the project's scope and priorities,
+          they were consciously set aside to focus on what mattered most.
+</p>
+        </div>
+        <img width="400px" class="rounded_shadows" src="img/first_steps_01.png" alt="Awareness only">
+      </div>
+
+      <div class="exp-step">
+        <div class="exp-step-num">02</div>
         <div class="exp-step-body">
           <div class="exp-step-title">Awareness only</div>
           <p>The smallest testable hypothesis: not whether users would customise, but whether they noticed that options existed. I surfaced bed type options as static information on the room card — no selection mechanic. This isolated the impact of awareness alone.</p>
           <p>Design challenge: bed configurations varied significantly. Presenting all options in a single line became unreadable for edge cases. I proposed displaying each option on its own line to preserve clarity across all configurations.</p>
         </div>
+        <img width="400px" class="rounded_shadows" src="img/first_steps_02.png" alt="Awareness only">
       </div>
       <div class="exp-step">
-        <div class="exp-step-num">02</div>
+        <div class="exp-step-num">03</div>
         <div class="exp-step-body">
           <div class="exp-step-title">Inline selection on the room card</div>
           <p>Building on positive awareness signals, we brought preference selection directly into the room card. Focus: bed type — the most requested room-level preference, already an established pattern on Desktop. This tested whether users would engage when given immediate, inline control.</p>
           <span class="exp-tag">+4,282 bookings with bed preference</span>
         </div>
+        <img width="400px" class="rounded_shadows" src="img/first_steps_03.png" alt="Inline selection on the room card">
+
       </div>
       <div class="exp-step">
-        <div class="exp-step-num">03</div>
+        <div class="exp-step-num">04</div>
         <div class="exp-step-body">
           <div class="exp-step-title">Establishing the default state</div>
           <p>A key team discussion: what should the default selection be? I decided to make "No preference" the explicit default. Auto-selecting a bed type for every eligible room would have generated unintentional requests at scale, driving up partner workload and pushing down reply rates — directly undermining the review score improvement the feature was designed to produce.</p>
           <span class="exp-tag decision">Trade-off: lower apparent engagement to protect partner experience</span>
         </div>
+        <img width="400px" class="rounded_shadows" src="img/first_steps_05.png" alt="Establishing the default state">
+
       </div>
       <div class="exp-step">
-        <div class="exp-step-num">04</div>
+        <div id="last_num" class="exp-step-num">05</div>
         <div class="exp-step-body">
           <div class="exp-step-title">Information architecture restructuring</div>
-          <p>As the room card began carrying more interactive elements, I restructured its IA. Static information — details, conditions, pricing — moved to the top. Interactive elements — preference selection, number of rooms, room CTA — moved to the bottom. Clear separation between reading and deciding.</p>
+          <p>As the room card began carrying more interactive elements, I restructured its IA: Static information (details,
+          conditions, pricing) moved to the top. Interactive elements (preference selection, number of rooms, room CTA) moved to
+          the bottom. Clear separation between reading and deciding.</p>
           <span class="exp-tag">+47 bookings · Structural foundation established</span>
         </div>
+        <img width="400px" class="rounded_shadows" src="img/first_steps_04.png" alt="Information architecture restructuring"
       </div>
-    </div> -->
+      
+    </div>
   </section>
 
   <!-- ── INSIGHT STATEMENT ── -->
-  <section class="slide slide-statement">
+  <section class="slide slide-statement gradient-color">
     <div class="header">
       <p class="label">Insight</p>
       <h1>As experiments showed positive signals, I began exploring designs that could support multiple preferences simultaneously.</h1>
@@ -526,20 +543,20 @@
     <div class="draft-grid">
       <div class="draft-item">
         <P>Base room card</P>
-        <img src="img/explorations_base.png" alt="" </img>
+        <img class="rounded_shadows" src="img/explorations_base.png" alt="" </img>
       </div>
       <div class="draft-item">
-        <P>Two preferences can easily double the room card height.</P>
-        <img src="img/explorations_0.png" alt="" </img>
+        <P>Adding two preferences easily doubled the room card height.</P>
+        <img class="rounded_shadows" src="img/explorations_0.png" alt="" </img>
       </div>
       <div class="draft-item">
-        <p>Using dropdowns, the pattern suggested by Design Systems team.</p>
-        <img src="img/explorations_1.png" alt="" </img>
+        <p>Dropdown helped to keep the height short but required multiple taps to select options.</p>
+        <img class="rounded_shadows" src="img/explorations_1.png" alt="" </img>
       </div>
 
       <div class="draft-item">
         <p>Chip-based multi-select at the bottom of the card.</p>
-        <img src="img/explorations_3.png" alt=""> </img>
+        <img class="rounded_shadows" src="img/explorations_3.png" alt=""> </img>
 
       </div>
     </div>
@@ -580,7 +597,7 @@
   </section> -->
 
   <!-- ── A NEW SCREEN ── -->
-  <section class="slide slide-statement">
+  <section class="slide slide-statement light-bg h55vh">
     <div class="header">
       <p class="label">Conclusion</p>
       <h1>A dedicated screen was necessary. One that could scale the preference experience without compromising the room selection flow.</h1>
@@ -588,9 +605,9 @@
   </section>
 
   <!-- ── CHAPTER: ARC 1 ── -->
-  <section class="slide slide-chapter">
+  <section class="slide slide-chapter mb-0 mt-0">
     <span class="chapter-eyebrow">Process · Chapter 02</span>
-    <h2 class="chapter-title">Arc 1 — Proving the concept</h2>
+    <h2 class="chapter-title">Proving the concept</h2>
     <p class="chapter-desc">With a dedicated screen established as the right direction, the next question was the container. Two variants, one clear tension: protecting conversion against maximising customisation rate.</p>
     <div class="chapter-meta">
       <div class="chapter-meta-item">
@@ -652,9 +669,10 @@
     </div>
     <div class="draft-grid grid-2 w50-50">
       <div class="draft-item">
-        <div class="phone">
+        <!-- <div class="phone">
           <img src="img/rc.png" alt="">
-        </div>
+        </div> -->
+        <video src="bottom sheet.mp4" autoplay muted></video>
         <p class="title">Full screen</p>
         <a href="#" class="proto-btn">Start prototype ↗</a>
         <p>A single screen for all room customisation. This would boost engagement by surfacing options upfront, and
@@ -670,9 +688,10 @@
             </div>
       </div>
       <div class="draft-item">
-        <div class="phone">
+        <!-- <div class="phone">
           <img src="img/bt1.png" alt="">
-        </div>
+        </div> -->
+        <video src="bottom sheet.mp4" autoplay muted></video>
         <p class="title">Two steps</p>
         <a href="#" class="proto-btn">Start prototype ↗</a>
         <p>I focused this proposal on splitting the customization flow across multiple screens, giving each room its own dedicated space with radio groups to display preferences clearly.
@@ -714,25 +733,25 @@
       <p>I took the single-screen structure of Variant 2 and replaced the complex input components with radio buttons — the simplest possible interaction for selecting one option. No dropdown overhead. No container designed for a future that wasn't here yet.</p>
       <p><B>The next iteration reached full-on.</B></p>
     </div>
-    <div class="phone-wrap">
               <div class="phone">
-                <div class="phone-notch"></div>
-                <div class="phone-status"><span>9:41</span><span>●●●</span></div>
-                <div class="phone-content">
-                  <div class="phone-screen-label">Awareness only</div>
-                </div>
-                <div class="phone-home"></div>
-              </div>
-            </div>
+                  <img src="img/full_on.png" alt="">  </div>
           </div>
   </section>
+
+  <section class="slide slide-statement">
+    <div class="header">
+      <h1>With the customiser commercially proven at full-on, we took our results to other teams. <br>The goal: Make the Room
+      Customiser the single place where guests could set their preferences.</h1>
+    </div>
+  </section>
+
+  
 
   <!-- ── COLLAB ── -->
   <section class="slide bg-designs">
     <div class="header">
       <p class="label">Collaboration</p>
-      <h1>Two cross-team experiments. One worked.</h1>
-      <p>With the customiser commercially proven at full-on, we took our results to other teams. The goal: make the Room Customiser the single place where guests could set their preferences.</p>
+      <h1>Two cross-team experiments:<br>A victory and a learning.</h1>
     </div>
     <div class="collab-grid wide">
 
@@ -789,19 +808,19 @@
 
   <!-- ── BLOCK-OUT ── -->
   <section class="slide">
-    <div class="header header--left">
+    <div class="header">
       <p class="label">Validation · End of 2022</p>
       <h1>To prove business value, we removed the feature entirely.</h1>
-      <p>By the end of 2022, the customiser had been iterated through several experiments — awareness, inline selection, IA restructuring — and had reached full-on on Android. To confirm that the incremental bookings we were seeing were genuinely caused by the feature, and not by seasonal trends or measurement noise, the PM ran a block-out experiment: the customiser was removed from Android entirely and users were reverted to the original free-text field.</p>
-      <p>The result was unambiguous. Removing the feature cost approximately <strong>500 bookings per night</strong> on Android alone. This wasn't a marginal signal — it was a clear commercial case for continued investment, and it directly informed the decision to pursue a more ambitious multi-step structure in 2023.</p>
-      <p>The block-out also served a secondary purpose: it gave leadership a concrete data point to justify resourcing a longer design and engineering cycle. Without it, the conversation about building a multi-step customiser would have started from assumptions. With it, we started from evidence.</p>
+      <p class="tal">By the end of 2022, the customiser had been iterated through several experiments — awareness, inline selection, IA restructuring — and had reached full-on on Android. To confirm that the incremental bookings we were seeing were genuinely caused by the feature, and not by seasonal trends or measurement noise, the PM ran a block-out experiment: the customiser was removed from Android entirely and users were reverted to the original free-text field.</p>
+      <p class="tal">The result was unambiguous. Removing the feature cost approximately <strong>500 bookings per night</strong> on Android alone. This wasn't a marginal signal — it was a clear commercial case for continued investment, and it directly informed the decision to pursue a more ambitious multi-step structure in 2023.</p>
+      <p class="tal">The block-out also served a secondary purpose: it gave leadership a concrete data point to justify resourcing a longer design and engineering cycle. Without it, the conversation about building a multi-step customiser would have started from assumptions. With it, we started from evidence.</p>
     </div>
   </section>
 
-  <!-- ── CHAPTER: ARC 2 ── -->
+  <!-- ── CHAPTER: ARC 2 ·─ -->
   <section class="slide slide-chapter">
     <span class="chapter-eyebrow">Process · Chapter 03</span>
-    <h2 class="chapter-title">Arc 2 — Finding the right structure</h2>
+    <h2 class="chapter-title">Finding the right structure</h2>
     <p class="chapter-desc">The single-screen customiser was commercially proven. The question shifted from whether to build a dedicated flow, to how that flow should work across multiple rooms and preferences.</p>
     <div class="chapter-meta">
       <div class="chapter-meta-item">
@@ -820,36 +839,51 @@
   </section>
 
   <!-- ── ARC 2 ── -->
-  <section class="slide">
-    <div class="header header--left">
+  <section class="slide wide slide_100">
+    <div class="header header">
       <p class="label">Arc 2 · 2023 · Finding the Right Structure</p>
       <h1>The question shifted from what to how.</h1>
       <p>With the single-screen customiser proven commercially, the next question was flow structure. I evaluated 7 alternatives to single-screen and narrowed to two challengers, before pushing back on the PM's sequencing plan to test multi-step directly.</p>
     </div>
-    <div class="exp-steps">
-      <div class="exp-step">
+    <div class="exp-steps exp-steps-wide">
+      <div class="exp-step exp-step">
         <div class="exp-step-num">A</div>
+        <div class="exp-step-body">
+          <div class="exp-step-title">The User Flow in place</div>
+          <p>From the room list, users can tap "Select and customise" directly on a room card, or navigate into room details first, 
+          where a persistent "Select and customise" CTA sits at the bottom of the page. Both paths lead to the same destination.
+          </p> <p>
+          The customisation screen opens as a bottom sheet overlaid on the current page. Tapping "Confirm" books the room with the selected preferences and advances directly to check-out. </p>
+          <span class="exp-tag decision">Discarded · Room page complexity</span>
+        </div>
+        <div class="flow_container"><img width="1237pX" src="/img/flow/Current flow.png" alt=""></div>
+      </div>
+
+      <div class="exp-step">
+        <div class="exp-step-num">B</div>
         <div class="exp-step-body">
           <div class="exp-step-title">The Linear Flow</div>
           <p>Inspired by e-commerce product detail patterns — sequential screens guaranteeing exposure to each customisation and simplifying tap targets. Backed with a competitor analysis. Ruled out: the room detail page was already dense, and adding customisation would have made it unsustainable.</p>
           <span class="exp-tag decision">Discarded · Room page complexity</span>
         </div>
+        <div class="flow_container"><img width="890px" src="/img/flow/Linear flow.png" alt=""></div>
       </div>
       <div class="exp-step">
-        <div class="exp-step-num">B</div>
+        <div class="exp-step-num">C</div>
         <div class="exp-step-body">
           <div class="exp-step-title">The Multi-Step Customiser</div>
           <p>Each customisation in its own dedicated screen, inspired by airline booking flows. Internal momentum: the lead designer favoured this direction. The PM's plan was to improve single-screen first, then test multi-step.</p>
           <p>I pushed back. Improvements to single-screen would not transfer to multi-step. We'd be optimising a foundation we already knew was going to be replaced. Testing multi-step in its raw state gave a cleaner read on whether the structural approach itself was valid.</p>
           <span class="exp-tag">Full-on · Validated the Microfunnel multi-step hypothesis</span>
         </div>
+        <div class="flow_container"><img width="1237X" src="/img/flow/Current flow.png" alt=""></div>
       </div>
     </div>
   </section>
 
   <!-- ── CONTAINER EXPERIMENT ── -->
   <section class="slide">
-    <div class="header header--left">
+    <div class="header header">
       <p class="label">Container experiment</p>
       <h1>48% of users were leaving by tapping outside.</h1>
       <p>The first multi-step experiment used a bottom sheet as the container. During the experiment review, I noticed 48% of users were leaving the flow by tapping outside the container — a default bottom sheet behaviour, with no confirmation gate. I flagged this as too high and worked with our Lead Designer on two alternatives.</p>
@@ -857,7 +891,7 @@
     <div class="variant-grid">
       <div class="variant-card">
         <span class="variant-label">Alternative A</span>
-        <div class="variant-title">Full Screen</div>
+        <div class="variant-title">Bottom sheet</div>
         <p>Prevented users from leaving the flow entirely. But in a product with Booking.com's information density, a full screen for a single radio button felt disproportionate — signalling a task more complex than it was.</p>
       </div>
       <div class="variant-card">
@@ -865,8 +899,14 @@
         <div class="variant-title">Full Screen Modal</div>
         <p>Let users leave anytime, with Previous/Next controls moved to the bottom. A middle ground between containment and freedom.</p>
       </div>
+      <div class="variant-card">
+        <span class="variant-label">Alternative C</span>
+        <div class="variant-title">Full Screen Modal</div>
+        <p>Let users leave anytime, with Previous/Next controls moved to the bottom. A middle ground between containment and
+          freedom.</p>
+      </div>
     </div>
-    <div class="header header--left">
+    <div class="header header">
       <p>I created and shared a written document laying out the pros and cons of each to shift the conversation from opinion to evidence. The bottom sheet won — it increased customisations the most while remaining non-inferior on conversion.</p>
     </div>
   </section>
@@ -947,6 +987,21 @@
 
 </div>
 
+<!-- <div id="align-tool">
+  <button id="align-tool-btn" title="Header alignment">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="2" width="14" height="2" rx="1" fill="currentColor"/>
+      <rect x="1" y="7" width="9" height="2" rx="1" fill="currentColor"/>
+      <rect x="1" y="12" width="11" height="2" rx="1" fill="currentColor"/>
+    </svg>
+    Align
+  </button>
+  <div id="align-tool-panel" hidden>
+    <div class="align-tool-header">Header alignment</div>
+    <div id="align-tool-list"></div>
+  </div>
+</div> -->
+
 <label class="anim-control" title="Toggle scroll animations">
   <span>Animate all</span>
   <div class="anim-switch">
@@ -954,6 +1009,126 @@
     <span class="anim-track"></span>
   </div>
 </label>
+
+<script>
+  (function () {
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;overflow:visible;z-index:9999;';
+    document.body.appendChild(svg);
+
+    // Add linear gradient to defs
+
+
+    const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+    const marker = document.createElementNS('http://www.w3.org/2000/svg', 'marker');
+    marker.setAttribute('id', 'arrowhead');
+    marker.setAttribute('markerWidth', '8');
+    marker.setAttribute('markerHeight', '8');
+    marker.setAttribute('refX', '4');
+    marker.setAttribute('refY', '4');
+    marker.setAttribute('orient', 'auto');
+    const arrowShape = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    arrowShape.setAttribute('d', 'M0,0 L8,4 L0,8 Z');
+    arrowShape.setAttribute('fill', '#a9afac');
+    arrowShape.style.opacity = '0';
+    arrowShape.style.transition = 'opacity 0.3s ease 0.85s';
+    marker.appendChild(arrowShape);
+    defs.appendChild(marker);
+    svg.appendChild(defs);
+
+    const gradient = document.createElementNS('http://www.w3.org/2000/svg', 'linearGradient');
+    gradient.setAttribute('id', 'arrowGradient');
+    gradient.setAttribute('x1', '0');
+    gradient.setAttribute('y1', '1');  // bottom
+    gradient.setAttribute('x2', '0');
+    gradient.setAttribute('y2', '0');  // top
+    gradient.setAttribute('gradientUnits', 'objectBoundingBox');
+
+    const stop1 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
+    stop1.setAttribute('offset', '0%');
+    stop1.setAttribute('stop-color', '#a9afac' );      // bottom color
+    stop1.setAttribute('stop-opacity', '1');
+
+    const stop2 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
+    stop2.setAttribute('offset', '60%');
+    stop2.setAttribute('stop-color', '#e0e5e3');      // top color
+    stop2.setAttribute('stop-opacity', '1');          // fades to transparent
+
+    gradient.appendChild(stop1);
+    gradient.appendChild(stop2);
+    defs.appendChild(gradient);
+
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('fill', 'none');
+  
+    path.setAttribute('stroke', 'url(#arrowGradient)');
+
+    path.setAttribute('stroke-width', '2');
+    path.setAttribute('stroke-linecap', 'round');
+    path.setAttribute('marker-end', 'url(#arrowhead)');
+    svg.appendChild(path);
+
+    const lastStep = [...document.querySelectorAll('.exp-steps .exp-step')].pop();
+    const fromEl = document.getElementById('last_num');
+  const toEl = document.querySelector('.gradient-color .header h1');
+
+    if (!fromEl || !toEl) return;
+
+    let animated = false;
+    function updatePath() {
+      const fromRect = fromEl.getBoundingClientRect();
+      const toRect = toEl.getBoundingClientRect();
+
+      const startOffsetY = 20;  // move start point down
+      const endOffsetY = -20;   // move end point up
+
+      const x1 = fromRect.left + fromRect.width / 2 + window.scrollX;
+      const y1 = fromRect.bottom + window.scrollY + startOffsetY;
+      const x2 = toRect.left + window.scrollX;
+      const y2 = toRect.top + toRect.height / 2 + window.scrollY + endOffsetY;
+
+      const cp1x = x1;
+      const cp1y = y2;
+      const cp2x = x1;
+      const cp2y = y2;
+
+      const d = `M ${x1} ${y1} C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${x2} ${y2}`;
+      path.setAttribute('d', d);
+
+      if (!animated) {
+        const length = path.getTotalLength();
+        path.style.transition = 'none';
+        path.style.strokeDasharray = length;
+        path.style.strokeDashoffset = length;
+      }
+    }
+    function triggerAnimation() {
+      const length = path.getTotalLength();
+      path.style.strokeDasharray = length;
+      path.style.strokeDashoffset = length;
+      path.getBoundingClientRect();
+      path.style.transition = 'stroke-dashoffset 1s cubic-bezier(0.4, 0, 0.2, 1)';
+      path.style.strokeDashoffset = 0;
+      arrowShape.style.opacity = '1';
+      animated = true;
+    }
+
+    window.addEventListener('resize', updatePath);
+    updatePath();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          updatePath();
+          triggerAnimation();
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+
+    observer.observe(toEl);
+  })();
+</script>
 
 <script>
   const slideObserver = new IntersectionObserver(entries => {
@@ -964,118 +1139,28 @@
 
   document.querySelectorAll('.slide').forEach(s => slideObserver.observe(s));
 
+  const stepObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('seen');
+        stepObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.05, rootMargin: '0px 0px 80px 0px' });
+
+  document.querySelectorAll('.exp-step').forEach(el => stepObserver.observe(el));
+
   document.getElementById('anim-ext').addEventListener('change', e => {
     document.body.classList.toggle('anim-all', e.target.checked);
     document.querySelectorAll('.slide').forEach(s => s.classList.remove('in-view'));
   });
 </script>
 
-<script>
-  const cards = [...document.querySelectorAll('.card')];
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
-  const showAllBtn = document.getElementById('showAllBtn');
-  const allDetails = document.getElementById('allDetails');
-  const sliderSection = document.querySelector('.slider-section');
-  const winBadge = document.getElementById('winBadge');
-  const WIN_INDEX = 2;
 
-  let current = 0;
-  let badgeShown = false;
-  let allMode = false;
-  let startX = 0;
-  let dragging = false;
 
-  function goTo(index) {
-    if (index < 0 || index >= cards.length) return;
-    current = index;
 
-    cards.forEach((c, i) => {
-      c.classList.toggle('active', i === index);
-      c.classList.toggle('inactive', i !== index);
-    });
 
-    prevBtn.disabled = index === 0;
-    nextBtn.disabled = index === cards.length - 1;
 
-    if (index === WIN_INDEX && !badgeShown) {
-      badgeShown = true;
-      setTimeout(() => winBadge.classList.add('pop'), 300);
-    }
-  }
 
-  // ── All-view toggle ──
-  function buildAllDetails() {
-    allDetails.innerHTML = '';
-    cards.forEach(card => {
-      const labels = card.querySelectorAll('.card-label');
-      const contentLabel = labels[labels.length - 1];
-      const col = document.createElement('div');
-      col.className = 'all-detail-col';
-      [...contentLabel.children].forEach(child => {
-        if (!child.classList.contains('card-title')) {
-          col.appendChild(child.cloneNode(true));
-        }
-      });
-      allDetails.appendChild(col);
-    });
-  }
-
-  function enterAllMode() {
-    allMode = true;
-    cards.forEach(c => {
-      c.classList.remove('inactive');
-      c.classList.add('active');
-    });
-    sliderSection.classList.add('show-all');
-    buildAllDetails();
-    allDetails.style.display = 'grid';
-    prevBtn.disabled = true;
-    nextBtn.disabled = true;
-    showAllBtn.classList.add('active');
-    showAllBtn.textContent = 'Show one at a time';
-  }
-
-  function exitAllMode() {
-    allMode = false;
-    sliderSection.classList.remove('show-all');
-    allDetails.style.display = 'none';
-    goTo(current);
-    showAllBtn.classList.remove('active');
-    showAllBtn.textContent = 'Show all designs together';
-  }
-
-  showAllBtn.addEventListener('click', () => allMode ? exitAllMode() : enterAllMode());
-
-  prevBtn.addEventListener('click', () => goTo(current - 1));
-  nextBtn.addEventListener('click', () => goTo(current + 1));
-
-  document.addEventListener('keydown', e => {
-    if (allMode) return;
-    if (e.key === 'ArrowRight') goTo(current + 1);
-    if (e.key === 'ArrowLeft') goTo(current - 1);
-  });
-
-  const outer = document.getElementById('trackOuter');
-
-  outer.addEventListener('mousedown', e => { dragging = true; startX = e.clientX; });
-  outer.addEventListener('mouseup', e => {
-    if (!dragging) return;
-    dragging = false;
-    if (allMode) return;
-    const d = e.clientX - startX;
-    if (Math.abs(d) > 40) d < 0 ? goTo(current + 1) : goTo(current - 1);
-  });
-  outer.addEventListener('mouseleave', () => { dragging = false; });
-
-  outer.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
-  outer.addEventListener('touchend', e => {
-    if (allMode) return;
-    const d = e.changedTouches[0].clientX - startX;
-    if (Math.abs(d) > 40) d < 0 ? goTo(current + 1) : goTo(current - 1);
-  }, { passive: true });
-
-  goTo(0);
-</script>
 </body>
 </html>
