@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Room Customiser — Booking.com</title>
+  <!-- <link rel="stylesheet" href="room_customiser_case_study.css"> -->
+</head>
+
+<body>
+<div class="page-wrap">
+
+  <!-- ── COVER ── -->
+  <section class="slide blue-bg">
+    <p class="slide-subtitle">Booking.com · 2022–2023</p>
+    <h1>Designing a scalable room customisation system</h1>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <span class="cover-meta-label">Role</span>
+        <span class="cover-meta-value">Product Designer</span>
+      </div>
+      <div class="cover-divider"></div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-label">Platform</span>
+        <span class="cover-meta-value">Android · iOS</span>
+      </div>
+      <div class="cover-divider"></div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-label">Scope</span>
+        <span class="cover-meta-value">Room Selection Apps</span>
+      </div>
+      <div class="cover-divider"></div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-label">Scale</span>
+        <span class="cover-meta-value">Hundreds of thousands of daily sessions</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── OVERVIEW ── -->
+  <section class="slide slide-summary">
+    <div class="header header--left">
+      <!-- <p class="label">Overview</p> -->
+      <h1>Summary</h1>
+    </div>
+    <div class="summary-grid mw-760">
+      <div class="summary-row">
+        <div class="summary-label">Problem</div>
+        <p>Guests had no structured way to express their room preferences — non-guaranteed customisations like bed type, floor, or smoking preference they can request at booking. Partners had no structured way to honour them. Unmet requests were causing cancellations and review score degradation.</p>
+      </div>
+      <div class="summary-row">
+        <div class="summary-label">My role</div>
+        <p>Sole designer on Room Selection Apps. I led the full design process from initial awareness experiments through to a multi-step customisation system — owning all design decisions, cross-team collaboration, and experiment strategy.</p>
+      </div>
+      <div class="summary-row">
+        <div class="summary-label">Impact</div>
+        <p><strong>~500 fewer bookings per night</strong> when the feature was removed. <br><strong>+50%</strong> cot and extra bed requests after cross-team integration.</p>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+  <!-- <section class="slide slide-flow wide">
+    <div class="container">
+      <img width="300px" height="1175px" src="/src/flow/01.png" alt="Image 1">
+      <img width="300px" height="1175px" src="/src/flow/02.png" alt="Image 2">
+      <img width="300px" height="1175px" src="/src/flow/03.png" alt="Image 3">
+      <img width="300px" height="1175px" src="/src/flow/04.png" alt="Image 4">
+      <img width="300px" height="1175px" src="/src/flow/05.png" alt="Image 5">
+      <img width="300px" height="1175px" src="/src/flow/06.png" alt="Image 6">
+      <img width="300px" height="1175px" src="/src/flow/07.png" alt="Image 7">
+    </div>
+  </section> -->
+
+  <!-- ── WHAT WE KNEW ── -->
+  <section class="slide">
+    <div class="header">
+      <p class="label">Discovery</p>
+      <h1>What we knew going in.</h1>
+    </div>
+      <div class="context-layout">
+        <div class="context-col">
+          <h2>What was working</h2>
+          <div class="context-cards">
+            <div class="insight insight--up">
+              <div class="insight-title">Guests</div>
+              <p>Felt more in control by setting expectations upfront, boosting trust and satisfaction.</p>
+            </div>
+            <div class="insight insight--up">
+              <div class="insight-title">Partners</div>
+              <p>1.3 review score uplift for partners who honoured requests — worth ~900€ per year in commission.</p>
+            </div>
+          </div>
+        </div>
+        <div class="context-col">
+          <h2>What wasn't working</h2>
+          <div class="context-cards">
+            <div class="insight">
+              <div class="insight-title">Guests hit a dead end</div>
+              <p>Preferences were only discoverable at the final booking step, via a free-text field — especially frustrating on mobile.</p>
+            </div>
+            <div class="insight">
+              <div class="insight-title">No scale for partners</div>
+              <p>234K unstructured free-text requests per day, with no way to process common ones at scale.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HYPOTHESIS ── -->
+  <section class="slide slide-statement">
+    <div class="header">
+      <p class="label">Our hypothesis</p>
+      <h1>By letting users select preferences during Room Selection, we aimed to replace 234K daily free-text requests with structured, actionable data — without hurting conversion.</h1>
+    </div>
+  </section>
+
+  <!-- ── CHAPTER: FOUNDATION ── -->
+  <section class="slide slide-chapter mb-0">
+    <span class="chapter-eyebrow">Process · Chapter 01</span>
+    <h2 class="chapter-title">Foundation</h2>
+    <p class="chapter-desc">Before designing a dedicated screen, we needed to understand how much the room card could hold — and what happened when we pushed past its limits.</p>
+    <div class="chapter-meta">
+      <div class="chapter-meta-item">
+        <span class="chapter-meta-label">Period</span>
+        <span class="chapter-meta-value">2022</span>
+      </div>
+      <div class="chapter-meta-item">
+        <span class="chapter-meta-label">Platform</span>
+        <span class="chapter-meta-value">Android · iOS</span>
+      </div>
+      <div class="chapter-meta-item">
+        <span class="chapter-meta-label">Focus</span>
+        <span class="chapter-meta-value">Awareness · Inline selection · IA</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOUNDATION ── -->
+  <section class="slide foundation">
+    <div class="header">
+      <p class="label">Process · Foundation</p>
+      <h1>The experiment that set the direction.</h1>
+      <p>Before designing a customisation flow, we needed to establish whether users would engage with preferences inside the room selection context at all. I started with an awareness-only experiment — static bed type options on the room card — to isolate that signal before adding any interaction.</p>
+    </div>
+
+     <div class="exp-steps">
+
+      <div class="exp-step">
+        <div id="last_num" class="exp-step-num">01</div>
+        <div class="exp-step-body">
+          <div class="exp-step-title">Inline selection on the room card</div>
+          <p>With positive awareness signals confirmed, we brought preference selection directly into the room card — below the Select CTA. Focus: bed type, the most requested room-level preference, already an established pattern on Desktop. This tested whether users would engage when given immediate, inline control.</p>
+          <p>I made "No preference" the explicit default. Auto-selecting a bed type for every eligible room would have generated unintentional requests at scale, driving up partner workload and pushing down reply rates — directly undermining the review score improvement the feature was designed to produce.</p>
+          <span class="exp-tag">+4,282 bookings with bed preference</span>
+          <span class="exp-tag decision">Trade-off: lower apparent engagement to protect partner experience</span>
+        </div>
+        <img width="400px" class="rounded_shadows" src="img/first_steps_03.png" alt="Inline selection on the room card">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── INSIGHT STATEMENT ── -->
+  <section class="slide slide-statement gradient-color">
+    <div class="header">
+      <p class="label">Insight</p>
+      <h1>As experiments showed positive signals, I began exploring designs that could support multiple preferences simultaneously.</h1>
+    </div>
+  </section>
+
+  <!-- ── CEILING ── -->
+  <section class="slide wide center">
+    <div class="header">
+      <p class="label">Challenge</p>
+      <h1>The limits of the Room Card.</h1>
+
+      <p>Even two preferences would significantly increase card height, hurting scannability and comparison. Past A/B tests
+        confirmed this — small height increases consistently hurt conversion — so this direction was discarded early.</p>
+      <!-- <h1>Multiple user preferences initial drafts</h1>
+
+      <p>I start with the simplest possible solution to surface limitations early. The first question: What if
+        users could select preferences directly from the room card?</p>
+
+      <p>Even two preferences would significantly increase card height, hurting scannability and comparison. Past A/B
+        tests confirmed this — small height increases consistently hurt conversion — so this direction was discarded
+        early.</p> -->
+    </div>
+
+    <div class="draft-grid">
+      <div class="draft-item">
+        <P>Base room card</P>
+        <img class="rounded_shadows" src="img/explorations_base.png" alt="" </img>
+      </div>
+      <div class="draft-item">
+        <P>Adding two preferences easily doubled the room card height.</P>
+        <img class="rounded_shadows" src="img/explorations_0.png" alt="" </img>
+      </div>
+      <div class="draft-item">
+        <p>Dropdown helped to keep the height short but required multiple taps to select options.</p>
+        <img class="rounded_shadows" src="img/explorations_1.png" alt="" </img>
+      </div>
+
+      <div class="draft-item">
+        <p>Chip-based multi-select at the bottom of the card.</p>
+        <img class="rounded_shadows" src="img/explorations_3.png" alt=""> </img>
+
+      </div>
+    </div>
+  </section>
+  <!-- <section class="slide wide">
+    <div class="header header--left">
+      <p class="label">Challenge</p>
+      <h1>The limits of the Room Card.</h1>
+      <p>As experiments showed positive signals, I began exploring designs that could support multiple preferences simultaneously. I started with the simplest possible solution to surface limitations early. The first question: what if users could select preferences directly from the room card?</p>
+      <p>Even two preferences would significantly increase card height, hurting scannability and comparison. Past A/B tests confirmed this — small height increases consistently hurt conversion — so this direction was discarded early.</p>
+    </div>
+    <div class="draft-grid">
+      <div class="draft-item">
+        <p>Base room card</p>
+        <div class="draft-placeholder">
+          <span>Base room card</span>
+        </div>
+      </div>
+      <div class="draft-item">
+        <p>Two preferences can easily double the room card height.</p>
+        <div class="draft-placeholder">
+          <span>Two preferences</span>
+        </div>
+      </div>
+      <div class="draft-item">
+        <p>Using dropdowns, the pattern suggested by Design Systems team.</p>
+        <div class="draft-placeholder">
+          <span>Dropdowns</span>
+        </div>
+      </div>
+      <div class="draft-item">
+        <p>Chip-based multi-select at the bottom of the card.</p>
+        <div class="draft-placeholder">
+          <span>Chips</span>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- ── A NEW SCREEN ── -->
+  <section class="slide slide-statement light-bg h55vh">
+    <div class="header">
+      <p class="label">Conclusion</p>
+      <h1>A dedicated screen was necessary. One that could scale the preference experience without compromising the room selection flow.</h1>
+    </div>
+  </section>
+
+  <!-- ── CHAPTER: ARC 1 ── -->
+  <section class="slide slide-chapter mb-0 mt-0">
+    <span class="chapter-eyebrow">Process · Chapter 02</span>
+    <h2 class="chapter-title">Proving the concept</h2>
+    <p class="chapter-desc">With a dedicated screen established as the right direction, the next question was the container. Two variants, one clear tension: protecting conversion against maximising customisation rate.</p>
+    <div class="chapter-meta">
+      <div class="chapter-meta-item">
+        <span class="chapter-meta-label">Period</span>
+        <span class="chapter-meta-value">2022</span>
+      </div>
+      <div class="chapter-meta-item">
+        <span class="chapter-meta-label">Platform</span>
+        <span class="chapter-meta-value">Android · iOS</span>
+      </div>
+      <div class="chapter-meta-item">
+        <span class="chapter-meta-label">Focus</span>
+        <span class="chapter-meta-value">Container · Collaboration · Validation</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FIRST CONTAINER EXPERIMENT ── -->
+
+
+  <!-- <section class="slide bg-designs">
+    <div class="header">
+      <p class="label">Arc 1 · 2022 · Proving the Concept</p>
+      <h1>Two variants. Two competing risks.</h1>
+      <p>I designed the first container experiment around a clear tension: protecting conversion versus maximising customisation rate. User testing showed both performed well — 6 out of 8 users preferred the bottom sheet, as did I. Both variants were built to accommodate multiple preferences simultaneously, future-proofed for a roadmap that had not yet arrived.</p>
+    </div>
+    <div class="variant-grid">
+      <div class="variant-card">
+        <span class="variant-label">Variant 1</span>
+        <div class="variant-title">Bottom Sheet</div>
+        <div class="variant-hypo">Hypothesis: keep the customisation layer lightweight so users don't perceive it as an obstacle. Minimise perceived commitment to protect conversion.</div>
+        <p>A lightweight overlay keeping users anchored in the room list. The concern: an extra full screen would push users back and hurt conversion.</p>
+        <div class="variant-result">
+          <span class="variant-result-label">Result · booked_with_pref</span>
+          <span class="variant-result-val">−15%</span>
+        </div>
+      </div>
+      <div class="variant-card">
+        <span class="variant-label">Variant 2</span>
+        <div class="variant-title">Full Screen</div>
+        <div class="variant-hypo">Hypothesis: give the customisation task its own dedicated space. Full focus and clarity will maximise customisation rate.</div>
+        <p>A dedicated screen for all room customisation. Dropdowns to manage height across multiple rooms and preferences.</p>
+        <div class="variant-result">
+          <span class="variant-result-label">Result · conversion</span>
+          <span class="variant-result-val">−12%</span>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <section class="slide bg-designs">
+    <div class="header">
+      <p class="label">Arc 1 · 2022 · Proving the Concept</p>
+      <h1>Two variants. Two competing risks.</h1>
+      <p>The first container experiment tested a clear tension: protecting conversion versus maximising customisation rate. Both variants were built to accommodate multiple preferences simultaneously — future-proofed for a roadmap that had not yet arrived.</p>
+    </div>
+    <div class="draft-grid grid-2 w50-50">
+      <div class="draft-item">
+        <video src="bottom sheet.mp4" autoplay muted></video>
+        <p class="title">Full screen</p>
+        <a href="#" class="proto-btn">Start prototype ↗</a>
+        <p>A single screen for all preferences, using dropdowns to manage height. All options visible at once.</p>
+        <div class="variant-result">
+          <span class="variant-result-label">Result · booked_with_pref</span>
+          <span class="variant-result-val">−15%</span>
+        </div>
+      </div>
+      <div class="draft-item">
+        <video src="bottom sheet.mp4" autoplay muted></video>
+        <p class="title">Two steps</p>
+        <a href="#" class="proto-btn">Start prototype ↗</a>
+        <p>Each room on its own screen with radio groups. More space per room, but harder to see all selections at once.</p>
+        <div class="variant-result">
+          <span class="variant-result-label">Result · booked_with_pref</span>
+          <span class="variant-result-val">−15%</span>
+        </div>
+      </div>
+  </section>
+
+  <!-- <section class="slide">
+    <div class="header">
+      <p class="label">Insight</p>
+      <h1>A new screen was needed</h1>
+      <p>After testing multiple approaches within the room card, it became clear that a dedicated screen was the right
+        path: one that could scale the preference experience without compromising the room selection flow.</p>
+    </div>
+  </section> -->
+  
+  <!-- ── DIAGNOSIS ── -->
+  <section class="slide slide-statement">
+    <div class="header">
+      <p class="label">Diagnosis</p>
+      <h1>Both designs hurt the metric they were built to improve. The root cause: we had over-engineered for a future state that hadn't arrived yet.</h1>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="w50-50">
+    <div class="header header--left">
+      <p class="label">Decision</p>
+      <h1>Back to basics.</h1>
+      <p>Both containers had been built to hold multiple preferences — future-proofed for a roadmap that wasn't arriving on schedule. The structural complexity was creating friction for what was, at that moment, a single-choice task.</p>
+      <p>I took the single-screen structure of Variant 2 and replaced the complex input components with radio buttons — the simplest possible interaction for selecting one option. No dropdown overhead. No container designed for a future that wasn't here yet.</p>
+      <p><B>The next iteration reached full-on.</B></p>
+    </div>
+              <div class="phone">
+                  <img src="img/full_on.png" alt="">  </div>
+          </div>
+  </section>
+
+
+  <!-- ── BLOCK-OUT ── -->
+  <section class="slide">
+    <div class="header">
+      <p class="label">Validation · End of 2022</p>
+      <h1>To prove business value, we removed the feature entirely.</h1>
+      <p class="tal">With the customiser at full-on on Android, the PM ran a block-out experiment — removing it entirely and reverting users to the free-text field — to confirm the incremental bookings were genuinely caused by the feature, not by seasonal trends.</p>
+      <p class="tal">The result was unambiguous. Removing the feature cost approximately <strong>500 bookings per night</strong> on Android alone. It gave leadership a concrete data point to justify resourcing a more ambitious multi-step structure in 2023 — the conversation started from evidence, not assumptions.</p>
+    </div>
+  </section>
+
+  <!-- ── CHAPTER: ARC 2 ·─ -->
+  <section class="slide slide-chapter">
+    <span class="chapter-eyebrow">Process · Chapter 03</span>
+    <h2 class="chapter-title">Finding the right structure</h2>
+    <p class="chapter-desc">The single-screen customiser was commercially proven. The question shifted from whether to build a dedicated flow, to how that flow should work across multiple rooms and preferences.</p>
+    <div class="chapter-meta">
+      <div class="chapter-meta-item">
+        <span class="chapter-meta-label">Period</span>
+        <span class="chapter-meta-value">2023</span>
+      </div>
+      <div class="chapter-meta-item">
+        <span class="chapter-meta-label">Platform</span>
+        <span class="chapter-meta-value">Android · iOS</span>
+      </div>
+      <div class="chapter-meta-item">
+        <span class="chapter-meta-label">Focus</span>
+        <span class="chapter-meta-value">Multi-step · Container · Microfunnel</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ARC 2 ── -->
+  <section class="slide wide slide_100">
+    <div class="header header">
+      <p class="label">Arc 2 · 2023 · Finding the Right Structure</p>
+      <h1>The question shifted from what to how.</h1>
+      <p>With the single-screen customiser proven commercially, the question shifted to flow structure. I evaluated alternatives and narrowed to three, before pushing back on the PM's plan to improve single-screen first — optimising a foundation we already knew would be replaced gave no useful signal.</p>
+    </div>
+    <div class="exp-steps exp-steps-wide">
+      <div class="exp-step exp-step">
+        <div class="exp-step-num">A</div>
+        <div class="exp-step-body">
+          <div class="exp-step-title">The User Flow in place</div>
+          <p>"Select and customise" CTA on the room card or room detail page, opening a bottom sheet that leads directly to check-out.</p>
+          <span class="exp-tag decision">Discarded · Room page complexity</span>
+        </div>
+        <div class="flow_container"><img width="1237pX" src="/img/flow/Current flow.png" alt=""></div>
+      </div>
+
+      <div class="exp-step">
+        <div class="exp-step-num">B</div>
+        <div class="exp-step-body">
+          <div class="exp-step-title">The Linear Flow</div>
+          <p>Sequential screens per customisation, inspired by e-commerce product detail patterns. Ruled out: the room detail page was already dense.</p>
+          <span class="exp-tag decision">Discarded · Room page complexity</span>
+        </div>
+        <div class="flow_container"><img width="890px" src="/img/flow/Linear flow.png" alt=""></div>
+      </div>
+      <div class="exp-step">
+        <div class="exp-step-num">C</div>
+        <div class="exp-step-body">
+          <div class="exp-step-title">The Multi-Step Customiser</div>
+          <p>Each customisation in its own dedicated screen, inspired by airline booking flows. Tested in its raw state to get a clean read on whether the structural approach itself was valid — not an optimised version of a design we'd replace.</p>
+          <span class="exp-tag">Full-on · Validated the Microfunnel multi-step hypothesis</span>
+        </div>
+        <div class="flow_container"><img width="1237X" src="/img/flow/Current flow.png" alt=""></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTAINER EXPERIMENT ── -->
+  <section class="slide">
+    <div class="header header">
+      <p class="label">Container experiment</p>
+      <h1>48% of users were leaving by tapping outside.</h1>
+      <p>The first multi-step experiment used a bottom sheet as the container. During review, I noticed 48% of users were exiting by tapping outside — a default bottom sheet behaviour with no confirmation gate. I worked with the Lead Designer on alternatives and shared a written pros/cons document to move the conversation from opinion to evidence.</p>
+      <p>The bottom sheet won — it increased customisations the most while remaining non-inferior on conversion.</p>
+    </div>
+  </section>
+
+  <!-- ── FINAL EVOLUTION ── -->
+  <!-- <section class="slide slide-statement">
+    <div class="header">
+      <p class="label">Final evolution</p>
+      <h1>We removed the entry point entirely. Customisation surfaced directly in the first screen of the flow.</h1>
+    </div>
+  </section> -->
+
+  <!-- ── IMPACT ── -->
+  <section class="slide">
+    <div class="header">
+      <p class="label">Impact</p>
+      <h1>What the experiments proved.</h1>
+    </div>
+    <div class="impact-grid">
+      <div class="impact-cell">
+        <span class="impact-cell-label">Block-out experiment · Android</span>
+        <span class="impact-cell-val positive">~500 BPDs</span>
+        <p>Fewer bookings per night when the customiser was removed. Direct confirmation of incremental value.</p>
+      </div>
+      <div class="impact-cell">
+        <span class="impact-cell-label">Cots and extra beds</span>
+        <span class="impact-cell-val positive">+50%</span>
+        <p>Requests on the first experiment run. <br>No conversion drop.</p>
+      </div>
+      <div class="impact-cell">
+        <span class="impact-cell-label">Awareness experiments · conversion</span>
+        <span class="impact-cell-val positive">+3.54%</span>
+        <p>Lift on first awareness experiment. <br>+1.08% on second. Surfacing options earlier moved the needle.</p>
+      </div>
+      <div class="impact-cell">
+        <span class="impact-cell-label">"Select and customise" CTA · booked_with_pref</span>
+        <span class="impact-cell-val positive">+39.56%</span>
+        <p>Copy proved more impactful than layout. A finding that shaped how we approached future experiments.</p>
+      </div>
+      <div class="impact-cell">
+        <span class="impact-cell-label">Multi-step experiment</span>
+        <span class="impact-cell-val positive">Full-on</span>
+        <p>Validated that room selection can work across multiple steps — the foundational assumption of the Microfunnel vision.</p>
+      </div>
+      <div class="impact-cell">
+        <span class="impact-cell-label">Multi-step booked_with_pref</span>
+        <span class="impact-cell-val pending">To be confirmed</span>
+        <p>Metric to be retrieved from experiment report.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── REFLECTION ── -->
+  <section class="slide">
+    <div class="header">
+      <p class="label">Reflection</p>
+      <h1>What I'd do differently.</h1>
+    </div>
+    <div class="reflection-list">
+      <div class="reflection-item">
+        <div class="reflection-title">Don't design containers for roadmap assumptions without validating the delivery timeline.</div>
+        <p>The first experiment failed because I built for multiple preferences before confirming when they were technically arriving. Earlier pushback on that dependency would have saved an experiment cycle.</p>
+      </div>
+      <div class="reflection-item">
+        <div class="reflection-title">User testing and quantitative experiments answer different questions.</div>
+        <p>Early user testing indicated a preference for the bottom sheet. The experiment showed the full screen performing better. Small sample qualitative research tells you about comprehension and comfort — it cannot predict behaviour at scale. Both signal types are necessary; neither is sufficient alone.</p>
+      </div>
+      <div class="reflection-item">
+        <div class="reflection-title">The confirmation dialog was never tested.</div>
+        <p>We shipped a working solution but left an open question: was the 48% bottom sheet abandonment intentional or accidental? Understanding the mechanism, not just the outcome, would have informed future iterations more precisely.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- <div id="align-tool">
+  <button id="align-tool-btn" title="Header alignment">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="2" width="14" height="2" rx="1" fill="currentColor"/>
+      <rect x="1" y="7" width="9" height="2" rx="1" fill="currentColor"/>
+      <rect x="1" y="12" width="11" height="2" rx="1" fill="currentColor"/>
+    </svg>
+    Align
+  </button>
+  <div id="align-tool-panel" hidden>
+    <div class="align-tool-header">Header alignment</div>
+    <div id="align-tool-list"></div>
+  </div>
+</div> -->
+
+<label class="anim-control" title="Toggle scroll animations">
+  <span>Animate all</span>
+  <div class="anim-switch">
+    <input type="checkbox" id="anim-ext">
+    <span class="anim-track"></span>
+  </div>
+</label>
+
+<script>
+  (function () {
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;overflow:visible;z-index:9999;';
+    document.body.appendChild(svg);
+
+    // Add linear gradient to defs
+
+
+    const defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+    const marker = document.createElementNS('http://www.w3.org/2000/svg', 'marker');
+    marker.setAttribute('id', 'arrowhead');
+    marker.setAttribute('markerWidth', '8');
+    marker.setAttribute('markerHeight', '8');
+    marker.setAttribute('refX', '4');
+    marker.setAttribute('refY', '4');
+    marker.setAttribute('orient', 'auto');
+    const arrowShape = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    arrowShape.setAttribute('d', 'M0,0 L8,4 L0,8 Z');
+    arrowShape.setAttribute('fill', '#a9afac');
+    arrowShape.style.opacity = '0';
+    arrowShape.style.transition = 'opacity 0.3s ease 0.85s';
+    marker.appendChild(arrowShape);
+    defs.appendChild(marker);
+    svg.appendChild(defs);
+
+    const gradient = document.createElementNS('http://www.w3.org/2000/svg', 'linearGradient');
+    gradient.setAttribute('id', 'arrowGradient');
+    gradient.setAttribute('x1', '0');
+    gradient.setAttribute('y1', '1');  // bottom
+    gradient.setAttribute('x2', '0');
+    gradient.setAttribute('y2', '0');  // top
+    gradient.setAttribute('gradientUnits', 'objectBoundingBox');
+
+    const stop1 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
+    stop1.setAttribute('offset', '0%');
+    stop1.setAttribute('stop-color', '#a9afac' );      // bottom color
+    stop1.setAttribute('stop-opacity', '1');
+
+    const stop2 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
+    stop2.setAttribute('offset', '60%');
+    stop2.setAttribute('stop-color', '#e0e5e3');      // top color
+    stop2.setAttribute('stop-opacity', '1');          // fades to transparent
+
+    gradient.appendChild(stop1);
+    gradient.appendChild(stop2);
+    defs.appendChild(gradient);
+
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('fill', 'none');
+  
+    path.setAttribute('stroke', 'url(#arrowGradient)');
+
+    path.setAttribute('stroke-width', '2');
+    path.setAttribute('stroke-linecap', 'round');
+    path.setAttribute('marker-end', 'url(#arrowhead)');
+    svg.appendChild(path);
+
+    const lastStep = [...document.querySelectorAll('.exp-steps .exp-step')].pop();
+    const fromEl = document.getElementById('last_num');
+  const toEl = document.querySelector('.gradient-color .header h1');
+
+    if (!fromEl || !toEl) return;
+
+    let animated = false;
+    function updatePath() {
+      const fromRect = fromEl.getBoundingClientRect();
+      const toRect = toEl.getBoundingClientRect();
+
+      const startOffsetY = 20;  // move start point down
+      const endOffsetY = -20;   // move end point up
+
+      const x1 = fromRect.left + fromRect.width / 2 + window.scrollX;
+      const y1 = fromRect.bottom + window.scrollY + startOffsetY;
+      const x2 = toRect.left + window.scrollX;
+      const y2 = toRect.top + toRect.height / 2 + window.scrollY + endOffsetY;
+
+      const cp1x = x1;
+      const cp1y = y2;
+      const cp2x = x1;
+      const cp2y = y2;
+
+      const d = `M ${x1} ${y1} C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${x2} ${y2}`;
+      path.setAttribute('d', d);
+
+      if (!animated) {
+        const length = path.getTotalLength();
+        path.style.transition = 'none';
+        path.style.strokeDasharray = length;
+        path.style.strokeDashoffset = length;
+      }
+    }
+    function triggerAnimation() {
+      const length = path.getTotalLength();
+      path.style.strokeDasharray = length;
+      path.style.strokeDashoffset = length;
+      path.getBoundingClientRect();
+      path.style.transition = 'stroke-dashoffset 1s cubic-bezier(0.4, 0, 0.2, 1)';
+      path.style.strokeDashoffset = 0;
+      arrowShape.style.opacity = '1';
+      animated = true;
+    }
+
+    window.addEventListener('resize', updatePath);
+    updatePath();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          updatePath();
+          triggerAnimation();
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+
+    observer.observe(toEl);
+  })();
+</script>
+
+<script>
+  const slideObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      entry.target.classList.toggle('in-view', entry.isIntersecting);
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.slide').forEach(s => slideObserver.observe(s));
+
+  const stepObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('seen');
+        stepObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.05, rootMargin: '0px 0px 80px 0px' });
+
+  document.querySelectorAll('.exp-step').forEach(el => stepObserver.observe(el));
+
+  document.getElementById('anim-ext').addEventListener('change', e => {
+    document.body.classList.toggle('anim-all', e.target.checked);
+    document.querySelectorAll('.slide').forEach(s => s.classList.remove('in-view'));
+  });
+</script>
+
+
+
+
+
+
+
+</body>
+</html>

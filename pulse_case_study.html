@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pulse Availability Calendar — Booking.com</title>
+  <link rel="stylesheet" href="pulse_case_study.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+</head>
+<body>
+
+<!-- ── NAV SIDEBAR ── -->
+<nav class="case-nav" id="case-nav">
+  <a href="#context" class="case-nav-link case-nav-link--active" data-section="context">Context</a>
+  <a href="#research" class="case-nav-link" data-section="research">Research</a>
+  <a href="#approach" class="case-nav-link" data-section="approach">Approach</a>
+  <a href="#testing" class="case-nav-link" data-section="testing">Testing</a>
+  <a href="#results" class="case-nav-link" data-section="results">Results</a>
+  <a href="#reflection" class="case-nav-link" data-section="reflection">Reflection</a>
+</nav>
+
+<div class="page-wrap">
+
+  <!-- ── COVER ── -->
+  <section class="slide blue-bg" id="cover">
+    <p class="slide-subtitle">Booking.com · 2018–2022</p>
+    <h1>Redesigning the Availability Calendar for 1.25M+ partners</h1>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <span class="cover-meta-label">Role</span>
+        <span class="cover-meta-value">Product Designer</span>
+      </div>
+      <div class="cover-divider"></div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-label">Platform</span>
+        <span class="cover-meta-value">Android iOS</span>
+      </div>
+      <div class="cover-divider"></div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-label">Scope</span>
+        <span class="cover-meta-value">AV Pulse team</span>
+      </div>
+      <div class="cover-divider"></div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-label">Scale</span>
+        <span class="cover-meta-value">1.25M+ accommodation partners, 228 countries</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTEXT ── -->
+  <section class="slide slide-summary" id="context">
+    <div class="header header--left mw-760">
+      <h1>Summary</h1>
+    
+    <div class="summary-grid mw-760">
+      <div class="summary-row">
+        <div class="summary-label">Problem</div>
+        <p>Partners struggled to understand their room status. The calendar used ambiguous colored dots and a flat information architecture that made it impossible to identify which room had an issue on which date. 30% of surveyed partners cited room status comprehension as their biggest pain point.</p>
+      </div>
+      <div class="summary-row">
+        <div class="summary-label">My role</div>
+        <p>Sole designer on the AV Pulse team. I redesigned the Availability Calendar across Android and iOS, owning the project from design sprint through Beta launch — 7 months of iterative research, design decisions, and cross-team collaboration.</p>
+      </div>
+      <div class="summary-row">
+        <div class="summary-label">Impact</div>
+        <p><strong>71% partner satisfaction</strong> (up from 65% baseline). </p><p><strong>75.7% Beta retention</strong> across ~3,900 partners.</p>
+        <p><strong>No negative impact on support tickets, bookings, or app stability.</strong></p>
+      </div>
+    </div>
+    </div>
+<hr>
+    <div class="header header--left mw-760">
+      <p class="label">Context</p>
+      <h1>What is Pulse?</h1>
+      <p>Pulse is Booking.com's mobile app for accommodation partners, available in 43 languages on Android and iOS. At the time of this project, it served over 1.25 million active partners who used it to manage reservations, respond to guests, and update availability and rates on the go. </p> <p>For many of them, especially smaller property owners , Pulse is their main interface with the platform.</p>
+      <p>The Availability tab was widely regarded as the most complex section of the app.</p>
+    </div>
+
+    <!-- <div class="header">
+      <h1>The process</h1>
+      <p>From problem identification to full rollout</p>
+   
+
+    <div class="tl2-wrapper">
+      <div class="tl2-step">
+        <div class="tl2-num">1</div>
+        <div class="tl2-content">
+          <div class="tl2-title">Existing research</div>
+          <div class="tl2-desc">Partner pain points identified and quantified.</div>
+        </div>
+      </div>
+      <div class="tl2-step">
+        <div class="tl2-num">2</div>
+        <div class="tl2-content">
+          <div class="tl2-title">Design Sprint</div>
+          <div class="tl2-desc">My progressive disclosure design is chosen as the blueprint.</div>
+        </div>
+      </div>
+      <div class="tl2-step">
+        <div class="tl2-num">3</div>
+        <div class="tl2-content">
+          <div class="tl2-title">Iterative validation</div>
+          <div class="tl2-desc">Concept refined across 3 rounds with partners and CS agents.</div>
+        </div>
+      </div>
+      <div class="tl2-step tl2-step--outcome">
+        <div class="tl2-num">4</div>
+        <div class="tl2-content">
+          <div class="tl2-title">Final validation (AMS)</div>
+          <div class="tl2-desc">Binary gap confirmed. Third color added.</div>
+        </div>
+      </div>
+      <div class="tl2-step tl2-step--outcome">
+        <div class="tl2-num">5</div>
+        <div class="tl2-content">
+          <div class="tl2-title">Beta launch</div>
+          <div class="tl2-desc">75.7% retention. Satisfaction up.</div>
+        </div>
+      </div>
+      <div class="tl2-step tl2-step--outcome">
+        <div class="tl2-num">6</div>
+        <div class="tl2-content">
+          <div class="tl2-title">A/B → Full-on</div>
+          <div class="tl2-desc">71% satisfaction. No negative impact.</div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  </section>
+
+  <!-- <section class="slide visual-slide" data-visual>
+   
+    <div class="timeline-wrapper">
+      <div class="timeline-row">
+        <div class="timeline-row-label">Research</div>
+        <div class="timeline-row-nodes timeline-row-nodes--dotted">
+          <div class="timeline-node tl-anim">
+            <div class="timeline-dot">1</div>
+            <div class="timeline-phase">Existing research</div>
+            <div class="timeline-insight">Partner pain points identified and quantified.</div>
+          </div>
+          <div class="timeline-node tl-anim">
+            <div class="timeline-dot">2</div>
+            <div class="timeline-phase">Design Sprint</div>
+            <div class="timeline-insight tl-sprint-lines">
+              <span class="tl-sprint-line">My progressive disclosure design</span>
+              <span class="tl-sprint-line">is chosen as the blueprint.</span>
+            </div>
+          </div>
+          <div class="timeline-node tl-anim">
+            <div class="timeline-dot">3</div>
+            <div class="timeline-phase">Iterative validation</div>
+            <div class="timeline-insight">Concept refined across 3 rounds<br>with partners and CS agents.</div>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-connector"></div>
+      <div class="timeline-row">
+        <div class="timeline-row-label">Outcome</div>
+        <div class="timeline-row-nodes timeline-row-nodes--dotted">
+          <div class="timeline-node tl-anim">
+            <div class="timeline-dot">4</div>
+            <div class="timeline-phase">Final validation (AMS)</div>
+            <div class="timeline-insight">Binary gap confirmed.<br>Third color added.</div>
+          </div>
+          <div class="timeline-node tl-anim">
+            <div class="timeline-dot timeline-dot--outcome">5</div>
+            <div class="timeline-phase">Beta launch</div>
+            <div class="timeline-insight">75.7% retention.<br>Satisfaction up.</div>
+          </div>
+          <div class="timeline-node tl-anim">
+            <div class="timeline-dot timeline-dot--outcome">6</div>
+            <div class="timeline-phase">A/B → Full-on</div>
+            <div class="timeline-insight">71% satisfaction.<br>No negative impact.</div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+
+  
+  <!-- </section>  -->
+
+  <!-- ── PROBLEM ── -->
+  <!-- <section class="slide">
+    <div class="header">
+      <p class="label">Problem</p>
+      <h1>The calendar made it impossible for partners to get a clear overview of their availability.</h1>
+    </div>
+    <div class="context-layout">
+      <div class="context-col">
+        <h2>The status system was broken</h2>
+        <div class="context-cards">
+          <div class="insight">
+            <div class="insight-title">The calendar was cluttered with dots that no one could read</div>
+            <p>Four colors, no legend — status information became visual noise.</p>
+          </div>
+          <div class="insight">
+            <div class="insight-title">Partners had to scroll through a long list to find a specific room</div>
+            <p>Time lost and errors made — especially for those managing multiple properties and room types.</p>
+          </div>
+        </div>
+      </div>
+      <div class="context-col">
+        <h2>The task flow was fragmented</h2>
+        <div class="context-cards">
+          <div class="insight">
+            <div class="insight-title">Partners couldn't tell whether a dot referred to the date above or below</div>
+            <p>Leading to edits on the wrong dates.</p>
+          </div>
+          <div class="insight">
+            <div class="insight-title">"Checking & confirming availability" was the #1 reason for CS calls</div>
+            <p>This wasn't just a visual issue — it was a support cost problem.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- ══ VISUAL: Old Calendar ══ -->
+  <section class="slide visual-slide wide bg-designs" data-visual id="research">
+    <div class="header ">
+      <h1>What research told us</h1>
+      <p>Research showed that a cluttered UI was confusing partners, losing their time scrolling through long room lists, and unable to tell why a room was unbookable or how to fix it.
+    </div>
+    <div class="old-cal-layout">
+      <div class="annotations" style="text-align:right">
+        <div class="annotation" style="flex-direction:row-reverse">
+          <div class="annotation-arrow" style="transform:scaleX(-1)"><svg viewBox="0 0 24 24" fill="none" stroke="#D93025" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          <div>
+            <div class="annotation-label">Which date does this dot belong to?</div>
+            <div class="annotation-desc">Dots sit between rows. Partners can't tell if a status refers to the date above or below.</div>
+          </div>
+        </div>
+        <div class="annotation" style="flex-direction:row-reverse">
+          <div class="annotation-arrow" style="transform:scaleX(-1)"><svg viewBox="0 0 24 24" fill="none" stroke="#D93025" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          <div>
+            <div class="annotation-label">4 colors. Partners can't decode them.</div>
+            <div class="annotation-desc">Red, yellow, blue, no dot. Too many states, no explanation.</div>
+          </div>
+        </div>
+      </div>
+      
+        <img class="phone" src="img/pulse/old_cal_1.png" alt="">
+        <img class="phone" src="img/pulse/old_cal_2.png" alt="">
+      
+      <div class="annotations">
+        <div class="annotation">
+          <div class="annotation-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#D93025" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          <div>
+            <div class="annotation-label">All rooms on one page.</div>
+            <div class="annotation-desc">Every property and room type stacked in a flat list. No way to isolate issues.</div>
+          </div>
+        </div>
+        <div class="annotation">
+          <div class="annotation-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#D93025" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+          <div>
+            <div class="annotation-label">Unbookable, but why?</div>
+            <div class="annotation-desc">No guidance on what action to take. Partners don't know how to fix it.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CHAPTER: PROCESS ── -->
+  <section class="slide slide-chapter mb-0">
+    <div class="header header-center">
+    <span class="chapter-eyebrow">Process</span>
+    <h1 class="chapter-title">Defining our approach</h1>
+    <p class="chapter-desc">The redesign was shaped by continuous partner research across 7 months, followed by validation through a Beta program, partner visits, and multiple A/B experiments divided in phases.</p>
+  </div>
+  </section>
+
+  <!-- ══ VISUAL: Timeline ══ -->
+
+
+  <!-- ── DESIGN SPRINT ── -->
+  <section class="slide text_img" id="approach">
+    <div class="header header--left mw-760">
+      <h1>Getting the right people in the room to define the direction.</h1>
+      <p>The Availability Calendar problem was complex enough that it needed alignment and feedback from people with different backgrounds. With that in mind, I organized a two-day design sprint and invited researchers, PMs, and designers from across Pulse and Extranet teams. </p>
+      <p>Day 1 focused on research sharing and problem alignment. Day 2 focused on solution drafting, feedback, and voting.</p>
+      <p>My concept proposed a hierarchy based on progressive disclosure (Property > Room overview > Calendar), with color-coded cells replacing dots and guidance messages explaining room status. It was the most voted concept and became the blueprint for all subsequent iterations.</p>
+    </div>
+  
+  </section>
+
+  <!-- ══ VISUAL: Before/After ══ -->
+  <section class="slide visual-slide wide center" data-visual>
+    <div class="header header-center">
+      <h1>Before and after</h1>
+      <p>From flat list with dots to structured hierarchy with clear status</p>
+    </div>
+    <div class="comparison-layout">
+      <div class="comparison-side">
+        <div class="comparison-label comparison-label--before">Before</div>
+        <div class="comparison-phones row-2">
+       
+        <img class="phone w360" src="img/pulse/old_cal_1.png" alt="">
+        <div class="comparison-arrow">→</div>
+        <img class="phone w360" src="img/pulse/old_cal_2.png" alt="">
+        <div class="seg-grid-header">Property Selector</div>
+        <div></div>
+        <div class="seg-grid-header">Room Selector</div>
+      </div>
+      </div>
+   
+      <div class="comparison-side">
+        <div class="comparison-label comparison-label--after">After</div>
+        <div class="comparison-phones row-3">
+        
+         <img class="phone w360" src="img/pulse/new_cal_1.png" alt="">
+          <div class="comparison-arrow">→</div>
+          <img class="phone w360" src="img/pulse/new_cal_2.png" alt="">
+          <div class="comparison-arrow">→</div>
+          <img class="phone w360" src="img/pulse/new_cal_3.png" alt="">
+          <div class="seg-grid-header">Property Selector</div>
+          <div></div>
+          <div class="seg-grid-header">Room Selector</div>
+          <div></div>
+          <div class="seg-grid-header">Monthly Calendar</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide visual-slide wide" data-visual style="min-height:auto">
+    <div class="header header-center">
+      <h1>Adapted to partner complexity</h1>
+      <p>Personalising the experience for over a million partners with vastly different setups isn't straightforward. I designed a system of three screens that adapts to each segment by showing only what's relevant.
+        One architecture, zero redundant engineering</p>
+    </div>
+    <div class="seg-grid">
+      <div class="seg-grid-header"></div>
+      <div class="seg-grid-header">Property Selector</div>
+      <div class="seg-grid-header">Room Selector</div>
+      <div class="seg-grid-header">Monthly Calendar</div>
+  
+      <div class="seg-grid-label">
+        <div class="segment-badge">Multiple properties</div>
+        <div class="seg-grid-desc">A manager running 3 hotels. Partners need to switch between properties without making
+          mistakes.</div>
+      </div>
+      <div class="seg-grid-cell">
+        <img class="phone phone-xs" src="img/pulse/new_cal_1.png" alt="">
+      </div>
+      <div class="seg-grid-cell">
+        <img class="phone phone-xs" src="img/pulse/new_cal_2.png" alt="">
+      </div>
+      <div class="seg-grid-cell">
+        <img class="phone phone-xs" src="img/pulse/new_cal_3.png" alt="">
+      </div>
+  
+      <div class="seg-grid-label">
+        <div class="segment-badge">Multiple rooms</div>
+        <div class="seg-grid-desc">A boutique hotel with 5 room types. Partners need to see which room has issues at a
+          glance.</div>
+      </div>
+      <div class="seg-grid-cell seg-grid-cell--empty">
+        <div class="seg-grid-na">Not needed</div>
+        <div class="seg-grid-reason">Still one property.</div>
+      </div>
+      <div class="seg-grid-cell">
+        <img class="phone phone-xs" src="img/pulse/new_cal_2.png" alt="">
+      </div>
+      <div class="seg-grid-cell">
+        <img class="phone phone-xs" src="img/pulse/new_cal_3.png" alt="">
+      </div>
+  
+      <div class="seg-grid-label">
+        <div class="segment-badge">1 room type</div>
+        <div class="seg-grid-desc">A studio apartment. Only one room to manage — partners just need a clearer calendar.
+        </div>
+      </div>
+      <div class="seg-grid-cell seg-grid-cell--empty">
+        <div class="seg-grid-na">Not needed</div>
+        <div class="seg-grid-reason">Only one property.</div>
+      </div>
+      <div class="seg-grid-cell seg-grid-cell--empty">
+        <div class="seg-grid-na">Not needed</div>
+        <div class="seg-grid-reason">Only one room type.</div>
+      </div>
+      <div class="seg-grid-cell">
+        <img class="phone phone-xs" src="img/pulse/new_cal_3.png" alt="">
+      </div>
+    </div>
+  </section>
+
+  <section class="slide visual-slide wide center" data-visual>
+    <div class="header header-center">
+      <h1>From ambiguous to obvious</h1>
+      <p>A color-coded calendar replaces hard-to-read dots. Each cell makes availability status immediately clear — no
+      interpretation needed.</p>
+</div>
+<table class="color-table mw-960">
+  <thead>
+
+    <tr>
+      <td></td>
+      <td>
+        <div class="cal-grid" style="grid-template-columns:repeat(4,1fr);max-width:320px">
+          <div class="cal-grid-cell day" style="font-size:22px;padding:12px 0 8px">11<div class="dots" style="gap:4px;margin-top:6px"><span class="dot dot--red" style="width:8px;height:8px"></span></div></div>
+          <div class="cal-grid-cell day" style="font-size:22px;padding:12px 0 8px">12<div class="dots" style="gap:4px;margin-top:6px"><span class="dot dot--yellow" style="width:8px;height:8px"></span><span class="dot dot--red" style="width:8px;height:8px"></span></div></div>
+          <div class="cal-grid-cell day" style="font-size:22px;padding:12px 0 8px;grid-column:span 2;display:flex;justify-content:space-around">13<span>14</span></div>
+          <div class="cal-grid-cell day" style="font-size:22px;padding:12px 0 8px">18</div>
+          <div class="cal-grid-cell day" style="font-size:22px;padding:12px 0 8px">19<div class="dots" style="gap:4px;margin-top:6px"><span class="dot dot--yellow" style="width:8px;height:8px"></span></div></div>
+          <div class="cal-grid-cell day" style="font-size:22px;padding:12px 0 8px;grid-column:span 2;display:flex;justify-content:space-around">20<span>21</span></div>
+        </div>
+      </td>
+      <td>
+        <div class="cal-grid" style="grid-template-columns:repeat(4,1fr);max-width:320px;gap:4px">
+          <div class="cal-grid-cell day cell--red" style="font-size:22px;padding:14px 0;border-radius:50px">11</div>
+          <div class="cal-grid-cell day cell--yellow" style="font-size:22px;padding:14px 0;border-radius:50px">12</div>
+          <div class="cal-grid-cell day cell--green" style="font-size:22px;padding:14px 0;border-radius:50px;grid-column:span 2;display:flex;justify-content:space-around">13<span>14</span></div>
+          <div class="cal-grid-cell day cell--green" style="font-size:22px;padding:14px 0;border-radius:50px">18</div>
+          <div class="cal-grid-cell day cell--yellow" style="font-size:22px;padding:14px 0;border-radius:50px">19</div>
+          <div class="cal-grid-cell day cell--green" style="font-size:22px;padding:14px 0;border-radius:50px;grid-column:span 2;display:flex;justify-content:space-around">20<span>21</span></div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Dots</th>
+      <th>Full Cells</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Readability</strong></td>
+      <td>
+        <p>Small and hard to distinguish at a glance.</p>
+      </td>
+      <td>
+        <p>Full cell color status visible immediately.</p>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Date Relationship</strong></td>
+      <td>
+        <p>Dot floats above the date, connection is implied.</p>
+      </td>
+      <td>
+        <p>Cell is the date, relationship is direct.</p>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Accessibility</strong></td>
+      <td>
+        <p>Low contrast, fails WCAG standards.</p>
+      </td>
+      <td>
+        <p>Color + size meets accessibility requirements.</p>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Reassurance</strong></td>
+      <td>
+        <div class="guidance-inline">Ambiguous: Unclear if white or empty space means "available."</div>
+      </td>perf
+      <td>
+        <div class="guidance-inline">Unambiguous: Green cells confirm rooms are bookable, aligning with desktop.</div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+  </section>
+
+
+  <section class="slide visual-slide wide center" data-visual>
+    <div class="header header-center">
+      <h1>Guidance when rooms aren't available</h1>
+      <p>When a room can't be booked, a contextual message tells partners exactly what to do next — reducing confusion and
+      support requests.</p>
+    </div>
+    <table class="color-table mw-960">
+      <thead>
+        <tr>
+          <th>Room status</th>
+          <th>Guidance message</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="color-status">
+              <div class="color-swatch color-swatch--green"></div>
+              <div class="color-status-text">
+                <h4>Bookable</h4>
+                <p>Room is open and available for guests to book.</p>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="guidance-inline">No message needed.</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="color-status">
+              <div class="color-swatch color-swatch--yellow"></div>
+              <div class="color-status-text">
+                <h4>Sold out</h4>
+                <p>Fully booked. No availability left for this date.</p>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="guidance-inline">"Sold out: To make this unit available, add availability"</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="color-status">
+              <div class="color-swatch color-swatch--red"></div>
+              <div class="color-status-text">
+                <h4>Unbookable</h4>
+                <p>Closed, no rates set, or restricted by minimum stay.</p>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div class="guidance-inline">"No rates: Add at least one rate to make this room bookable"</div>
+            <div class="guidance-inline">"Restricted: Remove the minimum length of stay restriction"</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ── VALIDATION ── -->
+  <section class="slide" id="testing">
+    <div class="header header--left mw-760">
+      <p class="label">Process · Validation</p>
+      <h1>From labs to partner visits — testing across 7 months.</h1>
+      <p>Three rounds of Design Labs and Open Labs ran between January and March 2019. Open Labs were internal sessions with Customer Service agents, who had frontline knowledge of partner pain points. By March, the core concept was stable.</p>
+      <p>In May, I created HTML prototypes for remote usability testing. Working with our UX Researcher, I defined the research questions, interviewed partners directly, and co-facilitated six sessions. Partners preferred colored cells over dots, understood the hierarchy, and valued the guidance messages.</p>
+      <p>In October, eight partners were visited in Amsterdam. One key tension surfaced: partners couldn't distinguish "fully booked" from "closed." This led to reintroducing a third color (yellow for "sold out") alongside green and red.</p>
+    </div>
+  </section>
+
+
+
+  <!-- ── DESIGN DECISIONS ── -->
+  <!-- <section class="slide">
+    <div class="header header--left">
+      <p class="label">Approach</p>
+      <h1>A new information architecture for the Availability tab.</h1>
+    </div>
+    <div class="discovery-col--prose mw-760">
+      <div class="discovery-prose-block">
+        <p><strong>Property Selector (MPPs only).</strong> Partners select a property first, with the selected name confirmed in the header of the next screen.</p>
+      </div>
+      <div class="discovery-prose-block">
+        <p><strong>Room Selector with Calendar Overview.</strong> Each room type gets its own mini calendar showing status at a glance, replacing the flat scrolling list. A toggle between Calendar and List view was added after Beta data showed partners also needed the list format for editing.</p>
+      </div>
+      <div class="discovery-prose-block">
+        <p><strong>Monthly calendar per room.</strong> A full calendar with color-coded cells: green (bookable), yellow (sold out), red (unbookable). This replaced the four-color dot system and evolved from binary to three colors based on partner feedback.</p>
+      </div>
+      <div class="discovery-prose-block">
+        <p><strong>Guidance messages.</strong> Contextual messages below the calendar explain room status and required actions: "Sold out: add availability," "No rates: add at least one rate," "Restricted: remove the minimum length of stay."</p>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- ══ VISUAL: Room Status ══ -->
+
+
+  <!-- ══ VISUAL: Segment Grid ══ -->
+
+
+  <!-- ── EXPERIMENTATION STRATEGY ── -->
+  <section class="slide visual-slide wide center">
+    <div class="header header-center">
+      <p class="label">Experimentation</p>
+      <h1>Phased rollout by partner segment.</h1>
+      <p>Segmented by partner type to manage risk</p>
+    </div>
+    <div class="phases-layout mw-960">
+      <div class="phase-card">
+        <div class="phase-number">Phase 1</div>
+        <div class="phase-title">1 room type</div>
+        <div class="phase-desc">Calendar UI changes only. Colored cells, guidance messages. No navigation change.</div>
+        <div class="phase-result">Full-on</div>
+      </div>
+      <div class="phase-card">
+        <div class="phase-number">Phase 2</div>
+        <div class="phase-title">Multiple rooms</div>
+        <div class="phase-desc">Full flow change. Room Selector with Calendar Overview + all UI improvements.</div>
+        <div class="phase-result">Full-on</div>
+      </div>
+      <div class="phase-card">
+        <div class="phase-number">Phase 3</div>
+        <div class="phase-title">Multiple properties</div>
+        <div class="phase-desc">Beta program. Partners opt in, give continuous feedback, can leave anytime.</div>
+        <div class="phase-result">75.7% retention</div>
+      </div>
+      <div class="phase-card">
+        <div class="phase-number">Phase 4</div>
+        <div class="phase-title">A/B test in both platforms → Full-on.</div>
+        <div class="phase-desc">Both platforms. All segments. Design direction validated at scale.</div>
+        <div class="phase-result">71% satisfaction</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CHAPTER: OUTCOME ── -->
+  <!-- <section class="slide slide-chapter mb-0">
+    <span class="chapter-eyebrow">Outcome</span>
+    <h2 class="chapter-title">Results</h2>
+    <p class="chapter-desc">Satisfaction improved across all segments. The design direction I established carried through to full-on on both platforms.</p>
+  </section> -->
+
+  <!-- ── RESULTS TEXT ── -->
+  <!-- <section class="slide">
+    <div class="header mw-760">
+      <p class="label">Results</p>
+      <h1>From Beta to full-on across both platforms.</h1>
+   
+
+  </div>
+  </section> -->
+
+  <!-- ══ VISUAL: Metrics ══ -->
+  <section class="slide visual-slide wide" data-visual id="results">
+    <div class="header" style="text-align:center;width:100%">
+      <h1>What the experiments proved.</h1>
+      <p>The design direction carried through to full A/B experiments on
+      both platforms. Satisfaction reached 71.11%, exceeding the 65% baseline. There were no impact on support tickets, bookings,
+      or app stability. </p>
+      
+    </div>
+
+    <div class="metrics-grid mw-960">
+      <div class="metric-card">
+        <div class="metric-category">Partner satisfaction · A/B</div>
+        <div class="metric-value">71.1%</div>
+        <div class="metric-context">Up from 65% baseline. Exceeds target across ~5 months of measurement.</div>
+      </div>
+   
+      <div class="metric-card">
+        <div class="metric-category">MUP satisfaction · Beta</div>
+        <div class="metric-value">76%</div>
+        <div class="metric-context">Up from 66.6% baseline. Strongest improvement across segments.</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-category">MPP satisfaction · Beta</div>
+        <div class="metric-value">63%</div>
+        <div class="metric-context">Up from 58.8% baseline.</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-category">Beta retention</div>
+        <div class="metric-value">75.7%</div>
+        <div class="metric-context">2,952 of 3,888 partners stayed in the program.</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-category">Bulk edit usage · iOS</div>
+        <div class="metric-value">+10%</div>
+        <div class="metric-context">More partners opening bulk editor and selecting multiple dates.</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-category">Guidance message action</div>
+        <div class="metric-value">+3%</div>
+        <div class="metric-context">More partners acting on rooms with a guidance message.</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-category">CS ticket impact</div>
+        <div class="metric-value metric-value--muted">None</div>
+        <div class="metric-context">No increase in availability-related support calls.</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-category">Booking impact</div>
+        <div class="metric-value metric-value--muted">None</div>
+        <div class="metric-context">No decrease in net booked room nights.</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-category">App stability</div>
+        <div class="metric-value metric-value--muted">Non-inferior</div>
+        <div class="metric-context">No increase in app crashes.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── REFLECTIONS ── -->
+  <section class="slide" id="reflection">
+    <div class="header">
+      <p class="label">Reflections</p>
+      <h1>What I would have done differently.</h1>
+    </div>
+    <div class="reflection-list">
+      <div class="reflection-item">
+        <div class="reflection-title">Introduced the third color earlier.</div>
+        <p>Every research session surfaced confusion between "fully booked" and "closed." We could have saved a cycle by testing three colors from the start.</p>
+      </div>
+      <div class="reflection-item">
+        <div class="reflection-title">Tested Room Selector scalability earlier.</div>
+        <p>Partners with 10+ room types flagged clutter concerns in June 2019. We didn't address it before Beta. Pagination or grouping would have mitigated this.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTEXT ── -->
+  <!-- <section class="slide slide-summary">
+    <div class="header header--left">
+      <h1>Context</h1>
+    </div>
+    <div class="summary-grid mw-760">
+      <div class="summary-row"><div class="summary-label">Role</div><p>Product Designer, AV Pulse team</p></div>
+      <div class="summary-row"><div class="summary-label">Company</div><p>Booking.com</p></div>
+      <div class="summary-row"><div class="summary-label">Team</div><p>PM, 2 engineers (Android, iOS), UX Researcher</p></div>
+      <div class="summary-row"><div class="summary-label">Platform</div><p>Android and iOS (Pulse app)</p></div>
+      <div class="summary-row"><div class="summary-label">Timeline</div><p>Oct 2018 – early 2020. Design direction carried through to full-on by Feb 2022.</p></div>
+      <div class="summary-row"><div class="summary-label">Scale</div><p>Serving 1.25M+ accommodation partners across 228 countries</p></div>
+    </div>
+  </section> -->
+
+</div>
+
+<!-- ── TOGGLE CONTROLLER ── -->
+<div class="slide-toggle-control">
+  <label><input type="checkbox" id="toggle-text" checked> <span>Text</span></label>
+  <label><input type="checkbox" id="toggle-visuals" checked> <span>Visuals</span></label>
+</div>
+
+<script>
+  // Toggle visibility
+  document.getElementById('toggle-text').addEventListener('change', e => {
+    document.querySelectorAll('.slide:not([data-visual])').forEach(s => {
+      s.style.display = e.target.checked ? '' : 'none';
+    });
+  });
+  document.getElementById('toggle-visuals').addEventListener('change', e => {
+    document.querySelectorAll('.slide[data-visual]').forEach(s => {
+      s.style.display = e.target.checked ? '' : 'none';
+    });
+  });
+
+  // Scroll animations
+  const slideObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.slide').forEach(s => slideObserver.observe(s));
+
+  // Hide nav over cover section
+  const nav = document.getElementById('case-nav');
+  const coverObserver = new IntersectionObserver(entries => {
+    nav.classList.toggle('is-visible', !entries[0].isIntersecting);
+  }, { threshold: 0.2 });
+  coverObserver.observe(document.getElementById('cover'));
+
+  // Smooth scroll on nav click
+  document.querySelectorAll('.case-nav-link').forEach(link => {
+    link.addEventListener('click', e => {
+      const target = document.getElementById(link.dataset.section);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Nav scroll detection
+  const navLinks = document.querySelectorAll('.case-nav-link');
+  const sections = {
+    context: document.getElementById('context'),
+    research: document.getElementById('research'),
+    approach: document.getElementById('approach'),
+    testing: document.getElementById('testing'),
+    results: document.getElementById('results'),
+    reflection: document.getElementById('reflection')
+  };
+
+  const navObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.classList.remove('case-nav-link--active');
+        });
+        const activeLink = document.querySelector(`[data-section="${entry.target.id}"]`);
+        if (activeLink) {
+          activeLink.classList.add('case-nav-link--active');
+        }
+      }
+    });
+  }, { threshold: 0.3 });
+
+  Object.values(sections).forEach(section => {
+    if (section) navObserver.observe(section);
+  });
+
+</script>
+
+<!-- Lightbox -->
+<div id="lightbox" aria-modal="true" role="dialog">
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const EASING_OPEN  = 'cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+  const EASING_CLOSE = 'cubic-bezier(0.55, 0.06, 0.68, 0.19)';
+  let originState = null;
+
+  document.querySelectorAll('img.phone').forEach(img => {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', () => {
+      const rect = img.getBoundingClientRect();
+      const finalW = Math.min(img.naturalWidth, window.innerWidth * 0.9);
+      const cx = window.innerWidth / 2;
+      const cy = window.innerHeight / 2;
+      const tx = rect.left + rect.width / 2 - cx;
+      const ty = rect.top + rect.height / 2 - cy;
+      const scaleX = rect.width / finalW;
+      const scaleY = rect.height / (finalW * rect.height / rect.width);
+
+      originState = { tx, ty, scaleX, scaleY };
+
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add('active');
+      document.body.style.overflowY = 'hidden';
+
+      lightboxImg.animate([
+        { transform: `translate(${tx}px, ${ty}px) scale(${scaleX}, ${scaleY})` },
+        { transform: 'translate(0,0) scale(1)' }
+      ], { duration: 320, easing: EASING_OPEN, fill: 'forwards' });
+
+      lightbox.animate([
+        { opacity: 0 },
+        { opacity: 1 }
+      ], { duration: 220, easing: EASING_OPEN, fill: 'forwards' });
+    });
+  });
+
+  lightbox.addEventListener('click', () => {
+    if (!originState) { lightbox.classList.remove('active'); return; }
+    const { tx, ty, scaleX, scaleY } = originState;
+
+    lightboxImg.animate([
+      { transform: 'translate(0,0) scale(1)' },
+      { transform: `translate(${tx}px, ${ty}px) scale(${scaleX}, ${scaleY})` }
+    ], { duration: 280, easing: EASING_CLOSE, fill: 'forwards' });
+
+    const anim = lightbox.animate([
+      { opacity: 1 },
+      { opacity: 0 }
+    ], { duration: 280, easing: EASING_CLOSE, fill: 'forwards' });
+
+    anim.onfinish = () => {
+      lightbox.classList.remove('active');
+      document.body.style.overflowY = '';
+      originState = null;
+    };
+  });
+</script>
+
+</body>
+</html>

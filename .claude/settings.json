@@ -9,11 +9,21 @@
       "Bash(sed -i '' 's/{ value: \"\"single\"\", label: \"\"2 Single beds\"\" },/{ value: \"\"single\"\", label: \"\"2 single beds\"\" },/' /Users/ignacio/Desktop/Work/Prototypes/www/src/BottomSheet.jsx)",
       "Bash(sed -i '' 's/{ value: \"\"double\"\", label: \"\"1 Double bed\"\" },/{ value: \"\"double\"\", label: \"\"1 double bed\"\" },/' /Users/ignacio/Desktop/Work/Prototypes/www/src/BottomSheet.jsx)",
       "Bash(sed -i '' 's/        PLACEHOLDER/        { value: \"\"single\"\", label: \"\"2 single beds\"\" },/' /Users/ignacio/Desktop/Work/Prototypes/www/src/BottomSheet.jsx)",
-      "Bash(sed -i '' '/{ value: \"\"no-preference\"\", label: \"\"No preference\"\" }/{n; s/{ value: \"\"single\"\", label: \"\"2 single beds\"\" },/SWAP_SINGLE/}' /Users/ignacio/Desktop/Work/Prototypes/www/src/BottomSheet.jsx)"
+      "Bash(sed -i '' '/{ value: \"\"no-preference\"\", label: \"\"No preference\"\" }/{n; s/{ value: \"\"single\"\", label: \"\"2 single beds\"\" },/SWAP_SINGLE/}' /Users/ignacio/Desktop/Work/Prototypes/www/src/BottomSheet.jsx)",
+      "Bash(sed -i '' 's/font-size: 12px;/font-size: var\\(--fs-sm\\);/g' /Users/ignacio/Desktop/Work/Prototypes/www/pulse_case_study.css)",
+      "Bash(sed -i '' 's/font-size: 18px;/font-size: var\\(--fs-body\\);/g' /Users/ignacio/Desktop/Work/Prototypes/www/pulse_case_study.css)",
+      "Bash(sed -i '' 's/font-size: 28px;/font-size: var\\(--fs-xl\\);/g' /Users/ignacio/Desktop/Work/Prototypes/www/pulse_case_study.css)",
+      "Bash(/Users/ignacio/Desktop/Work/Prototypes/www/pulse_case_study.css:*)",
+      "Bash(for f:*)",
+      "Bash(do)",
+      "Bash(echo -n \"$f: \")",
+      "Bash(python3 -c \":*)",
+      "Bash(done)"
     ],
     "additionalDirectories": [
       "/Users/ignacio/SwiftBar Plugins",
-      "/Users/ignacio"
+      "/Users/ignacio",
+      "/Users/ignacio/Desktop/Work/Prototypes/www"
     ]
   }
 }
